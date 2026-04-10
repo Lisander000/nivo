@@ -1,18 +1,14 @@
 import Link from "next/link";
 import { categories, getFeaturedProducts, getDeals, products } from "@/data/products";
-import { testimonials, instagramPosts } from "@/data/community";
+import { testimonials } from "@/data/community";
 import ProductCard from "@/components/ProductCard";
 import ProductRail from "@/components/ProductRail";
-import TestimonialCard from "@/components/TestimonialCard";
-import LiveActivity from "@/components/LiveActivity";
 import { AvatarStack } from "@/components/Avatar";
 
 export default function Home() {
   const featured = getFeaturedProducts();
   const deals = getDeals();
-  const topRated = [...products].sort((a, b) => b.rating - a.rating).slice(0, 10);
   const under500 = products.filter((p) => p.price < 500).slice(0, 10);
-  const newIn = [...products].slice(0, 10);
   const communityNames = testimonials.map((t) => t.name);
 
   // Bol.com-style brand tiles
@@ -242,17 +238,6 @@ export default function Home() {
       </Link>
 
       {/* ═══════════════════════════════════════════════════════
-          NEW IN RAIL
-          ═══════════════════════════════════════════════════════ */}
-      <ProductRail title="New arrivals" kicker="Just dropped" href="/category/all" accent="accent">
-        {newIn.map((p) => (
-          <div key={p.id} className="w-[180px] md:w-[220px] flex-shrink-0 snap-start">
-            <ProductCard product={p} />
-          </div>
-        ))}
-      </ProductRail>
-
-      {/* ═══════════════════════════════════════════════════════
           BRAND GRID — bol.com style brand tiles
           ═══════════════════════════════════════════════════════ */}
       <section>
@@ -278,17 +263,6 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          TOP RATED RAIL
-          ═══════════════════════════════════════════════════════ */}
-      <ProductRail title="Top rated by customers" kicker="★ Loved" href="/category/all">
-        {topRated.map((p) => (
-          <div key={p.id} className="w-[180px] md:w-[220px] flex-shrink-0 snap-start">
-            <ProductCard product={p} />
-          </div>
-        ))}
-      </ProductRail>
-
-      {/* ═══════════════════════════════════════════════════════
           TRUST BAR — inline stats
           ═══════════════════════════════════════════════════════ */}
       <div className="bg-white rounded-3xl shadow-card p-6 grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
@@ -309,37 +283,6 @@ export default function Home() {
           </div>
         ))}
       </div>
-
-      {/* ═══════════════════════════════════════════════════════
-          COMMUNITY — testimonials
-          ═══════════════════════════════════════════════════════ */}
-      <section className="relative">
-        <div className="flex items-end justify-between mb-5 flex-wrap gap-4">
-          <div className="flex items-center gap-3">
-            <span className="w-1 h-8 bg-accent rounded-full" />
-            <div>
-              <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider">Real people · Real reviews</p>
-              <h2 className="text-[20px] md:text-[24px] font-black text-ink tracking-tight leading-tight">Loved by Kosovo</h2>
-            </div>
-          </div>
-          <div className="hidden md:block">
-            <LiveActivity />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {testimonials.slice(0, 3).map((t) => (
-            <TestimonialCard key={t.name} t={t} />
-          ))}
-        </div>
-        <div className="mt-5 flex items-center justify-center">
-          <Link href="/community" className="group inline-flex items-center gap-1.5 text-primary font-extrabold hover:text-primary-dark text-[13px]">
-            Read 12,000+ reviews
-            <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-            </svg>
-          </Link>
-        </div>
-      </section>
 
       {/* ═══════════════════════════════════════════════════════
           UNDER €500 RAIL
@@ -375,53 +318,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* ═══════════════════════════════════════════════════════
-          INSTAGRAM WALL — community tail
-          ═══════════════════════════════════════════════════════ */}
-      <section className="relative bg-gradient-to-br from-primary-light via-white to-pink-50 rounded-3xl p-6 md:p-10 border border-primary/10 overflow-hidden">
-        <div className="absolute -top-24 -right-24 w-[320px] h-[320px] rounded-full bg-accent/10 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 w-[280px] h-[280px] rounded-full bg-primary/10 blur-3xl" />
-        <div className="relative">
-          <div className="flex items-end justify-between mb-6 flex-wrap gap-4">
-            <div className="flex items-center gap-3">
-              <span className="w-1 h-8 bg-accent rounded-full" />
-              <div>
-                <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider">#NivoKS on Instagram</p>
-                <h2 className="text-[20px] md:text-[24px] font-black text-ink tracking-tight leading-tight">Tag us. Get featured.</h2>
-              </div>
-            </div>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 h-[44px] px-5 bg-white text-ink text-[13px] font-extrabold rounded-full shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all border border-border"
-            >
-              Follow @nivo.ks
-            </a>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            {instagramPosts.map((post) => (
-              <a
-                key={post.id}
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br ${post.gradient} shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300`}
-              >
-                <div className="absolute inset-0 flex items-center justify-center text-[64px] md:text-[72px] group-hover:scale-110 transition-transform duration-500">
-                  {post.emoji}
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute inset-x-0 bottom-0 p-3 text-white translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <p className="text-[11px] font-extrabold truncate">@{post.author}</p>
-                  <p className="text-[10px] font-medium text-white/80 line-clamp-2 leading-tight mt-0.5">{post.caption}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ═══════════════════════════════════════════════════════
           NEWSLETTER
