@@ -2,6 +2,7 @@ import Link from "next/link";
 import { categories, getFeaturedProducts, getDeals, products } from "@/data/products";
 import { testimonials, instagramPosts } from "@/data/community";
 import ProductCard from "@/components/ProductCard";
+import ProductRail from "@/components/ProductRail";
 import TestimonialCard from "@/components/TestimonialCard";
 import LiveActivity from "@/components/LiveActivity";
 import { AvatarStack } from "@/components/Avatar";
@@ -9,117 +10,287 @@ import { AvatarStack } from "@/components/Avatar";
 export default function Home() {
   const featured = getFeaturedProducts();
   const deals = getDeals();
-  const topRated = [...products].sort((a, b) => b.rating - a.rating).slice(0, 4);
-  const under500 = products.filter((p) => p.price < 500).slice(0, 4);
+  const topRated = [...products].sort((a, b) => b.rating - a.rating).slice(0, 10);
+  const under500 = products.filter((p) => p.price < 500).slice(0, 10);
+  const newIn = [...products].slice(0, 10);
   const communityNames = testimonials.map((t) => t.name);
 
+  // Bol.com-style brand tiles
+  const brands = [
+    { name: "Apple", bg: "bg-[#F5F5F7]", text: "text-ink", logo: "" },
+    { name: "Samsung", bg: "bg-[#1428A0]", text: "text-white", logo: "" },
+    { name: "Sony", bg: "bg-black", text: "text-white", logo: "" },
+    { name: "Xiaomi", bg: "bg-[#FF6700]", text: "text-white", logo: "" },
+    { name: "Logitech", bg: "bg-white", text: "text-ink", logo: "" },
+    { name: "JBL", bg: "bg-[#FF3300]", text: "text-white", logo: "" },
+    { name: "Nintendo", bg: "bg-[#E60012]", text: "text-white", logo: "" },
+    { name: "Bose", bg: "bg-[#141414]", text: "text-white", logo: "" },
+    { name: "HP", bg: "bg-[#0096D6]", text: "text-white", logo: "" },
+    { name: "Lenovo", bg: "bg-[#E2231A]", text: "text-white", logo: "" },
+    { name: "Dyson", bg: "bg-[#FFD100]", text: "text-ink", logo: "" },
+    { name: "Canon", bg: "bg-[#CC0000]", text: "text-white", logo: "" },
+  ];
+
   return (
-    <div className="max-w-[1280px] mx-auto px-4 lg:px-6 py-6 space-y-10">
-      {/* Hero */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <div className="lg:col-span-2 relative bg-gradient-to-br from-[#001847] via-[#002D7A] to-[#0046BE] rounded-3xl overflow-hidden p-8 md:p-12 lg:p-14 text-white min-h-[360px] flex flex-col justify-center">
-          {/* Decorative blobs */}
-          <div className="absolute -top-20 -right-20 w-[320px] h-[320px] rounded-full bg-accent/20 blur-3xl" />
-          <div className="absolute -bottom-24 -left-10 w-[280px] h-[280px] rounded-full bg-primary/40 blur-3xl" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.1),transparent_60%)]" />
-          <div className="relative">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full pl-2 pr-4 py-1.5 mb-5">
-              <span className="flex items-center gap-1 bg-accent text-white text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full">
+    <div className="max-w-[1280px] mx-auto px-4 lg:px-6 py-5 lg:py-6 space-y-8 lg:space-y-10">
+      {/* ═══════════════════════════════════════════════════════
+          HERO — bol.com style: 1 wide banner + 2 stacked tiles
+          ═══════════════════════════════════════════════════════ */}
+      <div className="grid grid-cols-1 lg:grid-cols-[1.8fr_1fr] gap-3 lg:gap-4">
+        {/* Main hero banner — light, bright, bol-style */}
+        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#E8F1FF] via-[#F4F7FF] to-[#FFE8D6] min-h-[340px] lg:min-h-[400px] group">
+          {/* Decorative pattern */}
+          <div className="absolute -top-20 -right-16 w-[380px] h-[380px] rounded-full bg-primary/10 blur-3xl" />
+          <div className="absolute -bottom-20 -left-10 w-[320px] h-[320px] rounded-full bg-accent/15 blur-3xl" />
+          <div className="absolute top-8 right-8 text-[200px] lg:text-[260px] leading-none opacity-[0.12] select-none pointer-events-none group-hover:scale-110 group-hover:rotate-6 transition-transform duration-700">📱</div>
+
+          <div className="relative h-full p-8 md:p-12 lg:p-14 flex flex-col justify-center max-w-[560px]">
+            <div className="inline-flex self-start items-center gap-2 bg-white rounded-full pl-1.5 pr-4 py-1 mb-5 shadow-sm">
+              <span className="flex items-center gap-1 bg-danger text-white text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full">
                 <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
-                Live
+                Deals
               </span>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-white/90">Now in Kosovo</span>
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-ink">Tech week · Up to −40%</span>
             </div>
-            <h1 className="text-[36px] md:text-[56px] lg:text-[64px] font-black leading-[0.95] mb-4 tracking-[-0.02em]">
-              15,000+ gadgets.<br />
-              <span className="text-accent">One marketplace.</span>
+            <h1 className="text-[34px] md:text-[48px] lg:text-[56px] font-black leading-[0.95] mb-4 tracking-[-0.02em] text-ink">
+              Tech you love,<br />
+              <span className="text-primary">prices you&apos;ll</span><br />
+              <span className="text-accent">love more.</span>
             </h1>
-            <p className="text-[15px] md:text-[16px] text-white/70 mb-8 max-w-[460px] leading-relaxed">
-              150+ verified sellers. Local warranty. Free delivery tomorrow. The way shopping should be.
+            <p className="text-[14px] md:text-[15px] text-ink-secondary mb-7 max-w-[420px] leading-relaxed font-medium">
+              15,000+ gadgets. 150+ verified sellers. Free delivery tomorrow across Kosovo.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <Link
                 href="/category/all"
-                className="group inline-flex items-center gap-2 h-[52px] px-8 bg-accent text-white text-[15px] font-extrabold rounded-2xl hover:bg-accent-dark transition-all active:scale-[0.97] shadow-[0_8px_24px_rgba(255,103,0,0.4)] hover:shadow-[0_12px_32px_rgba(255,103,0,0.5)] hover:-translate-y-0.5"
+                className="group/btn inline-flex items-center gap-2 h-[48px] px-7 bg-primary text-white text-[14px] font-extrabold rounded-xl hover:bg-primary-dark transition-all active:scale-[0.97] shadow-[0_6px_20px_rgba(0,70,190,0.3)] hover:shadow-[0_10px_28px_rgba(0,70,190,0.4)] hover:-translate-y-0.5"
               >
-                Shop all products
-                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                Shop the deals
+                <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
               </Link>
               <Link
                 href="/category/all"
-                className="inline-flex items-center gap-2 h-[52px] px-6 bg-white/10 border border-white/20 backdrop-blur-sm text-white text-[14px] font-bold rounded-2xl hover:bg-white/15 transition-all"
+                className="inline-flex items-center h-[48px] px-6 bg-white text-ink text-[14px] font-bold rounded-xl hover:bg-white/80 transition-all shadow-sm border border-border"
               >
-                Today&apos;s deals
+                Browse catalog
               </Link>
             </div>
-
-            {/* Social proof */}
-            <div className="flex items-center gap-3 mt-7">
-              <AvatarStack names={communityNames} size={34} />
-              <div className="flex items-center gap-2">
-                <div className="flex gap-[1px]">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-3.5 h-3.5 text-accent" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-[12px] text-white/80 font-semibold">
-                  <span className="font-black text-white">4.8</span>
-                  <span className="text-white/50"> · </span>
-                  <span className="font-black text-white">50,000+</span> shoppers from Kosovo
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center gap-6 mt-8 text-[12px] text-white/60">
-              <div className="flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
-                <span>Free delivery</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
-                <span>14-day returns</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
-                <span>2-year warranty</span>
-              </div>
+            <div className="flex items-center gap-2 mt-6">
+              <AvatarStack names={communityNames} size={28} max={4} />
+              <p className="text-[11px] text-ink-muted font-bold">
+                <span className="text-ink font-black">50,000+</span> shoppers from Kosovo
+              </p>
             </div>
           </div>
         </div>
 
-        <div className="hidden lg:flex flex-col gap-4">
-          <Link href="/category/smartphones" className="flex-1 relative bg-white rounded-3xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 group overflow-hidden hover:-translate-y-1">
-            <div className="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-primary-light opacity-60 group-hover:scale-125 transition-transform duration-500" />
+        {/* Right: 2 stacked promo tiles */}
+        <div className="grid grid-cols-1 gap-3 lg:gap-4">
+          <Link href="/category/smartphones" className="group relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-[#003AAA] text-white p-6 lg:p-7 hover:-translate-y-0.5 transition-all shadow-card hover:shadow-card-hover min-h-[190px]">
+            <div className="absolute -right-6 -bottom-6 text-[160px] leading-none opacity-20 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">📱</div>
             <div className="relative">
-              <span className="inline-block text-[10px] font-extrabold text-primary uppercase tracking-wider bg-primary-light px-2.5 py-1 rounded-full">New arrival</span>
-              <p className="text-[22px] font-black text-ink mt-3 leading-tight">iPhone 16 Pro</p>
-              <p className="text-[13px] text-ink-secondary mt-1">From <span className="font-bold text-ink">&euro;1.199,-</span></p>
-              <span className="text-[13px] text-primary font-extrabold mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                Shop now <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+              <span className="inline-block text-[10px] font-extrabold text-accent uppercase tracking-wider bg-white/10 backdrop-blur-sm border border-white/20 px-2.5 py-1 rounded-full">New in</span>
+              <p className="text-[24px] font-black mt-3 leading-tight">iPhone 16 Pro</p>
+              <p className="text-[12px] text-white/70 mt-1 font-medium">From <span className="text-white font-black">€1.199,-</span></p>
+              <span className="inline-flex items-center gap-1 text-[12px] font-extrabold mt-4 text-accent group-hover:gap-2 transition-all">
+                Shop now
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
               </span>
             </div>
           </Link>
-          <Link href="/category/gaming" className="flex-1 relative bg-white rounded-3xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 group overflow-hidden hover:-translate-y-1">
-            <div className="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-accent-light opacity-60 group-hover:scale-125 transition-transform duration-500" />
+          <Link href="/category/gaming" className="group relative rounded-2xl overflow-hidden bg-gradient-to-br from-accent to-[#E05A00] text-white p-6 lg:p-7 hover:-translate-y-0.5 transition-all shadow-card hover:shadow-card-hover min-h-[190px]">
+            <div className="absolute -right-6 -bottom-6 text-[160px] leading-none opacity-20 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500">🎮</div>
             <div className="relative">
-              <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-white uppercase tracking-wider bg-danger px-2.5 py-1 rounded-full">
+              <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-white uppercase tracking-wider bg-white/15 backdrop-blur-sm border border-white/20 px-2.5 py-1 rounded-full">
                 <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
-                Hot deal −20%
+                Hot −20%
               </span>
-              <p className="text-[22px] font-black text-ink mt-3 leading-tight">PlayStation 5</p>
-              <p className="text-[13px] text-ink-secondary mt-1"><span className="font-bold text-ink">&euro;499,-</span> &middot; free delivery</p>
-              <span className="text-[13px] text-accent font-extrabold mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                Shop now <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+              <p className="text-[24px] font-black mt-3 leading-tight">PlayStation 5</p>
+              <p className="text-[12px] text-white/75 mt-1 font-medium"><span className="text-white font-black">€499,-</span> · free delivery</p>
+              <span className="inline-flex items-center gap-1 text-[12px] font-extrabold mt-4 text-white group-hover:gap-2 transition-all">
+                Shop now
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
               </span>
             </div>
           </Link>
         </div>
       </div>
 
-      {/* Trust bar */}
+      {/* ═══════════════════════════════════════════════════════
+          CATEGORY CIRCLES — bol.com's signature row
+          ═══════════════════════════════════════════════════════ */}
+      <div className="relative -mx-4 lg:mx-0">
+        <div className="flex lg:grid lg:grid-cols-6 gap-3 lg:gap-4 overflow-x-auto px-4 lg:px-0 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory">
+          {categories.map((cat, i) => {
+            const tints = [
+              "from-blue-100 to-blue-200",
+              "from-orange-100 to-orange-200",
+              "from-purple-100 to-purple-200",
+              "from-pink-100 to-pink-200",
+              "from-green-100 to-green-200",
+              "from-cyan-100 to-cyan-200",
+            ];
+            return (
+              <Link
+                key={cat.slug}
+                href={`/category/${cat.slug}`}
+                className="group flex-shrink-0 w-[110px] lg:w-auto flex flex-col items-center snap-start"
+              >
+                <div className={`w-[86px] h-[86px] lg:w-[96px] lg:h-[96px] rounded-full bg-gradient-to-br ${tints[i % tints.length]} flex items-center justify-center shadow-sm group-hover:shadow-card-hover group-hover:-translate-y-1 transition-all duration-300 relative overflow-hidden`}>
+                  <span className="text-[44px] lg:text-[48px] group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-300">{cat.icon}</span>
+                </div>
+                <p className="text-[12px] font-extrabold text-ink mt-2.5 text-center">{cat.name}</p>
+                <p className="text-[10px] text-ink-muted font-semibold">{cat.count} items</p>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════
+          PROMO STRIP — 4 colorful tiles bol-style
+          ═══════════════════════════════════════════════════════ */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {[
+          { title: "Pay in 3", sub: "Interest-free", bg: "bg-gradient-to-br from-primary to-[#0039AA]", text: "text-white", accent: "text-accent", href: "/help", icon: "💳" },
+          { title: "Free returns", sub: "14 days, no drama", bg: "bg-gradient-to-br from-success to-[#0E7A52]", text: "text-white", accent: "text-white/70", href: "/returns", icon: "↩️" },
+          { title: "Nivo Business", sub: "Tech for teams", bg: "bg-gradient-to-br from-ink to-[#0F172A]", text: "text-white", accent: "text-accent", href: "/business", icon: "💼" },
+          { title: "Sell on Nivo", sub: "150+ partners", bg: "bg-gradient-to-br from-accent to-[#D65400]", text: "text-white", accent: "text-white/70", href: "/sell", icon: "🚀" },
+        ].map((p) => (
+          <Link
+            key={p.title}
+            href={p.href}
+            className={`group relative rounded-2xl p-5 ${p.bg} ${p.text} overflow-hidden hover:-translate-y-1 transition-all shadow-card hover:shadow-card-hover`}
+          >
+            <div className="absolute -right-2 -bottom-2 text-[80px] leading-none opacity-20 group-hover:scale-110 group-hover:-rotate-12 transition-transform duration-500">{p.icon}</div>
+            <div className="relative">
+              <p className="text-[16px] font-black leading-tight">{p.title}</p>
+              <p className={`text-[11px] font-bold mt-0.5 ${p.accent}`}>{p.sub}</p>
+              <span className="inline-flex items-center gap-1 text-[11px] font-extrabold mt-3 group-hover:gap-1.5 transition-all">
+                Learn more
+                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+              </span>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════
+          DEALS RAIL — horizontal scrolling, deal tint
+          ═══════════════════════════════════════════════════════ */}
+      {deals.length > 0 && (
+        <div className="relative bg-gradient-to-br from-danger/5 via-accent/5 to-transparent rounded-3xl p-5 md:p-6 lg:p-7 border border-danger/10">
+          <ProductRail
+            title="Today's hottest deals"
+            kicker="⚡ Limited time"
+            href="/category/all"
+            accent="danger"
+            trailing={
+              <div className="hidden lg:flex items-center gap-1 bg-white border border-danger/20 rounded-full px-3 py-1.5 mr-1">
+                <svg className="w-3.5 h-3.5 text-danger" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+                <span className="text-[11px] font-extrabold text-danger uppercase tracking-wider">Ends in 8h 24m</span>
+              </div>
+            }
+          >
+            {deals.map((p) => (
+              <div key={p.id} className="w-[180px] md:w-[220px] flex-shrink-0 snap-start">
+                <ProductCard product={p} />
+              </div>
+            ))}
+          </ProductRail>
+        </div>
+      )}
+
+      {/* ═══════════════════════════════════════════════════════
+          POPULAR RAIL
+          ═══════════════════════════════════════════════════════ */}
+      <ProductRail title="Popular right now" kicker="Trending" href="/category/all">
+        {featured.map((p) => (
+          <div key={p.id} className="w-[180px] md:w-[220px] flex-shrink-0 snap-start">
+            <ProductCard product={p} />
+          </div>
+        ))}
+      </ProductRail>
+
+      {/* ═══════════════════════════════════════════════════════
+          FULL-WIDTH PROMO BANNER — student discount
+          ═══════════════════════════════════════════════════════ */}
+      <Link
+        href="/category/laptops"
+        className="relative block rounded-3xl overflow-hidden bg-gradient-to-r from-[#FFE8D6] via-[#FFF4E8] to-[#E8F1FF] p-8 md:p-10 lg:p-12 group hover:shadow-card-hover transition-all shadow-card"
+      >
+        <div className="absolute -right-10 -top-10 text-[220px] leading-none opacity-15 select-none pointer-events-none group-hover:scale-110 group-hover:rotate-6 transition-transform duration-700">💻</div>
+        <div className="absolute -left-16 -bottom-16 w-[280px] h-[280px] rounded-full bg-primary/10 blur-3xl" />
+        <div className="relative grid md:grid-cols-[1fr_auto] gap-6 items-center">
+          <div className="max-w-[560px]">
+            <span className="inline-block text-[10px] font-extrabold text-accent uppercase tracking-[0.15em] bg-white px-3 py-1 rounded-full shadow-sm">Student Week</span>
+            <p className="text-[26px] md:text-[36px] font-black text-ink mt-3 leading-[1.05] tracking-tight">
+              15% off all laptops<br />
+              <span className="text-primary">with valid student ID.</span>
+            </p>
+            <p className="text-[13px] md:text-[14px] text-ink-secondary mt-3 font-medium">
+              MacBooks, Windows laptops, Chromebooks — all in. Until March 31.
+            </p>
+          </div>
+          <div className="inline-flex items-center gap-2 h-[52px] px-7 rounded-xl bg-primary text-white text-[14px] font-extrabold shadow-[0_6px_20px_rgba(0,70,190,0.3)] group-hover:shadow-[0_10px_28px_rgba(0,70,190,0.4)] group-hover:-translate-y-0.5 transition-all flex-shrink-0 self-start md:self-center whitespace-nowrap">
+            Claim discount
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+          </div>
+        </div>
+      </Link>
+
+      {/* ═══════════════════════════════════════════════════════
+          NEW IN RAIL
+          ═══════════════════════════════════════════════════════ */}
+      <ProductRail title="New arrivals" kicker="Just dropped" href="/category/all" accent="accent">
+        {newIn.map((p) => (
+          <div key={p.id} className="w-[180px] md:w-[220px] flex-shrink-0 snap-start">
+            <ProductCard product={p} />
+          </div>
+        ))}
+      </ProductRail>
+
+      {/* ═══════════════════════════════════════════════════════
+          BRAND GRID — bol.com style brand tiles
+          ═══════════════════════════════════════════════════════ */}
+      <section>
+        <div className="flex items-center gap-3 mb-5">
+          <span className="w-1 h-8 bg-accent rounded-full" />
+          <div>
+            <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider">Verified partners</p>
+            <h2 className="text-[20px] md:text-[24px] font-black text-ink tracking-tight leading-tight">Top brands on Nivo</h2>
+          </div>
+        </div>
+        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
+          {brands.map((b) => (
+            <Link
+              key={b.name}
+              href={`/category/all?q=${encodeURIComponent(b.name)}`}
+              className={`group h-[84px] rounded-2xl ${b.bg} ${b.text} flex items-center justify-center shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all border border-border/40 relative overflow-hidden`}
+            >
+              <span className="text-[18px] font-black tracking-tight relative z-10">{b.name}</span>
+              <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          TOP RATED RAIL
+          ═══════════════════════════════════════════════════════ */}
+      <ProductRail title="Top rated by customers" kicker="★ Loved" href="/category/all">
+        {topRated.map((p) => (
+          <div key={p.id} className="w-[180px] md:w-[220px] flex-shrink-0 snap-start">
+            <ProductCard product={p} />
+          </div>
+        ))}
+      </ProductRail>
+
+      {/* ═══════════════════════════════════════════════════════
+          TRUST BAR — inline stats
+          ═══════════════════════════════════════════════════════ */}
       <div className="bg-white rounded-3xl shadow-card p-6 grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
         {[
           { title: "Free delivery", desc: "On every order across Kosovo", icon: <svg className="w-6 h-6 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" /></svg> },
@@ -139,86 +310,16 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Categories */}
-      <section>
-        <SectionHeader title="Shop by category" kicker="Browse" />
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-3 md:gap-4">
-          {categories.map((cat, i) => {
-            const tints = [
-              "from-blue-50 to-blue-100",
-              "from-orange-50 to-orange-100",
-              "from-purple-50 to-purple-100",
-              "from-pink-50 to-pink-100",
-              "from-green-50 to-green-100",
-              "from-cyan-50 to-cyan-100",
-            ];
-            return (
-              <Link
-                key={cat.slug}
-                href={`/category/${cat.slug}`}
-                className={`relative bg-gradient-to-br ${tints[i % tints.length]} rounded-3xl p-5 text-center shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 group overflow-hidden`}
-              >
-                <div className="absolute -bottom-6 -right-6 w-20 h-20 rounded-full bg-white/40 group-hover:scale-150 transition-transform duration-500" />
-                <div className="relative">
-                  <span className="text-[36px] block mb-2 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-300 inline-block">{cat.icon}</span>
-                  <p className="text-[13px] font-extrabold text-ink">{cat.name}</p>
-                  <p className="text-[11px] text-ink-muted font-medium mt-0.5">{cat.count} items</p>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Deals */}
-      {deals.length > 0 && (
-        <section className="relative bg-gradient-to-br from-danger/5 via-accent/5 to-transparent rounded-3xl p-6 md:p-8 border border-danger/10">
-          <div className="flex items-end justify-between mb-5 flex-wrap gap-3">
-            <div className="flex items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 bg-danger text-white text-[11px] font-extrabold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-[0_4px_12px_rgba(214,59,47,0.3)]">
-                <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                Deal
-              </span>
-              <div>
-                <p className="text-[11px] font-extrabold text-danger uppercase tracking-wider">Limited time</p>
-                <h2 className="text-[22px] md:text-[24px] font-black text-ink tracking-tight leading-tight">Today&apos;s hottest deals</h2>
-              </div>
-            </div>
-            <Link href="/category/all" className="group text-[13px] text-danger font-extrabold hover:text-danger/80 flex items-center gap-1.5">
-              See all deals
-              <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-            {deals.map((p) => <ProductCard key={p.id} product={p} />)}
-          </div>
-        </section>
-      )}
-
-      {/* Featured */}
-      <section>
-        <SectionHeader title="Popular right now" kicker="Trending" href="/category/all" />
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-          {featured.map((p) => <ProductCard key={p.id} product={p} />)}
-        </div>
-      </section>
-
-      {/* Top rated */}
-      <section>
-        <SectionHeader title="Top rated by customers" kicker="★ Loved" href="/category/all" />
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-          {topRated.map((p) => <ProductCard key={p.id} product={p} />)}
-        </div>
-      </section>
-
-      {/* Community testimonials */}
+      {/* ═══════════════════════════════════════════════════════
+          COMMUNITY — testimonials
+          ═══════════════════════════════════════════════════════ */}
       <section className="relative">
-        <div className="flex items-end justify-between mb-6 flex-wrap gap-4">
+        <div className="flex items-end justify-between mb-5 flex-wrap gap-4">
           <div className="flex items-center gap-3">
             <span className="w-1 h-8 bg-accent rounded-full" />
             <div>
               <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider">Real people · Real reviews</p>
-              <h2 className="text-[22px] md:text-[28px] font-black text-ink tracking-tight leading-tight">Loved by Kosovo</h2>
+              <h2 className="text-[20px] md:text-[24px] font-black text-ink tracking-tight leading-tight">Loved by Kosovo</h2>
             </div>
           </div>
           <div className="hidden md:block">
@@ -226,12 +327,12 @@ export default function Home() {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {testimonials.slice(0, 6).map((t) => (
+          {testimonials.slice(0, 3).map((t) => (
             <TestimonialCard key={t.name} t={t} />
           ))}
         </div>
-        <div className="mt-6 flex items-center justify-center gap-2 text-[13px] text-ink-muted font-semibold">
-          <Link href="/community" className="group inline-flex items-center gap-1.5 text-primary font-extrabold hover:text-primary-dark">
+        <div className="mt-5 flex items-center justify-center">
+          <Link href="/community" className="group inline-flex items-center gap-1.5 text-primary font-extrabold hover:text-primary-dark text-[13px]">
             Read 12,000+ reviews
             <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
               <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -240,7 +341,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Instagram / community wall */}
+      {/* ═══════════════════════════════════════════════════════
+          UNDER €500 RAIL
+          ═══════════════════════════════════════════════════════ */}
+      <ProductRail title="Under €500" kicker="Budget picks" href="/category/all" accent="accent">
+        {under500.map((p) => (
+          <div key={p.id} className="w-[180px] md:w-[220px] flex-shrink-0 snap-start">
+            <ProductCard product={p} />
+          </div>
+        ))}
+      </ProductRail>
+
+      {/* ═══════════════════════════════════════════════════════
+          INSTALLMENTS BANNER
+          ═══════════════════════════════════════════════════════ */}
+      <div className="relative bg-gradient-to-br from-primary-light via-white to-primary-50 rounded-3xl shadow-card overflow-hidden border border-primary/10">
+        <div className="absolute -top-10 -right-10 w-48 h-48 rounded-full bg-primary/10 blur-2xl" />
+        <div className="relative p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
+          <div className="flex-1">
+            <span className="inline-block text-[11px] font-extrabold text-primary uppercase tracking-wider bg-white px-3 py-1 rounded-full shadow-sm">Flexible payments</span>
+            <p className="text-[26px] md:text-[32px] font-black text-ink mt-3 leading-tight tracking-tight">Pay in installments.<br /><span className="text-primary">No interest.</span></p>
+            <p className="text-[14px] text-ink-secondary mt-3 leading-relaxed max-w-[440px]">
+              Split any purchase over €50 into 3, 6, or 12 monthly payments. No hidden fees. No paperwork.
+            </p>
+          </div>
+          <div className="flex gap-3 flex-shrink-0">
+            {[3, 6, 12].map((m) => (
+              <div key={m} className="text-center bg-white rounded-2xl px-5 py-5 min-w-[82px] shadow-card border border-primary/10 hover:border-primary/30 hover:-translate-y-1 transition-all">
+                <p className="text-[32px] font-black text-primary leading-none">{m}</p>
+                <p className="text-[11px] text-ink-muted font-bold mt-1.5 uppercase tracking-wider">months</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════
+          INSTAGRAM WALL — community tail
+          ═══════════════════════════════════════════════════════ */}
       <section className="relative bg-gradient-to-br from-primary-light via-white to-pink-50 rounded-3xl p-6 md:p-10 border border-primary/10 overflow-hidden">
         <div className="absolute -top-24 -right-24 w-[320px] h-[320px] rounded-full bg-accent/10 blur-3xl" />
         <div className="absolute -bottom-24 -left-24 w-[280px] h-[280px] rounded-full bg-primary/10 blur-3xl" />
@@ -250,7 +388,7 @@ export default function Home() {
               <span className="w-1 h-8 bg-accent rounded-full" />
               <div>
                 <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider">#NivoKS on Instagram</p>
-                <h2 className="text-[22px] md:text-[28px] font-black text-ink tracking-tight leading-tight">Tag us. Get featured.</h2>
+                <h2 className="text-[20px] md:text-[24px] font-black text-ink tracking-tight leading-tight">Tag us. Get featured.</h2>
               </div>
             </div>
             <a
@@ -259,9 +397,6 @@ export default function Home() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 h-[44px] px-5 bg-white text-ink text-[13px] font-extrabold rounded-full shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all border border-border"
             >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
               Follow @nivo.ks
             </a>
           </div>
@@ -281,21 +416,6 @@ export default function Home() {
                 <div className="absolute inset-x-0 bottom-0 p-3 text-white translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <p className="text-[11px] font-extrabold truncate">@{post.author}</p>
                   <p className="text-[10px] font-medium text-white/80 line-clamp-2 leading-tight mt-0.5">{post.caption}</p>
-                  <div className="flex items-center gap-3 mt-1.5 text-[10px] font-bold">
-                    <span className="flex items-center gap-1">
-                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" /></svg>
-                      {post.likes.toLocaleString()}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7z" clipRule="evenodd" /></svg>
-                      {post.comments}
-                    </span>
-                  </div>
-                </div>
-                <div className="absolute top-2 right-2 w-6 h-6 rounded-full bg-white/90 backdrop-blur flex items-center justify-center">
-                  <svg className="w-3.5 h-3.5 text-ink" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                  </svg>
                 </div>
               </a>
             ))}
@@ -303,37 +423,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Installments */}
-      <div className="relative bg-gradient-to-br from-primary-light via-white to-primary-50 rounded-3xl shadow-card overflow-hidden border border-primary/10">
-        <div className="absolute -top-10 -right-10 w-48 h-48 rounded-full bg-primary/10 blur-2xl" />
-        <div className="relative p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
-          <div className="flex-1">
-            <span className="inline-block text-[11px] font-extrabold text-primary uppercase tracking-wider bg-white px-3 py-1 rounded-full shadow-sm">Flexible payments</span>
-            <p className="text-[26px] md:text-[32px] font-black text-ink mt-3 leading-tight tracking-tight">Pay in installments.<br /><span className="text-primary">No interest.</span></p>
-            <p className="text-[14px] text-ink-secondary mt-3 leading-relaxed max-w-[440px]">
-              Split any purchase over &euro;50 into 3, 6, or 12 monthly payments. No hidden fees. No paperwork.
-            </p>
-          </div>
-          <div className="flex gap-3 flex-shrink-0">
-            {[3, 6, 12].map((m) => (
-              <div key={m} className="text-center bg-white rounded-2xl px-5 py-5 min-w-[82px] shadow-card border border-primary/10 hover:border-primary/30 hover:-translate-y-1 transition-all">
-                <p className="text-[32px] font-black text-primary leading-none">{m}</p>
-                <p className="text-[11px] text-ink-muted font-bold mt-1.5 uppercase tracking-wider">months</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Under €500 */}
-      <section>
-        <SectionHeader title="Under €500" kicker="Budget" href="/category/all" />
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-          {under500.map((p) => <ProductCard key={p.id} product={p} />)}
-        </div>
-      </section>
-
-      {/* Newsletter */}
+      {/* ═══════════════════════════════════════════════════════
+          NEWSLETTER
+          ═══════════════════════════════════════════════════════ */}
       <div className="relative bg-gradient-to-br from-[#001847] via-[#002D7A] to-[#0046BE] rounded-3xl p-10 md:p-14 text-center text-white overflow-hidden">
         <div className="absolute -top-20 -left-20 w-[320px] h-[320px] rounded-full bg-accent/20 blur-3xl" />
         <div className="absolute -bottom-20 -right-20 w-[280px] h-[280px] rounded-full bg-primary/30 blur-3xl" />
@@ -355,28 +447,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-function SectionHeader({ title, href, kicker }: { title: string; href?: string; kicker?: string }) {
-  return (
-    <div className="flex items-end justify-between mb-5">
-      <div className="flex items-center gap-3">
-        <span className="w-1 h-8 bg-accent rounded-full" />
-        <div>
-          {kicker && <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider">{kicker}</p>}
-          <h2 className="text-[22px] md:text-[24px] font-black text-ink tracking-tight leading-tight">{title}</h2>
-        </div>
-      </div>
-      {href && (
-        <Link href={href} className="group text-[13px] text-primary font-extrabold hover:text-primary-dark flex items-center gap-1.5 pb-1">
-          View all
-          <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-          </svg>
-        </Link>
-      )}
     </div>
   );
 }
