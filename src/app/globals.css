@@ -1,51 +1,47 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* ─── Nivo Editorial Brand System ─── */
-  /* Primary = near-black ink, used as the dominant brand color */
-  --color-primary: #0A0A0A;
-  --color-primary-dark: #000000;
-  --color-primary-light: #F2EFE8;
-  --color-primary-50: #FAF8F3;
+  /* ─── Nivo Brand System ─── */
+  --color-primary: #0046BE;
+  --color-primary-dark: #003494;
+  --color-primary-light: #E8F0FE;
+  --color-primary-50: #F0F5FF;
 
-  /* Accent = refined terracotta, used sparingly */
-  --color-accent: #C8461E;
-  --color-accent-dark: #A93912;
-  --color-accent-light: #FBEFE9;
+  --color-accent: #FF6700;
+  --color-accent-dark: #E55A00;
+  --color-accent-light: #FFF4EB;
 
-  --color-success: #4F6B3E;
-  --color-success-dark: #3E5530;
-  --color-success-light: #EFF2EA;
+  --color-success: #00A854;
+  --color-success-dark: #008A45;
+  --color-success-light: #E6F9F0;
 
-  --color-danger: #9B2C1F;
-  --color-danger-light: #F7EAE7;
+  --color-danger: #D63B2F;
+  --color-danger-light: #FEF0EF;
 
-  --color-star: #B8893B;
+  --color-star: #F5A623;
 
-  /* Warm neutral canvas */
-  --color-bg: #F7F5F0;
+  --color-bg: #F5F6FA;
   --color-surface: #FFFFFF;
   --color-elevated: #FFFFFF;
-  --color-border: #E8E4DB;
-  --color-border-hover: #CFC9BC;
-  --color-divider: #EFEBE2;
+  --color-border: #E4E7ED;
+  --color-border-hover: #C9CDD6;
+  --color-divider: #F0F1F5;
 
-  --color-ink: #0A0A0A;
-  --color-ink-secondary: #44423D;
-  --color-ink-muted: #8A857A;
-  --color-ink-faint: #BFBAB0;
+  --color-ink: #1A1A2E;
+  --color-ink-secondary: #53566B;
+  --color-ink-muted: #8E91A4;
+  --color-ink-faint: #C8CAD4;
 
   --font-sans: var(--font-inter);
-  --font-serif: var(--font-display);
 
-  /* Elevation — almost non-existent */
-  --shadow-xs: 0 1px 1px rgba(20,16,8,0.03);
-  --shadow-sm: 0 1px 2px rgba(20,16,8,0.04);
-  --shadow-md: 0 2px 8px rgba(20,16,8,0.05);
-  --shadow-lg: 0 8px 24px rgba(20,16,8,0.06);
-  --shadow-xl: 0 16px 48px rgba(20,16,8,0.08);
-  --shadow-card: 0 1px 2px rgba(20,16,8,0.03);
-  --shadow-card-hover: 0 4px 16px rgba(20,16,8,0.06);
+  /* Elevation system */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-lg: 0 8px 28px rgba(0,0,0,0.09), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-xl: 0 20px 56px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.05);
+  --shadow-card: 0 1px 4px rgba(0,0,0,0.05);
+  --shadow-card-hover: 0 8px 24px rgba(0,0,0,0.1), 0 2px 6px rgba(0,0,0,0.04);
 }
 
 html {
@@ -62,18 +58,10 @@ body {
   font-size: 14px;
   line-height: 1.6;
   letter-spacing: -0.006em;
-  font-feature-settings: "ss01", "cv11";
-}
-
-.font-display {
-  font-family: var(--font-serif), "Times New Roman", Georgia, serif;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
 }
 
 ::selection {
-  background: var(--color-accent);
+  background: var(--color-primary);
   color: white;
 }
 

@@ -2,28 +2,18 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-bg mt-0">
-      {/* Editorial statement */}
-      <div className="border-b border-bg/10">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 md:py-32">
-          <p className="text-[10px] uppercase tracking-[0.22em] text-bg/40 mb-6">Nivo — est. 2026</p>
-          <p className="font-display text-[44px] md:text-[72px] leading-[0.95] tracking-tight max-w-[900px]">
-            Technology, <span className="italic">thoughtfully</span> delivered. A new kind of marketplace for Kosovo.
-          </p>
-        </div>
-      </div>
-
+    <footer className="bg-[#1A1A2E] text-white mt-8">
       {/* Main footer */}
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16">
+      <div className="max-w-[1280px] mx-auto px-4 lg:px-6 py-12">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-baseline mb-4">
-              <span className="font-display text-[28px] italic">nivo</span>
-              <span className="font-display text-[28px] italic text-accent">.</span>
+            <div className="flex items-baseline gap-0.5 mb-4">
+              <span className="text-[22px] font-extrabold">nivo</span>
+              <span className="text-[22px] font-extrabold text-accent">.</span>
             </div>
-            <p className="text-[12px] text-bg/45 leading-relaxed mb-6 max-w-[220px]">
-              The premium gadget marketplace of Kosovo.
+            <p className="text-[13px] text-white/45 leading-relaxed mb-5 max-w-[220px]">
+              The premium gadget marketplace of Kosovo. Technology, delivered.
             </p>
             <div className="flex gap-3">
               {[
@@ -31,7 +21,7 @@ export default function Footer() {
                 { name: "Facebook", icon: <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg> },
                 { name: "TikTok", icon: <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg> },
               ].map((s) => (
-                <a key={s.name} href="#" className="w-9 h-9 flex items-center justify-center text-bg/40 hover:text-bg transition-colors">
+                <a key={s.name} href="#" className="w-9 h-9 rounded-xl bg-white/8 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/15 transition-colors">
                   {s.icon}
                 </a>
               ))}
@@ -40,7 +30,7 @@ export default function Footer() {
 
           {/* Shop */}
           <div>
-            <h4 className="text-[10px] uppercase tracking-[0.18em] text-bg/40 mb-5">Shop</h4>
+            <h4 className="text-[12px] font-bold uppercase tracking-wider text-white/35 mb-4">Shop</h4>
             <ul className="space-y-2.5">
               {[
                 ["All Products", "/category/all"],
@@ -51,14 +41,14 @@ export default function Footer() {
                 ["Gaming", "/category/gaming"],
                 ["Smart Home", "/category/smart-home"],
               ].map(([label, href]) => (
-                <li key={label}><Link href={href} className="text-[12px] text-bg/60 hover:text-bg transition-colors">{label}</Link></li>
+                <li key={label}><Link href={href} className="text-[13px] text-white/55 hover:text-white transition-colors">{label}</Link></li>
               ))}
             </ul>
           </div>
 
           {/* Customer service */}
           <div>
-            <h4 className="text-[10px] uppercase tracking-[0.18em] text-bg/40 mb-5">Support</h4>
+            <h4 className="text-[12px] font-bold uppercase tracking-wider text-white/35 mb-4">Support</h4>
             <ul className="space-y-2.5">
               {[
                 ["Help Center", "/help"],
@@ -66,14 +56,14 @@ export default function Footer() {
                 ["Warranty Claims", "/help"],
                 ["Contact Us", "/contact"],
               ].map(([label, href]) => (
-                <li key={label}><Link href={href} className="text-[12px] text-bg/60 hover:text-bg transition-colors">{label}</Link></li>
+                <li key={label}><Link href={href} className="text-[13px] text-white/55 hover:text-white transition-colors">{label}</Link></li>
               ))}
             </ul>
           </div>
 
           {/* Sell on Nivo */}
           <div>
-            <h4 className="text-[10px] uppercase tracking-[0.18em] text-bg/40 mb-5">Partners</h4>
+            <h4 className="text-[12px] font-bold uppercase tracking-wider text-white/35 mb-4">Partners</h4>
             <ul className="space-y-2.5">
               {[
                 ["Sell on Nivo", "/sell"],
@@ -81,14 +71,14 @@ export default function Footer() {
                 ["Fulfillment by Nivo", "/sell"],
                 ["Partner Guidelines", "/sell"],
               ].map(([label, href]) => (
-                <li key={label}><Link href={href} className="text-[12px] text-bg/60 hover:text-bg transition-colors">{label}</Link></li>
+                <li key={label}><Link href={href} className="text-[13px] text-white/55 hover:text-white transition-colors">{label}</Link></li>
               ))}
             </ul>
           </div>
 
           {/* About */}
           <div>
-            <h4 className="text-[10px] uppercase tracking-[0.18em] text-bg/40 mb-5">Company</h4>
+            <h4 className="text-[12px] font-bold uppercase tracking-wider text-white/35 mb-4">Company</h4>
             <ul className="space-y-2.5">
               {[
                 ["About Us", "/about"],
@@ -96,7 +86,7 @@ export default function Footer() {
                 ["Privacy Policy", "/privacy"],
                 ["Terms of Service", "/terms"],
               ].map(([label, href]) => (
-                <li key={label}><Link href={href} className="text-[12px] text-bg/60 hover:text-bg transition-colors">{label}</Link></li>
+                <li key={label}><Link href={href} className="text-[13px] text-white/55 hover:text-white transition-colors">{label}</Link></li>
               ))}
             </ul>
           </div>
@@ -104,25 +94,23 @@ export default function Footer() {
       </div>
 
       {/* Payment & trust */}
-      <div className="border-t border-bg/10">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-8">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="border-t border-white/8">
+        <div className="max-w-[1280px] mx-auto px-4 lg:px-6 py-6">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.18em] text-bg/30 mb-3">Payment</p>
-              <div className="flex flex-wrap gap-4 text-[11px] text-bg/50">
-                {["Visa", "Mastercard", "Bank Transfer", "Cash on Delivery", "Installments"].map((m, i, arr) => (
-                  <span key={m} className="flex items-center gap-4">
-                    {m}{i < arr.length - 1 && <span className="text-bg/20">·</span>}
-                  </span>
+              <p className="text-[11px] text-white/30 font-semibold mb-2.5">Payment methods</p>
+              <div className="flex flex-wrap gap-2">
+                {["Visa", "Mastercard", "Bank Transfer", "Cash on Delivery", "Installments"].map((m) => (
+                  <span key={m} className="text-[11px] bg-white/6 text-white/50 px-3 py-1.5 rounded-lg border border-white/8">{m}</span>
                 ))}
               </div>
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-[0.18em] text-bg/30 mb-3">Delivery</p>
-              <div className="flex flex-wrap gap-4 text-[11px] text-bg/50">
-                <span>Nivo Express</span>
-                <span className="text-bg/20">·</span>
-                <span>Posta e Kosoves</span>
+              <p className="text-[11px] text-white/30 font-semibold mb-2.5">Delivery partners</p>
+              <div className="flex flex-wrap gap-2">
+                {["Nivo Express", "Posta e Kosoves"].map((m) => (
+                  <span key={m} className="text-[11px] bg-white/6 text-white/50 px-3 py-1.5 rounded-lg border border-white/8">{m}</span>
+                ))}
               </div>
             </div>
           </div>
@@ -130,16 +118,16 @@ export default function Footer() {
       </div>
 
       {/* Bottom */}
-      <div className="border-t border-bg/10">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-[10px] uppercase tracking-[0.14em] text-bg/30">&copy; 2026 Nivo sh.p.k. — Prishtina, Kosovo</p>
-          <div className="flex gap-6">
+      <div className="border-t border-white/6">
+        <div className="max-w-[1280px] mx-auto px-4 lg:px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-2">
+          <p className="text-[11px] text-white/30">&copy; 2026 Nivo sh.p.k. Prishtina, Kosovo. All rights reserved.</p>
+          <div className="flex gap-5">
             {[
               ["Privacy", "/privacy"],
               ["Terms", "/terms"],
               ["Cookies", "/cookies"],
             ].map(([label, href]) => (
-              <Link key={label} href={href} className="text-[10px] uppercase tracking-[0.14em] text-bg/30 hover:text-bg transition-colors">{label}</Link>
+              <Link key={label} href={href} className="text-[11px] text-white/30 hover:text-white/55 transition-colors">{label}</Link>
             ))}
           </div>
         </div>
