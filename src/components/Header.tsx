@@ -43,6 +43,25 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50">
+      {/* Top deals strip */}
+      <div className="bg-gradient-to-r from-[#001847] via-primary to-[#001847] text-white">
+        <div className="max-w-[1280px] mx-auto px-4 lg:px-6 h-[34px] flex items-center justify-center">
+          <Link href="/category/all" className="group inline-flex items-center gap-2 text-[12px] font-bold">
+            <span className="inline-flex items-center gap-1 bg-accent text-white text-[9px] font-extrabold uppercase tracking-wider px-1.5 py-0.5 rounded-full">
+              <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
+              Deals
+            </span>
+            <span className="text-white/90">Tech Week is live — up to −40% on 1,000+ products</span>
+            <span className="inline-flex items-center gap-1 text-accent font-extrabold group-hover:gap-1.5 transition-all">
+              Shop now
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </Link>
+        </div>
+      </div>
+
       {/* Main bar */}
       <div className={`bg-white transition-shadow duration-200 ${scrolled ? "shadow-md" : "shadow-xs"}`}>
         <div className="max-w-[1280px] mx-auto px-4 lg:px-6">
@@ -83,8 +102,8 @@ export default function Header() {
               {megaMenuOpen && (
                 <>
                   {/* Backdrop */}
-                  <div className="fixed inset-0 top-[72px] bg-black/30 backdrop-blur-sm z-40 animate-fade-in" onClick={() => setMegaMenuOpen(false)} />
-                  <div className="fixed left-0 right-0 top-[72px] bg-white shadow-2xl border-t border-divider z-50 animate-fade-in">
+                  <div className="fixed inset-0 top-[106px] bg-black/30 backdrop-blur-sm z-40 animate-fade-in" onClick={() => setMegaMenuOpen(false)} />
+                  <div className="fixed left-0 right-0 top-[106px] bg-white shadow-2xl border-t border-divider z-50 animate-fade-in">
                     <div className="max-w-[1280px] mx-auto px-6 py-8">
                       <div className="grid grid-cols-[260px_1fr_280px] gap-8">
                         {/* Column 1: main categories */}
@@ -259,22 +278,6 @@ export default function Header() {
           </form>
         </div>
 
-        {/* Nav strip — secondary links only (categories lives in top mega trigger) */}
-        <div className="border-t border-divider hidden lg:block">
-          <div className="max-w-[1280px] mx-auto px-6">
-            <nav className="flex items-center h-[44px] gap-0 -mx-1">
-              <Link href="/category/all" className="text-[14px] font-semibold text-accent hover:text-accent-dark px-4 py-2 rounded-lg hover:bg-accent-light transition-colors">
-                Deals
-              </Link>
-              <Link href="/community" className="text-[14px] text-ink-secondary hover:text-ink px-4 py-2 rounded-lg hover:bg-bg transition-colors">
-                Community
-              </Link>
-              <Link href="/help" className="text-[14px] text-ink-secondary hover:text-ink px-4 py-2 rounded-lg hover:bg-bg transition-colors">
-                Customer Service
-              </Link>
-            </nav>
-          </div>
-        </div>
       </div>
 
       {/* Delivery promise */}
