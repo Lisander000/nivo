@@ -60,6 +60,128 @@ export default function Header() {
               <span className="text-[28px] font-extrabold text-accent leading-none">.</span>
             </Link>
 
+            {/* Desktop mega menu trigger — bol.com differentiator */}
+            <div className="hidden lg:block relative" ref={megaRef}>
+              <button
+                onClick={() => setMegaMenuOpen(!megaMenuOpen)}
+                className={`group flex items-center gap-2.5 h-[44px] pl-3 pr-5 rounded-xl text-[14px] font-extrabold transition-all ${
+                  megaMenuOpen
+                    ? "bg-primary text-white shadow-[0_6px_20px_rgba(0,70,190,0.3)]"
+                    : "bg-primary-light text-primary hover:bg-primary hover:text-white hover:shadow-[0_6px_20px_rgba(0,70,190,0.3)]"
+                }`}
+              >
+                {/* Animated 3-line burger */}
+                <div className="relative w-5 h-5 flex items-center justify-center">
+                  <span className={`absolute w-5 h-[2.5px] rounded-full bg-current transition-all duration-300 ${megaMenuOpen ? "rotate-45" : "-translate-y-[6px]"}`} />
+                  <span className={`absolute w-5 h-[2.5px] rounded-full bg-current transition-all duration-300 ${megaMenuOpen ? "opacity-0 scale-x-0" : ""}`} />
+                  <span className={`absolute w-5 h-[2.5px] rounded-full bg-current transition-all duration-300 ${megaMenuOpen ? "-rotate-45" : "translate-y-[6px]"}`} />
+                </div>
+                <span>{megaMenuOpen ? "Close" : "All categories"}</span>
+              </button>
+
+              {/* Full-width mega menu */}
+              {megaMenuOpen && (
+                <>
+                  {/* Backdrop */}
+                  <div className="fixed inset-0 top-[72px] bg-black/30 backdrop-blur-sm z-40 animate-fade-in" onClick={() => setMegaMenuOpen(false)} />
+                  <div className="fixed left-0 right-0 top-[72px] bg-white shadow-2xl border-t border-divider z-50 animate-fade-in">
+                    <div className="max-w-[1280px] mx-auto px-6 py-8">
+                      <div className="grid grid-cols-[260px_1fr_280px] gap-8">
+                        {/* Column 1: main categories */}
+                        <div className="border-r border-divider pr-6">
+                          <p className="text-[10px] font-extrabold text-ink-muted uppercase tracking-[0.15em] mb-3 px-3">Browse</p>
+                          {categories.map((cat, i) => (
+                            <button
+                              key={cat.slug}
+                              onMouseEnter={() => setActiveCat(i)}
+                              onClick={() => { router.push(`/category/${cat.slug}`); setMegaMenuOpen(false); }}
+                              className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl text-left transition-all group/cat ${
+                                activeCat === i ? "bg-primary-light text-primary" : "text-ink hover:bg-bg"
+                              }`}
+                            >
+                              <span className={`w-10 h-10 rounded-xl flex items-center justify-center text-[22px] transition-all ${
+                                activeCat === i ? "bg-white shadow-sm scale-110" : "bg-bg group-hover/cat:bg-white"
+                              }`}>{cat.icon}</span>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-[14px] font-extrabold">{cat.name}</p>
+                                <p className={`text-[11px] font-semibold ${activeCat === i ? "text-primary/70" : "text-ink-muted"}`}>{cat.count} items</p>
+                              </div>
+                              <svg className={`w-4 h-4 transition-all ${activeCat === i ? "text-primary translate-x-0.5" : "text-ink-faint"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                              </svg>
+                            </button>
+                          ))}
+                        </div>
+
+                        {/* Column 2: subcategories */}
+                        <div className="py-2">
+                          <div className="flex items-baseline gap-2 mb-4">
+                            <p className="text-[11px] font-extrabold text-primary uppercase tracking-[0.15em]">{categories[activeCat]?.name}</p>
+                            <span className="text-[11px] text-ink-muted font-semibold">· {categories[activeCat]?.description}</span>
+                          </div>
+                          <div className="grid grid-cols-2 gap-x-6 gap-y-1 mb-5">
+                            {categories[activeCat]?.subs.map((sub) => (
+                              <Link
+                                key={sub.name}
+                                href={`/category/${sub.slug}`}
+                                onClick={() => setMegaMenuOpen(false)}
+                                className="group/sub flex items-center gap-2 text-[13px] text-ink-secondary hover:text-primary py-2 font-medium transition-colors"
+                              >
+                                <span className="w-1 h-1 rounded-full bg-ink-faint group-hover/sub:bg-primary group-hover/sub:w-2 transition-all" />
+                                {sub.name}
+                              </Link>
+                            ))}
+                          </div>
+                          <Link
+                            href={`/category/${categories[activeCat]?.slug}`}
+                            onClick={() => setMegaMenuOpen(false)}
+                            className="inline-flex items-center gap-1.5 h-[40px] px-5 bg-primary-light text-primary text-[13px] font-extrabold rounded-xl hover:bg-primary hover:text-white transition-all group/view"
+                          >
+                            View all in {categories[activeCat]?.name}
+                            <svg className="w-3.5 h-3.5 group-hover/view:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                          </Link>
+                        </div>
+
+                        {/* Column 3: promo card */}
+                        <div className="space-y-3">
+                          <Link
+                            href="/category/all"
+                            onClick={() => setMegaMenuOpen(false)}
+                            className="group/promo relative block rounded-2xl overflow-hidden bg-gradient-to-br from-[#001847] via-[#002D7A] to-[#0046BE] text-white p-5 hover:-translate-y-0.5 transition-all shadow-card hover:shadow-card-hover min-h-[180px]"
+                          >
+                            <div className="absolute -right-6 -bottom-6 text-[120px] leading-none opacity-20 group-hover/promo:scale-110 group-hover/promo:rotate-6 transition-transform duration-500">⚡</div>
+                            <div className="relative">
+                              <span className="inline-flex items-center gap-1 bg-accent text-white text-[9px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full">
+                                <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
+                                Live
+                              </span>
+                              <p className="text-[18px] font-black mt-3 leading-tight">Tech Week<br />−40% off</p>
+                              <p className="text-[11px] text-white/70 mt-1 font-medium">Limited time</p>
+                              <span className="inline-flex items-center gap-1 text-[12px] font-extrabold mt-3 text-accent group-hover/promo:gap-1.5 transition-all">
+                                Shop deals
+                                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                              </span>
+                            </div>
+                          </Link>
+                          <Link
+                            href="/business"
+                            onClick={() => setMegaMenuOpen(false)}
+                            className="group/promo2 relative block rounded-2xl overflow-hidden bg-gradient-to-br from-primary-light to-white border border-primary/10 p-4 hover:shadow-card-hover transition-all"
+                          >
+                            <p className="text-[10px] font-extrabold text-primary uppercase tracking-wider">For business</p>
+                            <p className="text-[14px] font-black text-ink mt-1">Bulk orders?</p>
+                            <p className="text-[11px] text-ink-muted font-medium mt-0.5">Dedicated account manager</p>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+
             {/* Search */}
             <form onSubmit={handleSearch} className="flex-1 hidden md:block max-w-[640px]">
               <div className="relative">
@@ -137,87 +259,10 @@ export default function Header() {
           </form>
         </div>
 
-        {/* Nav strip — bol.com style: only 3 items */}
+        {/* Nav strip — secondary links only (categories lives in top mega trigger) */}
         <div className="border-t border-divider hidden lg:block">
           <div className="max-w-[1280px] mx-auto px-6">
             <nav className="flex items-center h-[44px] gap-0 -mx-1">
-              {/* Categories mega menu trigger */}
-              <div className="relative" ref={megaRef}>
-                <button
-                  onClick={() => setMegaMenuOpen(!megaMenuOpen)}
-                  className={`flex items-center gap-1.5 text-[14px] font-semibold px-4 py-2 rounded-lg transition-colors ${megaMenuOpen ? "text-primary bg-primary-light" : "text-ink hover:text-primary hover:bg-bg"}`}
-                >
-                  <svg className="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                  </svg>
-                  Categories
-                  <svg className={`w-3.5 h-3.5 transition-transform ${megaMenuOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                  </svg>
-                </button>
-
-                {/* Mega menu */}
-                {megaMenuOpen && (
-                  <div className="absolute top-full left-0 mt-1 bg-white rounded-2xl shadow-xl border border-border w-[640px] flex overflow-hidden animate-scale-in z-50">
-                    {/* Left: main categories */}
-                    <div className="w-[240px] border-r border-divider py-2">
-                      {categories.map((cat, i) => (
-                        <button
-                          key={cat.slug}
-                          onMouseEnter={() => setActiveCat(i)}
-                          onClick={() => { router.push(`/category/${cat.slug}`); setMegaMenuOpen(false); }}
-                          className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors ${
-                            activeCat === i ? "bg-primary-light text-primary" : "text-ink hover:bg-bg"
-                          }`}
-                        >
-                          <span className="text-[18px] w-6 text-center">{cat.icon}</span>
-                          <span className="text-[13px] font-medium">{cat.name}</span>
-                          <svg className="w-3.5 h-3.5 ml-auto text-ink-faint" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                          </svg>
-                        </button>
-                      ))}
-                      <div className="border-t border-divider mt-2 pt-2 mx-2">
-                        <Link href="/category/all" onClick={() => setMegaMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-[13px] font-semibold text-primary hover:bg-primary-light rounded-lg transition-colors">
-                          All products
-                          <svg className="w-3.5 h-3.5 ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                          </svg>
-                        </Link>
-                      </div>
-                    </div>
-                    {/* Right: subcategories */}
-                    <div className="flex-1 p-5">
-                      <p className="text-[11px] font-bold text-ink-muted uppercase tracking-wider mb-3">
-                        {categories[activeCat]?.name}
-                      </p>
-                      <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                        {categories[activeCat]?.subs.map((sub) => (
-                          <Link
-                            key={sub.name}
-                            href={`/category/${sub.slug}`}
-                            onClick={() => setMegaMenuOpen(false)}
-                            className="text-[13px] text-ink-secondary hover:text-primary py-1.5 transition-colors"
-                          >
-                            {sub.name}
-                          </Link>
-                        ))}
-                      </div>
-                      <Link
-                        href={`/category/${categories[activeCat]?.slug}`}
-                        onClick={() => setMegaMenuOpen(false)}
-                        className="inline-flex items-center gap-1 text-[13px] text-primary font-semibold mt-4 hover:underline"
-                      >
-                        All in {categories[activeCat]?.name}
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                        </svg>
-                      </Link>
-                    </div>
-                  </div>
-                )}
-              </div>
-
               <Link href="/category/all" className="text-[14px] font-semibold text-accent hover:text-accent-dark px-4 py-2 rounded-lg hover:bg-accent-light transition-colors">
                 Deals
               </Link>
