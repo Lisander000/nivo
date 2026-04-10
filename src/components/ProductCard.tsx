@@ -89,25 +89,44 @@ export default function ProductCard({ product, listView = false }: { product: Pr
 
   // Grid view (default)
   return (
-    <div className="group bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-shadow duration-200 flex flex-col h-full overflow-hidden">
+    <div className="group bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col h-full overflow-hidden hover:-translate-y-1 border border-transparent hover:border-primary/10">
       {/* Image */}
       <Link href={`/product/${product.id}`} className="block relative">
         <div className="aspect-[4/3] overflow-hidden bg-[#FAFBFD]">
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
           />
         </div>
         {discount > 0 && (
-          <span className="absolute top-2.5 left-2.5 bg-danger text-white text-[11px] font-bold px-2 py-[3px] rounded-lg shadow-sm">-{discount}%</span>
+          <span className="absolute top-3 left-3 bg-danger text-white text-[11px] font-extrabold px-2.5 py-1 rounded-lg shadow-[0_4px_12px_rgba(214,59,47,0.3)]">
+            −{discount}%
+          </span>
         )}
+        {product.badge && !discount && (
+          <span className="absolute top-3 left-3 bg-primary text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-lg shadow-[0_4px_12px_rgba(0,70,190,0.3)]">
+            {product.badge}
+          </span>
+        )}
+        <button
+          className="absolute top-3 right-3 w-9 h-9 bg-white rounded-full shadow-card flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all hover:bg-primary hover:[&>svg]:text-white"
+          aria-label="Add to wishlist"
+          onClick={(e) => e.preventDefault()}
+        >
+          <svg className="w-4 h-4 text-ink-secondary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+          </svg>
+        </button>
       </Link>
 
       {/* Content */}
-      <div className="px-4 pt-3 pb-4 flex-1 flex flex-col">
+      <div className="px-4 pt-3.5 pb-4 flex-1 flex flex-col">
+        {/* Brand */}
+        <p className="text-[10px] font-extrabold text-primary uppercase tracking-wider">{product.brand}</p>
+
         <Link href={`/product/${product.id}`}>
-          <h3 className="text-[13px] text-ink leading-[1.45] line-clamp-2 group-hover:text-primary transition-colors font-medium">
+          <h3 className="text-[13px] text-ink leading-[1.4] line-clamp-2 group-hover:text-primary transition-colors font-bold mt-1">
             {product.name}
           </h3>
         </Link>
@@ -116,13 +135,13 @@ export default function ProductCard({ product, listView = false }: { product: Pr
         <div className="flex items-center gap-1.5 mt-2">
           <div className="flex gap-[1px]">
             {[...Array(5)].map((_, i) => (
-              <svg key={i} className={`w-[14px] h-[14px] ${i < Math.floor(product.rating) ? "text-star" : "text-ink-faint/40"}`} viewBox="0 0 20 20" fill="currentColor">
+              <svg key={i} className={`w-[13px] h-[13px] ${i < Math.floor(product.rating) ? "text-star" : "text-ink-faint/40"}`} viewBox="0 0 20 20" fill="currentColor">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
             ))}
           </div>
-          <span className="text-[12px] text-ink-muted font-medium">{product.rating}</span>
-          <span className="text-[11px] text-ink-faint">({product.reviews})</span>
+          <span className="text-[12px] text-ink font-bold">{product.rating}</span>
+          <span className="text-[11px] text-ink-muted">({product.reviews})</span>
         </div>
 
         {/* Price */}
@@ -131,31 +150,39 @@ export default function ProductCard({ product, listView = false }: { product: Pr
             <span className="text-[12px] text-ink-muted line-through block mb-0.5">&euro;{product.originalPrice},-</span>
           )}
           <div className="flex items-baseline gap-0.5">
-            <span className="text-[22px] font-extrabold text-ink leading-none">{product.price}</span>
-            <span className="text-[13px] font-bold text-ink-muted leading-none">,-</span>
+            <span className="text-[26px] font-black text-ink leading-none tracking-tight">&euro;{product.price}</span>
+            <span className="text-[14px] font-extrabold text-ink leading-none">,-</span>
           </div>
         </div>
 
-        {/* Delivery — first-class citizen like bol.com */}
-        <div className="flex items-center gap-1.5 mt-2.5">
+        {/* Delivery */}
+        <div className="flex items-center gap-1.5 mt-2.5 bg-success-light rounded-lg px-2 py-1.5">
           <svg className="w-[14px] h-[14px] text-success flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
           </svg>
-          <span className="text-[12px] text-success font-semibold">
-            {product.deliveryDays <= 1 ? "Tomorrow at your door" : `In ${product.deliveryDays} days`}
+          <span className="text-[11px] text-success-dark font-extrabold">
+            {product.deliveryDays <= 1 ? "Tomorrow in Kosovo" : `In ${product.deliveryDays} days`}
           </span>
         </div>
 
-        {/* Seller */}
-        <p className="text-[11px] text-ink-muted mt-1">
-          Sold by <span className="font-medium">{product.seller}</span>
-        </p>
+        {/* Seller with verified */}
+        <div className="flex items-center gap-1 mt-1.5">
+          <svg className="w-3 h-3 text-primary flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+          </svg>
+          <p className="text-[11px] text-ink-muted truncate">
+            <span className="font-bold text-ink-secondary">{product.seller}</span>
+          </p>
+        </div>
 
         {/* Add to cart */}
         <button
           onClick={() => addToCart(product)}
-          className="mt-3 w-full h-[38px] rounded-xl text-[13px] font-bold bg-primary text-white hover:bg-primary-dark active:scale-[0.97] transition-all duration-150 shadow-sm hover:shadow-md"
+          className="mt-3 w-full h-[42px] rounded-xl text-[13px] font-extrabold bg-primary text-white hover:bg-primary-dark active:scale-[0.97] transition-all duration-200 shadow-[0_4px_12px_rgba(0,70,190,0.2)] hover:shadow-[0_8px_20px_rgba(0,70,190,0.35)] flex items-center justify-center gap-1.5"
         >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+          </svg>
           Add to cart
         </button>
       </div>
