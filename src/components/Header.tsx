@@ -280,16 +280,6 @@ export default function Header() {
 
       </div>
 
-      {/* Delivery promise */}
-      <div className="bg-success-light">
-        <div className="max-w-[1280px] mx-auto px-4 lg:px-6 py-[7px] flex items-center justify-center gap-2">
-          <svg className="w-[16px] h-[16px] text-success flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
-          </svg>
-          <span className="text-[12px] text-success-dark font-semibold">Free delivery on all orders &mdash; order before 23:00, delivered tomorrow</span>
-        </div>
-      </div>
-
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-[100]">
