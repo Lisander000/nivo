@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Avatar from "@/components/Avatar";
+import { pressQuotes, ambassadors } from "@/data/community";
 
 export default function AboutPage() {
   return (
@@ -126,6 +128,123 @@ export default function AboutPage() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* FOUNDER STORY */}
+      <div className="grid lg:grid-cols-[1.4fr_1fr] gap-6 mb-10">
+        <div className="bg-white rounded-2xl shadow-card p-8 md:p-10">
+          <p className="text-[11px] font-extrabold text-primary uppercase tracking-[0.15em] mb-3">The story</p>
+          <h2 className="text-[28px] md:text-[34px] font-black text-ink tracking-tight leading-[1.1] mb-5">
+            It started with a broken laptop.
+          </h2>
+          <div className="space-y-4 text-[14px] text-ink-secondary leading-relaxed">
+            <p>
+              In 2023, our founder Arben ordered a MacBook from a grey-market reseller in Prishtina. It arrived with a US keyboard, no invoice, and a warranty &ldquo;valid only in Dubai.&rdquo; Two weeks later, the trackpad died. The store ghosted him.
+            </p>
+            <p>
+              That week he met Endrit — a logistics engineer who&apos;d just moved back from Rotterdam — at a coffee shop in Germia. They drew the first version of Nivo on a napkin: <span className="font-bold text-ink">real sellers, real warranty, real receipts, and delivery that actually shows up.</span>
+            </p>
+            <p>
+              Nine months later we launched with 12 sellers and 400 products. Today we serve 50,000+ customers across Kosovo with 150+ verified sellers. Still the same napkin principles.
+            </p>
+          </div>
+          <div className="flex items-center gap-3 mt-7 pt-6 border-t border-divider">
+            <Avatar name="Arben Krasniqi" size={48} />
+            <div>
+              <p className="text-[14px] font-extrabold text-ink">Arben Krasniqi</p>
+              <p className="text-[12px] text-ink-muted font-medium">Co-founder &amp; CEO</p>
+            </div>
+            <div className="w-px h-10 bg-divider mx-3" />
+            <Avatar name="Endrit Berisha" size={48} />
+            <div>
+              <p className="text-[14px] font-extrabold text-ink">Endrit Berisha</p>
+              <p className="text-[12px] text-ink-muted font-medium">Co-founder &amp; COO</p>
+            </div>
+          </div>
+        </div>
+
+        {/* TIMELINE */}
+        <div className="bg-gradient-to-br from-primary-light via-white to-pink-50 rounded-2xl shadow-card p-8 md:p-10 border border-primary/10 relative overflow-hidden">
+          <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-accent/10 blur-3xl" />
+          <div className="relative">
+            <p className="text-[11px] font-extrabold text-primary uppercase tracking-[0.15em] mb-3">Milestones</p>
+            <h3 className="text-[22px] font-black text-ink leading-tight mb-6">From napkin to nationwide.</h3>
+            <div className="space-y-5 relative">
+              <div className="absolute left-[11px] top-2 bottom-2 w-px bg-primary/20" />
+              {[
+                { year: "2023", title: "The napkin", desc: "Idea drawn over coffee in Prishtina." },
+                { year: "2024 · Q1", title: "Launch", desc: "12 sellers, 400 products, 1 warehouse." },
+                { year: "2024 · Q3", title: "10,000 orders", desc: "Expanded to 7 cities in Kosovo." },
+                { year: "2025", title: "150 sellers", desc: "Nivo Business + installments launched." },
+                { year: "2026", title: "You are here", desc: "50,000+ customers and counting." },
+              ].map((m, i) => (
+                <div key={m.year} className="relative pl-8">
+                  <div className={`absolute left-0 top-1 w-[22px] h-[22px] rounded-full border-[3px] border-white flex items-center justify-center ${i === 4 ? "bg-accent" : "bg-primary"}`}>
+                    {i === 4 && <span className="w-2 h-2 rounded-full bg-white animate-pulse" />}
+                  </div>
+                  <p className="text-[10px] font-extrabold text-primary uppercase tracking-wider">{m.year}</p>
+                  <p className="text-[14px] font-black text-ink mt-0.5">{m.title}</p>
+                  <p className="text-[12px] text-ink-muted mt-0.5 leading-relaxed">{m.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* PRESS */}
+      <div className="mb-10">
+        <div className="flex items-center gap-3 mb-5">
+          <span className="w-1 h-8 bg-accent rounded-full" />
+          <div>
+            <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider">As seen in</p>
+            <h2 className="text-[22px] md:text-[24px] font-black text-ink tracking-tight leading-tight">Press &amp; media</h2>
+          </div>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {pressQuotes.map((p) => (
+            <div key={p.outlet} className="bg-white rounded-2xl shadow-card p-6 hover:shadow-card-hover hover:-translate-y-1 transition-all border border-transparent hover:border-primary/10">
+              <svg className="w-7 h-7 text-primary/15 mb-3" fill="currentColor" viewBox="0 0 32 32">
+                <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H8c0-1.1.9-2 2-2V8zm16 0c-3.3 0-6 2.7-6 6v10h10V14h-6c0-1.1.9-2 2-2V8z" />
+              </svg>
+              <p className="text-[13px] text-ink leading-relaxed font-medium mb-4">&ldquo;{p.quote}&rdquo;</p>
+              <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider">— {p.outlet}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* AMBASSADORS */}
+      <div className="mb-10 bg-gradient-to-br from-[#001847] via-[#002D7A] to-[#0046BE] rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+        <div className="absolute -top-24 -right-24 w-[360px] h-[360px] rounded-full bg-accent/20 blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 w-[300px] h-[300px] rounded-full bg-primary/30 blur-3xl" />
+        <div className="relative">
+          <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
+            <div>
+              <p className="text-[11px] font-extrabold text-accent uppercase tracking-[0.15em] mb-2">The Nivo Collective</p>
+              <h2 className="text-[28px] md:text-[36px] font-black tracking-tight leading-tight max-w-[480px]">
+                Creators building the culture with us.
+              </h2>
+            </div>
+            <Link href="/community" className="inline-flex items-center gap-2 h-[44px] px-5 bg-white text-primary text-[13px] font-extrabold rounded-full hover:-translate-y-0.5 transition-all shadow-[0_6px_20px_rgba(0,0,0,0.2)]">
+              Meet the collective
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {ambassadors.map((a) => (
+              <div key={a.name} className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/10 hover:bg-white/15 transition-colors">
+                <Avatar name={a.name} size={56} />
+                <p className="text-[15px] font-black text-white mt-3">{a.name}</p>
+                <p className="text-[12px] text-accent font-bold">{a.handle}</p>
+                <p className="text-[11px] text-white/60 mt-1.5 font-medium">{a.role}</p>
+                <p className="text-[11px] text-white/80 mt-2 pt-2 border-t border-white/10 font-bold">{a.specialty}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

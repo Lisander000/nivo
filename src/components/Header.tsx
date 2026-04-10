@@ -221,6 +221,9 @@ export default function Header() {
               <Link href="/category/all" className="text-[14px] font-semibold text-accent hover:text-accent-dark px-4 py-2 rounded-lg hover:bg-accent-light transition-colors">
                 Deals
               </Link>
+              <Link href="/community" className="text-[14px] text-ink-secondary hover:text-ink px-4 py-2 rounded-lg hover:bg-bg transition-colors">
+                Community
+              </Link>
               <Link href="/help" className="text-[14px] text-ink-secondary hover:text-ink px-4 py-2 rounded-lg hover:bg-bg transition-colors">
                 Customer Service
               </Link>
@@ -275,6 +278,7 @@ export default function Header() {
               ))}
               <div className="border-t border-divider mt-2 pt-2 mx-5" />
               <Link href="/category/all" className="flex items-center px-5 py-3.5 text-[14px] text-accent font-semibold" onClick={() => setMobileMenuOpen(false)}>Deals</Link>
+              <Link href="/community" className="flex items-center px-5 py-3.5 text-[14px] text-ink" onClick={() => setMobileMenuOpen(false)}>Community</Link>
               <Link href="/help" className="flex items-center px-5 py-3.5 text-[14px] text-ink" onClick={() => setMobileMenuOpen(false)}>Customer Service</Link>
               <Link href="/account" className="flex items-center px-5 py-3.5 text-[14px] text-ink" onClick={() => setMobileMenuOpen(false)}>My Account</Link>
             </div>

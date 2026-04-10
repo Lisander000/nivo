@@ -82,6 +82,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {[
                 ["About Us", "/about"],
+                ["Community", "/community"],
                 ["Nivo Business", "/business"],
                 ["Privacy Policy", "/privacy"],
                 ["Terms of Service", "/terms"],

@@ -1,12 +1,17 @@
 import Link from "next/link";
 import { categories, getFeaturedProducts, getDeals, products } from "@/data/products";
+import { testimonials, instagramPosts } from "@/data/community";
 import ProductCard from "@/components/ProductCard";
+import TestimonialCard from "@/components/TestimonialCard";
+import LiveActivity from "@/components/LiveActivity";
+import { AvatarStack } from "@/components/Avatar";
 
 export default function Home() {
   const featured = getFeaturedProducts();
   const deals = getDeals();
   const topRated = [...products].sort((a, b) => b.rating - a.rating).slice(0, 4);
   const under500 = products.filter((p) => p.price < 500).slice(0, 4);
+  const communityNames = testimonials.map((t) => t.name);
 
   return (
     <div className="max-w-[1280px] mx-auto px-4 lg:px-6 py-6 space-y-10">
@@ -48,6 +53,25 @@ export default function Home() {
               >
                 Today&apos;s deals
               </Link>
+            </div>
+
+            {/* Social proof */}
+            <div className="flex items-center gap-3 mt-7">
+              <AvatarStack names={communityNames} size={34} />
+              <div className="flex items-center gap-2">
+                <div className="flex gap-[1px]">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-3.5 h-3.5 text-accent" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-[12px] text-white/80 font-semibold">
+                  <span className="font-black text-white">4.8</span>
+                  <span className="text-white/50"> · </span>
+                  <span className="font-black text-white">50,000+</span> shoppers from Kosovo
+                </p>
+              </div>
             </div>
             <div className="flex items-center gap-6 mt-8 text-[12px] text-white/60">
               <div className="flex items-center gap-1.5">
@@ -184,6 +208,98 @@ export default function Home() {
         <SectionHeader title="Top rated by customers" kicker="★ Loved" href="/category/all" />
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
           {topRated.map((p) => <ProductCard key={p.id} product={p} />)}
+        </div>
+      </section>
+
+      {/* Community testimonials */}
+      <section className="relative">
+        <div className="flex items-end justify-between mb-6 flex-wrap gap-4">
+          <div className="flex items-center gap-3">
+            <span className="w-1 h-8 bg-accent rounded-full" />
+            <div>
+              <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider">Real people · Real reviews</p>
+              <h2 className="text-[22px] md:text-[28px] font-black text-ink tracking-tight leading-tight">Loved by Kosovo</h2>
+            </div>
+          </div>
+          <div className="hidden md:block">
+            <LiveActivity />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {testimonials.slice(0, 6).map((t) => (
+            <TestimonialCard key={t.name} t={t} />
+          ))}
+        </div>
+        <div className="mt-6 flex items-center justify-center gap-2 text-[13px] text-ink-muted font-semibold">
+          <Link href="/community" className="group inline-flex items-center gap-1.5 text-primary font-extrabold hover:text-primary-dark">
+            Read 12,000+ reviews
+            <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+          </Link>
+        </div>
+      </section>
+
+      {/* Instagram / community wall */}
+      <section className="relative bg-gradient-to-br from-primary-light via-white to-pink-50 rounded-3xl p-6 md:p-10 border border-primary/10 overflow-hidden">
+        <div className="absolute -top-24 -right-24 w-[320px] h-[320px] rounded-full bg-accent/10 blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 w-[280px] h-[280px] rounded-full bg-primary/10 blur-3xl" />
+        <div className="relative">
+          <div className="flex items-end justify-between mb-6 flex-wrap gap-4">
+            <div className="flex items-center gap-3">
+              <span className="w-1 h-8 bg-accent rounded-full" />
+              <div>
+                <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider">#NivoKS on Instagram</p>
+                <h2 className="text-[22px] md:text-[28px] font-black text-ink tracking-tight leading-tight">Tag us. Get featured.</h2>
+              </div>
+            </div>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 h-[44px] px-5 bg-white text-ink text-[13px] font-extrabold rounded-full shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all border border-border"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+              Follow @nivo.ks
+            </a>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {instagramPosts.map((post) => (
+              <a
+                key={post.id}
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br ${post.gradient} shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300`}
+              >
+                <div className="absolute inset-0 flex items-center justify-center text-[64px] md:text-[72px] group-hover:scale-110 transition-transform duration-500">
+                  {post.emoji}
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-x-0 bottom-0 p-3 text-white translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <p className="text-[11px] font-extrabold truncate">@{post.author}</p>
+                  <p className="text-[10px] font-medium text-white/80 line-clamp-2 leading-tight mt-0.5">{post.caption}</p>
+                  <div className="flex items-center gap-3 mt-1.5 text-[10px] font-bold">
+                    <span className="flex items-center gap-1">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" /></svg>
+                      {post.likes.toLocaleString()}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7z" clipRule="evenodd" /></svg>
+                      {post.comments}
+                    </span>
+                  </div>
+                </div>
+                <div className="absolute top-2 right-2 w-6 h-6 rounded-full bg-white/90 backdrop-blur flex items-center justify-center">
+                  <svg className="w-3.5 h-3.5 text-ink" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
