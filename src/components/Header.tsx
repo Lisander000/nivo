@@ -44,9 +44,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50">
       {/* Main bar */}
-      <div className={`bg-white transition-shadow duration-200 ${scrolled ? "shadow-md" : "shadow-xs"}`}>
-        <div className="max-w-[1280px] mx-auto px-4 lg:px-6">
-          <div className="flex items-center gap-4 lg:gap-6 h-[72px]">
+      <div className={`bg-bg/95 backdrop-blur-md transition-all duration-300 ${scrolled ? "border-b border-border" : "border-b border-transparent"}`}>
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="flex items-center gap-6 lg:gap-10 h-[76px]">
             {/* Mobile hamburger */}
             <button className="lg:hidden -ml-1 w-10 h-10 flex items-center justify-center rounded-full hover:bg-bg text-ink-secondary" onClick={() => setMobileMenuOpen(true)}>
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
@@ -55,9 +55,9 @@ export default function Header() {
             </button>
 
             {/* Logo */}
-            <Link href="/" className="flex items-baseline gap-0.5 flex-shrink-0">
-              <span className="text-[28px] font-extrabold text-primary tracking-tight leading-none">nivo</span>
-              <span className="text-[28px] font-extrabold text-accent leading-none">.</span>
+            <Link href="/" className="flex items-baseline flex-shrink-0 group">
+              <span className="font-display text-[32px] text-ink leading-none italic pr-0.5">nivo</span>
+              <span className="font-display text-[32px] text-accent leading-none italic">.</span>
             </Link>
 
             {/* Search */}
@@ -70,14 +70,14 @@ export default function Header() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onFocus={() => setSearchFocused(true)}
                   onBlur={() => setSearchFocused(false)}
-                  placeholder="Zoek in heel nivo..."
-                  className={`w-full h-[44px] pl-4 pr-[52px] rounded-[10px] text-[14px] text-ink bg-bg border-2 focus:outline-none placeholder:text-ink-muted transition-all duration-200 ${
+                  placeholder="Search products, brands, categories"
+                  className={`w-full h-[46px] pl-5 pr-[56px] rounded-full text-[13px] text-ink bg-transparent border focus:outline-none placeholder:text-ink-muted transition-all duration-300 ${
                     searchFocused
-                      ? "border-primary bg-white shadow-[0_0_0_3px_rgba(0,70,190,0.1)]"
-                      : "border-transparent hover:border-border-hover"
+                      ? "border-ink bg-white"
+                      : "border-border hover:border-ink/40"
                   }`}
                 />
-                <button type="submit" className="absolute right-1.5 top-1.5 w-[36px] h-[36px] bg-primary rounded-[8px] flex items-center justify-center hover:bg-primary-dark transition-colors active:scale-95">
+                <button type="submit" className="absolute right-1 top-1 w-[38px] h-[38px] bg-ink rounded-full flex items-center justify-center hover:bg-primary-dark transition-colors active:scale-95">
                   <svg className="w-[18px] h-[18px] text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                   </svg>
@@ -137,21 +137,18 @@ export default function Header() {
           </form>
         </div>
 
-        {/* Nav strip — bol.com style: only 3 items */}
-        <div className="border-t border-divider hidden lg:block">
-          <div className="max-w-[1280px] mx-auto px-6">
-            <nav className="flex items-center h-[44px] gap-0 -mx-1">
+        {/* Nav strip */}
+        <div className="hidden lg:block">
+          <div className="max-w-[1400px] mx-auto px-10">
+            <nav className="flex items-center h-[44px] gap-0 -mx-1 pb-2">
               {/* Categories mega menu trigger */}
               <div className="relative" ref={megaRef}>
                 <button
                   onClick={() => setMegaMenuOpen(!megaMenuOpen)}
-                  className={`flex items-center gap-1.5 text-[14px] font-semibold px-4 py-2 rounded-lg transition-colors ${megaMenuOpen ? "text-primary bg-primary-light" : "text-ink hover:text-primary hover:bg-bg"}`}
+                  className={`flex items-center gap-2 text-[12px] uppercase tracking-[0.14em] font-medium px-3 py-2 transition-colors ${megaMenuOpen ? "text-ink" : "text-ink-secondary hover:text-ink"}`}
                 >
-                  <svg className="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                  </svg>
-                  Categories
-                  <svg className={`w-3.5 h-3.5 transition-transform ${megaMenuOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  Shop
+                  <svg className={`w-3 h-3 transition-transform ${megaMenuOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                   </svg>
                 </button>
@@ -218,24 +215,28 @@ export default function Header() {
                 )}
               </div>
 
-              <Link href="/category/all" className="text-[14px] font-semibold text-accent hover:text-accent-dark px-4 py-2 rounded-lg hover:bg-accent-light transition-colors">
-                Deals
+              <Link href="/category/all" className="text-[12px] uppercase tracking-[0.14em] font-medium text-ink-secondary hover:text-ink px-3 py-2 transition-colors">
+                New Arrivals
               </Link>
-              <Link href="/help" className="text-[14px] text-ink-secondary hover:text-ink px-4 py-2 rounded-lg hover:bg-bg transition-colors">
-                Customer Service
+              <Link href="/category/all" className="text-[12px] uppercase tracking-[0.14em] font-medium text-accent hover:text-accent-dark px-3 py-2 transition-colors">
+                Editor&apos;s Picks
+              </Link>
+              <Link href="/help" className="text-[12px] uppercase tracking-[0.14em] font-medium text-ink-secondary hover:text-ink px-3 py-2 transition-colors">
+                Journal
               </Link>
             </nav>
           </div>
         </div>
       </div>
 
-      {/* Delivery promise */}
-      <div className="bg-success-light">
-        <div className="max-w-[1280px] mx-auto px-4 lg:px-6 py-[7px] flex items-center justify-center gap-2">
-          <svg className="w-[16px] h-[16px] text-success flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
-          </svg>
-          <span className="text-[12px] text-success-dark font-semibold">Free delivery on all orders &mdash; order before 23:00, delivered tomorrow</span>
+      {/* Marquee promise */}
+      <div className="bg-ink text-bg">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-2 flex items-center justify-center gap-8 text-[11px] uppercase tracking-[0.18em]">
+          <span className="opacity-70">Complimentary next-day delivery</span>
+          <span className="w-1 h-1 rounded-full bg-bg/30 hidden md:block" />
+          <span className="opacity-70 hidden md:inline">Verified sellers</span>
+          <span className="w-1 h-1 rounded-full bg-bg/30 hidden md:block" />
+          <span className="opacity-70 hidden md:inline">14-day returns</span>
         </div>
       </div>
 
