@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "nivo — The Premium Gadget Marketplace of Kosovo",
+  title: "kahsya — The Premium Gadget Marketplace of Kosovo",
   description: "Curated gadgets, verified sellers, free delivery. Shop smartphones, laptops, audio, gaming & more with local warranty.",
 };
 

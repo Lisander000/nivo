@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-baseline gap-0.5 mb-4">
-              <span className="text-[22px] font-extrabold">nivo</span>
+              <span className="text-[22px] font-extrabold">kahsya</span>
               <span className="text-[22px] font-extrabold text-accent">.</span>
             </div>
             <p className="text-[13px] text-white/45 leading-relaxed mb-5 max-w-[220px]">
@@ -61,14 +61,14 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Sell on Nivo */}
+          {/* Sell on Kahsya */}
           <div>
             <h4 className="text-[12px] font-bold uppercase tracking-wider text-white/35 mb-4">Partners</h4>
             <ul className="space-y-2.5">
               {[
-                ["Sell on Nivo", "/sell"],
+                ["Sell on Kahsya", "/sell"],
                 ["Commission & Fees", "/sell"],
-                ["Fulfillment by Nivo", "/sell"],
+                ["Fulfillment by Kahsya", "/sell"],
                 ["Partner Guidelines", "/sell"],
               ].map(([label, href]) => (
                 <li key={label}><Link href={href} className="text-[13px] text-white/55 hover:text-white transition-colors">{label}</Link></li>
@@ -83,7 +83,7 @@ export default function Footer() {
               {[
                 ["About Us", "/about"],
                 ["Community", "/community"],
-                ["Nivo Business", "/business"],
+                ["Kahsya Business", "/business"],
                 ["Privacy Policy", "/privacy"],
                 ["Terms of Service", "/terms"],
               ].map(([label, href]) => (
@@ -109,7 +109,7 @@ export default function Footer() {
             <div>
               <p className="text-[11px] text-white/30 font-semibold mb-2.5">Delivery partners</p>
               <div className="flex flex-wrap gap-2">
-                {["Nivo Express", "Posta e Kosoves"].map((m) => (
+                {["Kahsya Express", "Posta e Kosoves"].map((m) => (
                   <span key={m} className="text-[11px] bg-white/6 text-white/50 px-3 py-1.5 rounded-lg border border-white/8">{m}</span>
                 ))}
               </div>
@@ -121,7 +121,7 @@ export default function Footer() {
       {/* Bottom */}
       <div className="border-t border-white/6">
         <div className="max-w-[1280px] mx-auto px-4 lg:px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-2">
-          <p className="text-[11px] text-white/30">&copy; 2026 Nivo sh.p.k. Prishtina, Kosovo. All rights reserved.</p>
+          <p className="text-[11px] text-white/30">&copy; 2026 Kahsya sh.p.k. Prishtina, Kosovo. All rights reserved.</p>
           <div className="flex gap-5">
             {[
               ["Privacy", "/privacy"],

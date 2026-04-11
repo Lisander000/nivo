@@ -75,7 +75,7 @@ export default function Header() {
 
             {/* Logo */}
             <Link href="/" className="flex items-baseline gap-0.5 flex-shrink-0">
-              <span className="text-[28px] font-extrabold text-primary tracking-tight leading-none">nivo</span>
+              <span className="text-[28px] font-extrabold text-primary tracking-tight leading-none">kahsya</span>
               <span className="text-[28px] font-extrabold text-accent leading-none">.</span>
             </Link>
 
@@ -211,7 +211,7 @@ export default function Header() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onFocus={() => setSearchFocused(true)}
                   onBlur={() => setSearchFocused(false)}
-                  placeholder="Zoek in heel nivo..."
+                  placeholder="Zoek in heel kahsya..."
                   className={`w-full h-[44px] pl-4 pr-[52px] rounded-[10px] text-[14px] text-ink bg-bg border-2 focus:outline-none placeholder:text-ink-muted transition-all duration-200 ${
                     searchFocused
                       ? "border-primary bg-white shadow-[0_0_0_3px_rgba(0,70,190,0.1)]"
@@ -232,7 +232,7 @@ export default function Header() {
                 <svg className="w-[22px] h-[22px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                 </svg>
-                <span className="text-[10px] font-medium mt-0.5 hidden lg:block">Mijn nivo</span>
+                <span className="text-[10px] font-medium mt-0.5 hidden lg:block">Mijn kahsya</span>
               </Link>
               <Link href="/wishlist" className="hidden sm:flex flex-col items-center px-3 py-1.5 rounded-xl text-ink-secondary hover:text-ink hover:bg-bg transition-colors">
                 <svg className="w-[22px] h-[22px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -287,7 +287,7 @@ export default function Header() {
           <div className="absolute left-0 top-0 h-full w-[320px] bg-white overflow-y-auto animate-slide-in-left shadow-xl">
             <div className="sticky top-0 bg-white z-10 px-5 py-4 border-b border-divider flex items-center justify-between">
               <div className="flex items-baseline gap-0.5">
-                <span className="text-[20px] font-extrabold text-primary">nivo</span>
+                <span className="text-[20px] font-extrabold text-primary">kahsya</span>
                 <span className="text-[20px] font-extrabold text-accent">.</span>
               </div>
               <button onClick={() => setMobileMenuOpen(false)} className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-bg text-ink-muted">

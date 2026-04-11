@@ -13,7 +13,7 @@ export default function PrivacyPage() {
           title: "Who we are",
           content: (
             <p>
-              <strong>Nivo sh.p.k.</strong> (&quot;Nivo&quot;, &quot;we&quot;, &quot;us&quot;) is registered in Kosovo under business number 811234567, with its registered office at Rr. Agim Ramadani 40, 10000 Prishtina, Kosovo. We operate the marketplace platform available at nivo.ks.
+              <strong>Kahsya sh.p.k.</strong> (&quot;Kahsya&quot;, &quot;we&quot;, &quot;us&quot;) is registered in Kosovo under business number 811234567, with its registered office at Rr. Agim Ramadani 40, 10000 Prishtina, Kosovo. We operate the marketplace platform available at kahsya.ks.
             </p>
           ),
         },
@@ -22,7 +22,7 @@ export default function PrivacyPage() {
           title: "What data we collect",
           content: (
             <>
-              <p>When you use Nivo, we may collect:</p>
+              <p>When you use Kahsya, we may collect:</p>
               <ul>
                 <li><strong>Account information:</strong> name, email address, phone number, delivery address</li>
                 <li><strong>Order data:</strong> products purchased, payment method, delivery preferences</li>
@@ -95,7 +95,7 @@ export default function PrivacyPage() {
           title: "Contact",
           content: (
             <p>
-              For any privacy-related questions, contact our Data Protection Officer at <strong>privacy@nivo.ks</strong> or write to Nivo sh.p.k., Rr. Agim Ramadani 40, 10000 Prishtina, Kosovo.
+              For any privacy-related questions, contact our Data Protection Officer at <strong>privacy@kahsya.ks</strong> or write to Kahsya sh.p.k., Rr. Agim Ramadani 40, 10000 Prishtina, Kosovo.
             </p>
           ),
         },

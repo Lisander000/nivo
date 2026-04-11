@@ -7,7 +7,7 @@ export default function SellPage() {
       <nav className="flex items-center gap-1.5 text-[12px] text-ink-muted mb-5">
         <Link href="/" className="hover:text-primary transition-colors">Home</Link>
         <svg className="w-3 h-3 text-ink-faint" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
-        <span className="text-ink-secondary font-medium">Sell on Nivo</span>
+        <span className="text-ink-secondary font-medium">Sell on Kahsya</span>
       </nav>
 
       {/* HERO */}
@@ -75,7 +75,7 @@ export default function SellPage() {
           {[
             { title: "Low commission", desc: "Starting from just 5% per sale. No hidden fees, no monthly subscription.", icon: "M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z", grad: "from-blue-50 to-blue-100" },
             { title: "Fast payouts", desc: "Get paid within 3 business days after successful delivery to the customer.", icon: "M13 10V3L4 14h7v7l9-11h-7z", grad: "from-orange-50 to-orange-100" },
-            { title: "Fulfillment by Nivo", desc: "Store in our warehouse. We handle packing, shipping, and returns for you.", icon: "M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z", grad: "from-purple-50 to-purple-100" },
+            { title: "Fulfillment by Kahsya", desc: "Store in our warehouse. We handle packing, shipping, and returns for you.", icon: "M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z", grad: "from-purple-50 to-purple-100" },
             { title: "Seller dashboard", desc: "Track sales, manage inventory, and view analytics in real-time.", icon: "M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z", grad: "from-green-50 to-green-100" },
             { title: "Marketing support", desc: "Featured placements, deal promotions, and social media exposure.", icon: "M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46", grad: "from-pink-50 to-pink-100" },
             { title: "Seller protection", desc: "Insurance against fraud and chargebacks. We have your back.", icon: "M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z", grad: "from-cyan-50 to-cyan-100" },
@@ -112,7 +112,7 @@ export default function SellPage() {
           {[
             { step: "01", title: "Apply online", desc: "Fill in your business details and upload KYC documents. Approval takes 1-2 business days." },
             { step: "02", title: "List your products", desc: "Upload your catalog manually or via CSV. Set prices, stock, and shipping options." },
-            { step: "03", title: "Start selling", desc: "Your products go live. Orders roll in — you ship, or let Fulfillment by Nivo handle it." },
+            { step: "03", title: "Start selling", desc: "Your products go live. Orders roll in — you ship, or let Fulfillment by Kahsya handle it." },
           ].map((s, i) => (
             <div key={s.step} className="relative bg-white rounded-2xl shadow-card p-7 hover:-translate-y-1 hover:shadow-card-hover transition-all">
               {i < 2 && (
@@ -170,10 +170,10 @@ export default function SellPage() {
             <p className="text-[11px] font-extrabold text-accent uppercase tracking-[0.15em] mb-3">Ready?</p>
             <h2 className="text-[30px] md:text-[40px] font-black leading-tight tracking-tight mb-3">
               Grow your business <br className="hidden md:block" />
-              with Nivo.
+              with Kahsya.
             </h2>
             <p className="text-[14px] text-white/70 leading-relaxed">
-              Contact us at <span className="font-extrabold text-white">partners@nivo.ks</span> or <span className="font-extrabold text-white">+383 44 123 456</span>
+              Contact us at <span className="font-extrabold text-white">partners@kahsya.ks</span> or <span className="font-extrabold text-white">+383 44 123 456</span>
             </p>
           </div>
           <Link href="/contact" className="inline-flex items-center justify-center gap-2 h-[56px] px-8 rounded-xl bg-accent text-white text-[15px] font-extrabold hover:bg-accent-dark transition-all shadow-[0_8px_24px_rgba(255,103,0,0.4)] hover:-translate-y-0.5 whitespace-nowrap">

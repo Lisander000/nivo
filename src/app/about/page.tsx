@@ -65,7 +65,7 @@ export default function AboutPage() {
             Shopping, <br />without the friction.
           </h2>
           <p className="text-[14px] text-ink-secondary leading-relaxed">
-            Whether it&apos;s a new sofa, skincare, a laptop, or weekly groceries — every product on Nivo ships from a verified seller, carries local guarantees, and arrives at your door, usually within 24 hours. No grey imports, no fake reviews, no surprises at checkout.
+            Whether it&apos;s a new sofa, skincare, a laptop, or weekly groceries — every product on Kahsya ships from a verified seller, carries local guarantees, and arrives at your door, usually within 24 hours. No grey imports, no fake reviews, no surprises at checkout.
           </p>
         </div>
 
@@ -143,7 +143,7 @@ export default function AboutPage() {
               In 2023, our founder Arben ordered a &ldquo;premium&rdquo; coffee machine from a classifieds site in Prishtina. It arrived scratched, with no invoice, and a warranty &ldquo;valid only in Dubai.&rdquo; Two weeks later, it died. The seller ghosted him.
             </p>
             <p>
-              That week he met Endrit — a logistics engineer who&apos;d just moved back from Rotterdam — at a coffee shop in Germia. They drew the first version of Nivo on a napkin: <span className="font-bold text-ink">everything under one roof, real sellers, real guarantees, real receipts, and delivery that actually shows up.</span>
+              That week he met Endrit — a logistics engineer who&apos;d just moved back from Rotterdam — at a coffee shop in Germia. They drew the first version of Kahsya on a napkin: <span className="font-bold text-ink">everything under one roof, real sellers, real guarantees, real receipts, and delivery that actually shows up.</span>
             </p>
             <p>
               Nine months later we launched with 40 sellers across 6 categories. Today we serve 50,000+ customers with 850+ verified sellers across 30 categories — from fashion to furniture, beauty to groceries. Still the same napkin principles.
@@ -222,7 +222,7 @@ export default function AboutPage() {
         <div className="relative">
           <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
             <div>
-              <p className="text-[11px] font-extrabold text-accent uppercase tracking-[0.15em] mb-2">The Nivo Collective</p>
+              <p className="text-[11px] font-extrabold text-accent uppercase tracking-[0.15em] mb-2">The Kahsya Collective</p>
               <h2 className="text-[28px] md:text-[36px] font-black tracking-tight leading-tight max-w-[480px]">
                 Creators building the culture with us.
               </h2>
@@ -253,10 +253,10 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-[1fr_auto] gap-6 items-center">
           <div>
             <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider mb-2">Get in touch</p>
-            <h2 className="text-[24px] md:text-[28px] font-black text-ink tracking-tight mb-2">Nivo sh.p.k.</h2>
+            <h2 className="text-[24px] md:text-[28px] font-black text-ink tracking-tight mb-2">Kahsya sh.p.k.</h2>
             <p className="text-[13px] text-ink-secondary">Rr. Agim Ramadani 40 · 10000 Prishtina · Kosovo</p>
             <p className="text-[13px] text-ink-secondary mt-1">
-              <span className="font-bold text-ink">info@nivo.ks</span> · +383 44 123 456
+              <span className="font-bold text-ink">info@kahsya.ks</span> · +383 44 123 456
             </p>
             <p className="text-[11px] text-ink-muted mt-3">Business nr: 811234567 · VAT: KS811234567</p>
           </div>

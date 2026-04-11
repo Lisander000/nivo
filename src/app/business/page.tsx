@@ -7,7 +7,7 @@ export default function BusinessPage() {
       <nav className="flex items-center gap-1.5 text-[12px] text-ink-muted mb-5">
         <Link href="/" className="hover:text-primary transition-colors">Home</Link>
         <svg className="w-3 h-3 text-ink-faint" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
-        <span className="text-ink-secondary font-medium">Nivo Business</span>
+        <span className="text-ink-secondary font-medium">Kahsya Business</span>
       </nav>
 
       {/* HERO */}
@@ -19,7 +19,7 @@ export default function BusinessPage() {
         <div className="relative px-6 md:px-16 py-16 md:py-24">
           <div className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 mb-6 border border-white/15">
             <svg className="w-3 h-3 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-            <span className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-white/90">Nivo Business · B2B</span>
+            <span className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-white/90">Kahsya Business · B2B</span>
           </div>
           <h1 className="text-[44px] md:text-[68px] font-black leading-[0.95] tracking-tight mb-5 max-w-[800px]">
             Tech for teams. <br />
@@ -34,8 +34,8 @@ export default function BusinessPage() {
               Open business account
               <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
             </Link>
-            <a href="mailto:business@nivo.ks" className="inline-flex items-center h-[56px] px-7 rounded-xl bg-white/10 backdrop-blur-sm text-white text-[14px] font-extrabold hover:bg-white/15 transition-all border border-white/15">
-              business@nivo.ks
+            <a href="mailto:business@kahsya.ks" className="inline-flex items-center h-[56px] px-7 rounded-xl bg-white/10 backdrop-blur-sm text-white text-[14px] font-extrabold hover:bg-white/15 transition-all border border-white/15">
+              business@kahsya.ks
             </a>
           </div>
 
@@ -145,7 +145,7 @@ export default function BusinessPage() {
               Open a business account <span className="text-primary">today.</span>
             </h2>
             <p className="text-[14px] text-ink-secondary leading-relaxed">
-              Contact our B2B team at <span className="font-extrabold text-ink">business@nivo.ks</span> or <span className="font-extrabold text-ink">+383 44 123 456</span>
+              Contact our B2B team at <span className="font-extrabold text-ink">business@kahsya.ks</span> or <span className="font-extrabold text-ink">+383 44 123 456</span>
             </p>
           </div>
           <Link href="/contact" className="inline-flex items-center justify-center gap-2 h-[56px] px-8 rounded-xl bg-primary text-white text-[15px] font-extrabold hover:bg-primary-dark transition-all shadow-[0_8px_24px_rgba(0,70,190,0.3)] hover:shadow-[0_12px_32px_rgba(0,70,190,0.45)] hover:-translate-y-0.5 whitespace-nowrap">

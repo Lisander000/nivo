@@ -113,16 +113,16 @@ export const primaryCategories = categories.slice(0, 12);
 
 const sharedReviews: Review[] = [
   { id: "r1", author: "Arta M.", date: "2026-03-28", rating: 5, title: "Best purchase I've made this year", body: "Absolutely love it. The build quality is premium and it performs exactly as advertised. Delivery was fast too.", verified: true, helpful: 24 },
-  { id: "r2", author: "Besnik H.", date: "2026-03-15", rating: 4, title: "Great product, minor issues", body: "Overall very happy with the purchase. Small learning curve but worth it. Nivo delivery was on time.", verified: true, helpful: 12 },
-  { id: "r3", author: "Dren K.", date: "2026-03-02", rating: 5, title: "Exceeded my expectations", body: "I compared prices everywhere and Nivo had the best deal with actual warranty. Product is flawless.", verified: true, helpful: 18 },
+  { id: "r2", author: "Besnik H.", date: "2026-03-15", rating: 4, title: "Great product, minor issues", body: "Overall very happy with the purchase. Small learning curve but worth it. Kahsya delivery was on time.", verified: true, helpful: 12 },
+  { id: "r3", author: "Dren K.", date: "2026-03-02", rating: 5, title: "Exceeded my expectations", body: "I compared prices everywhere and Kahsya had the best deal with actual warranty. Product is flawless.", verified: true, helpful: 18 },
   { id: "r4", author: "Fjolla S.", date: "2026-02-20", rating: 4, title: "Solid choice", body: "Good value for money. The seller was very responsive when I had questions about setup.", verified: true, helpful: 8 },
   { id: "r5", author: "Gent R.", date: "2026-02-10", rating: 5, title: "Highly recommended", body: "Ordered for my business, arrived next day in perfect packaging. Already ordering more.", verified: true, helpful: 31 },
 ];
 
 const sharedFaq: FAQ[] = [
-  { question: "Is this product covered by local warranty?", answer: "Yes, all products on Nivo come with local warranty handled through our verified seller network. You can claim warranty directly through your Nivo account.", author: "Nivo Support", date: "2026-03-01" },
-  { question: "Can I pay in installments?", answer: "Yes! We offer 3, 6, or 12 month installment plans through our banking partners. Select 'Installments' at checkout to see your monthly payment.", author: "Nivo Support", date: "2026-03-01" },
-  { question: "How fast is delivery?", answer: "Prishtina: next-day delivery. Rest of Kosovo: 2-3 business days. You'll see the exact delivery date before checkout.", author: "Nivo Support", date: "2026-03-01" },
+  { question: "Is this product covered by local warranty?", answer: "Yes, all products on Kahsya come with local warranty handled through our verified seller network. You can claim warranty directly through your Kahsya account.", author: "Kahsya Support", date: "2026-03-01" },
+  { question: "Can I pay in installments?", answer: "Yes! We offer 3, 6, or 12 month installment plans through our banking partners. Select 'Installments' at checkout to see your monthly payment.", author: "Kahsya Support", date: "2026-03-01" },
+  { question: "How fast is delivery?", answer: "Prishtina: next-day delivery. Rest of Kosovo: 2-3 business days. You'll see the exact delivery date before checkout.", author: "Kahsya Support", date: "2026-03-01" },
 ];
 
 export const products: Product[] = [

@@ -1,5 +1,5 @@
 // Deterministic avatar: initials on gradient background seeded from name.
-// Used across community/testimonial UI to give Nivo a "people-first" feel.
+// Used across community/testimonial UI to give Kahsya a "people-first" feel.
 
 const gradients = [
   "from-blue-400 to-blue-600",

@@ -5,8 +5,8 @@ import LiveActivity from "@/components/LiveActivity";
 import { testimonials, instagramPosts, ambassadors, pressQuotes } from "@/data/community";
 
 export const metadata = {
-  title: "Community · Nivo",
-  description: "Real voices from the Nivo community in Kosovo.",
+  title: "Community · Kahsya",
+  description: "Real voices from the Kahsya community in Kosovo.",
 };
 
 export default function CommunityPage() {
@@ -37,7 +37,7 @@ export default function CommunityPage() {
             It&apos;s a <span className="text-accent">community.</span>
           </h1>
           <p className="text-[16px] md:text-[18px] text-white/75 max-w-[560px] leading-relaxed mb-8">
-            Designers, devs, gamers, photographers, founders — every Nivo order is a story. Here are some of them.
+            Designers, devs, gamers, photographers, founders — every Kahsya order is a story. Here are some of them.
           </p>
           <div className="flex items-center gap-4 flex-wrap">
             <AvatarStack names={communityNames} size={40} />
@@ -101,7 +101,7 @@ export default function CommunityPage() {
             <div className="flex items-center gap-3">
               <span className="w-1 h-8 bg-accent rounded-full" />
               <div>
-                <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider">#NivoKS</p>
+                <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider">#KahsyaKS</p>
                 <h2 className="text-[22px] md:text-[28px] font-black text-ink tracking-tight leading-tight">From the feed</h2>
               </div>
             </div>
@@ -111,7 +111,7 @@ export default function CommunityPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 h-[44px] px-5 bg-white text-ink text-[13px] font-extrabold rounded-full shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all border border-border"
             >
-              @nivo.ks
+              @kahsya.ks
             </a>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
@@ -142,7 +142,7 @@ export default function CommunityPage() {
         <div className="flex items-center gap-3 mb-6">
           <span className="w-1 h-8 bg-accent rounded-full" />
           <div>
-            <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider">The Nivo Collective</p>
+            <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider">The Kahsya Collective</p>
             <h2 className="text-[22px] md:text-[28px] font-black text-ink tracking-tight leading-tight">Ambassadors</h2>
           </div>
         </div>
@@ -190,7 +190,7 @@ export default function CommunityPage() {
         <div className="relative max-w-[640px] mx-auto">
           <span className="inline-block text-[11px] font-extrabold text-accent uppercase tracking-[0.15em] bg-accent/10 border border-accent/20 px-3 py-1 rounded-full">Join the movement</span>
           <p className="text-[30px] md:text-[44px] font-black mt-4 leading-[1.05] tracking-tight">
-            Tag <span className="text-accent">#NivoKS</span><br />and get featured.
+            Tag <span className="text-accent">#KahsyaKS</span><br />and get featured.
           </p>
           <p className="text-[14px] md:text-[15px] text-white/70 mt-4 mb-8 leading-relaxed">
             Share your unboxing, your setup, your wins. We repost the best every week — and the creators behind them get early access to launches.
@@ -202,7 +202,7 @@ export default function CommunityPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 h-[52px] px-7 bg-accent text-white text-[15px] font-extrabold rounded-2xl hover:bg-accent-dark transition-all hover:-translate-y-0.5 shadow-[0_8px_24px_rgba(255,103,0,0.4)]"
             >
-              Follow @nivo.ks
+              Follow @kahsya.ks
             </a>
             <Link
               href="/category/all"

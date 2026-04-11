@@ -5,7 +5,7 @@ export default function CookiesPage() {
     <LegalPage
       kicker="Small files, big role"
       title="Cookie Policy"
-      subtitle="How we use cookies and similar technologies to make Nivo work better for you."
+      subtitle="How we use cookies and similar technologies to make Kahsya work better for you."
       lastUpdated="January 1, 2026"
       sections={[
         {
@@ -69,7 +69,7 @@ export default function CookiesPage() {
           title: "Contact",
           content: (
             <p>
-              For questions about our cookie policy, contact us at <strong>privacy@nivo.ks</strong>.
+              For questions about our cookie policy, contact us at <strong>privacy@kahsya.ks</strong>.
             </p>
           ),
         },

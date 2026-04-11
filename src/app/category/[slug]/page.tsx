@@ -259,7 +259,7 @@ export default function CategoryPage() {
           {/* Category description — SEO text like bol.com */}
           {category && !isAll && (
             <div className="mt-8 bg-white rounded-2xl shadow-card p-6">
-              <h2 className="text-[15px] font-bold text-ink mb-2">{category.name} at Nivo</h2>
+              <h2 className="text-[15px] font-bold text-ink mb-2">{category.name} at Kahsya</h2>
               <p className="text-[13px] text-ink-muted leading-relaxed">
                 Discover our wide range of {category.name.toLowerCase()} at the best prices in Kosovo. All products come with local warranty, free delivery, and 14-day returns. Shop from 150+ verified sellers and pay in installments with 0% interest.
               </p>

@@ -28,7 +28,7 @@ export const testimonials: Testimonial[] = [
     city: "Peja",
     role: "Developer",
     rating: 5,
-    quote: "Been buying tech from grey imports for years. First time paying Nivo the extra 30€ — warranty, receipts, the works. Never going back.",
+    quote: "Been buying tech from grey imports for years. First time paying Kahsya the extra 30€ — warranty, receipts, the works. Never going back.",
     product: "Sony WH-1000XM5",
     verified: true,
     date: "5 days ago",
@@ -58,7 +58,7 @@ export const testimonials: Testimonial[] = [
     city: "Prishtina",
     role: "Marketing lead",
     rating: 5,
-    quote: "Bought iPhones for our whole team through Nivo Business. Bulk discount, VAT invoice for accounting, next-day delivery. Chef's kiss.",
+    quote: "Bought iPhones for our whole team through Kahsya Business. Bulk discount, VAT invoice for accounting, next-day delivery. Chef's kiss.",
     product: "iPhone 15 Pro · x6",
     verified: true,
     date: "2 weeks ago",
@@ -96,8 +96,8 @@ export interface InstagramPost {
 
 export const instagramPosts: InstagramPost[] = [
   { id: "1", caption: "Unboxing the new iPhone 16 Pro 📱", likes: 1240, comments: 48, author: "arta.k", gradient: "from-blue-500 to-purple-600", emoji: "📱" },
-  { id: "2", caption: "Studio setup complete thanks to @nivo", likes: 892, comments: 31, author: "driton.dev", gradient: "from-orange-500 to-pink-500", emoji: "💻" },
-  { id: "3", caption: "First camera, first love 📸 #NivoKS", likes: 2104, comments: 87, author: "elira.shoots", gradient: "from-pink-500 to-rose-600", emoji: "📸" },
+  { id: "2", caption: "Studio setup complete thanks to @kahsya", likes: 892, comments: 31, author: "driton.dev", gradient: "from-orange-500 to-pink-500", emoji: "💻" },
+  { id: "3", caption: "First camera, first love 📸 #KahsyaKS", likes: 2104, comments: 87, author: "elira.shoots", gradient: "from-pink-500 to-rose-600", emoji: "📸" },
   { id: "4", caption: "Gaming rig upgrade 🎮 PS5 Day 1", likes: 1567, comments: 52, author: "agon.plays", gradient: "from-indigo-500 to-blue-600", emoji: "🎮" },
   { id: "5", caption: "Home office goals ✨", likes: 743, comments: 24, author: "fatlinda.m", gradient: "from-green-500 to-teal-600", emoji: "✨" },
   { id: "6", caption: "New AirPods, who dis? 🎧", likes: 1189, comments: 38, author: "blerim.h", gradient: "from-purple-500 to-indigo-600", emoji: "🎧" },
@@ -116,5 +116,5 @@ export const pressQuotes = [
   { outlet: "Koha Ditore", quote: "Kosovo's answer to bol.com — and honestly, sharper." },
   { outlet: "Balkan Insight", quote: "A local tech marketplace built with Western-standard UX." },
   { outlet: "Telegrafi", quote: "Finally, online shopping in Kosovo that actually works." },
-  { outlet: "Gazeta Express", quote: "Nivo is reshaping how Kosovars buy technology." },
+  { outlet: "Gazeta Express", quote: "Kahsya is reshaping how Kosovars buy technology." },
 ];

@@ -20,7 +20,7 @@ export default function AccountPage() {
             <div className="relative h-full flex flex-col p-8 md:p-12">
               {/* Logo */}
               <Link href="/" className="flex items-baseline gap-0.5 self-start">
-                <span className="text-[28px] font-black text-white">nivo</span>
+                <span className="text-[28px] font-black text-white">kahsya</span>
                 <span className="text-[28px] font-black text-accent">.</span>
               </Link>
 
@@ -95,7 +95,7 @@ export default function AccountPage() {
               </div>
 
               <h2 className="text-[26px] md:text-[30px] font-black text-ink tracking-tight leading-tight mb-1.5">
-                {tab === "login" ? "Welcome back" : "Join Nivo"}
+                {tab === "login" ? "Welcome back" : "Join Kahsya"}
               </h2>
               <p className="text-[13px] text-ink-muted mb-6">
                 {tab === "login" ? "Sign in to continue shopping" : "It takes less than 30 seconds"}
