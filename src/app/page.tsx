@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { categories, getFeaturedProducts, getDeals, products } from "@/data/products";
+import { primaryCategories, getFeaturedProducts, getDeals, products } from "@/data/products";
 import { testimonials } from "@/data/community";
 import ProductCard from "@/components/ProductCard";
 import ProductRail from "@/components/ProductRail";
@@ -11,20 +11,26 @@ export default function Home() {
   const under500 = products.filter((p) => p.price < 500).slice(0, 10);
   const communityNames = testimonials.map((t) => t.name);
 
-  // Bol.com-style brand tiles
+  // Bol.com-style brand tiles — mix of categories
   const brands = [
-    { name: "Apple", bg: "bg-[#F5F5F7]", text: "text-ink", logo: "" },
-    { name: "Samsung", bg: "bg-[#1428A0]", text: "text-white", logo: "" },
-    { name: "Sony", bg: "bg-black", text: "text-white", logo: "" },
-    { name: "Xiaomi", bg: "bg-[#FF6700]", text: "text-white", logo: "" },
-    { name: "Logitech", bg: "bg-white", text: "text-ink", logo: "" },
-    { name: "JBL", bg: "bg-[#FF3300]", text: "text-white", logo: "" },
-    { name: "Nintendo", bg: "bg-[#E60012]", text: "text-white", logo: "" },
-    { name: "Bose", bg: "bg-[#141414]", text: "text-white", logo: "" },
-    { name: "HP", bg: "bg-[#0096D6]", text: "text-white", logo: "" },
-    { name: "Lenovo", bg: "bg-[#E2231A]", text: "text-white", logo: "" },
-    { name: "Dyson", bg: "bg-[#FFD100]", text: "text-ink", logo: "" },
-    { name: "Canon", bg: "bg-[#CC0000]", text: "text-white", logo: "" },
+    { name: "IKEA", bg: "bg-[#0058A3]", text: "text-[#FFDB00]" },
+    { name: "Apple", bg: "bg-[#F5F5F7]", text: "text-ink" },
+    { name: "Zara", bg: "bg-black", text: "text-white" },
+    { name: "LEGO", bg: "bg-[#FFCF00]", text: "text-[#E3000B]" },
+    { name: "Dyson", bg: "bg-[#FFD100]", text: "text-ink" },
+    { name: "Samsung", bg: "bg-[#1428A0]", text: "text-white" },
+    { name: "Nike", bg: "bg-black", text: "text-white" },
+    { name: "L'Oréal", bg: "bg-white", text: "text-ink" },
+    { name: "Philips", bg: "bg-[#0A5EA4]", text: "text-white" },
+    { name: "Adidas", bg: "bg-white", text: "text-ink" },
+    { name: "Bosch", bg: "bg-[#E20015]", text: "text-white" },
+    { name: "Sony", bg: "bg-black", text: "text-white" },
+    { name: "H&M", bg: "bg-[#E50010]", text: "text-white" },
+    { name: "Nivea", bg: "bg-[#002D6F]", text: "text-white" },
+    { name: "Tefal", bg: "bg-[#E30613]", text: "text-white" },
+    { name: "Nintendo", bg: "bg-[#E60012]", text: "text-white" },
+    { name: "Maybelline", bg: "bg-[#0F1A4E]", text: "text-white" },
+    { name: "Logitech", bg: "bg-white", text: "text-ink" },
   ];
 
   return (
@@ -44,17 +50,17 @@ export default function Home() {
             <div className="inline-flex self-start items-center gap-2 bg-white rounded-full pl-1.5 pr-4 py-1 mb-5 shadow-sm">
               <span className="flex items-center gap-1 bg-danger text-white text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full">
                 <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
-                Deals
+                Sale
               </span>
-              <span className="text-[11px] font-extrabold uppercase tracking-wider text-ink">Tech week · Up to −40%</span>
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-ink">Spring sale · Up to −50%</span>
             </div>
             <h1 className="text-[34px] md:text-[48px] lg:text-[56px] font-black leading-[0.95] mb-4 tracking-[-0.02em] text-ink">
-              Tech you love,<br />
-              <span className="text-primary">prices you&apos;ll</span><br />
-              <span className="text-accent">love more.</span>
+              Everything you want.<br />
+              <span className="text-primary">One marketplace</span><br />
+              <span className="text-accent">for all of Kosovo.</span>
             </h1>
-            <p className="text-[14px] md:text-[15px] text-ink-secondary mb-7 max-w-[420px] leading-relaxed font-medium">
-              15,000+ gadgets. 150+ verified sellers. Free delivery tomorrow across Kosovo.
+            <p className="text-[14px] md:text-[15px] text-ink-secondary mb-7 max-w-[440px] leading-relaxed font-medium">
+              200,000+ products across 30 categories. Fashion, home, beauty, electronics, toys, books &amp; more. Free next-day delivery.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <Link
@@ -84,27 +90,27 @@ export default function Home() {
 
         {/* Right: 2 stacked promo tiles */}
         <div className="grid grid-cols-1 gap-3 lg:gap-4">
-          <Link href="/category/smartphones" className="group relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-[#003AAA] text-white p-6 lg:p-7 hover:-translate-y-0.5 transition-all shadow-card hover:shadow-card-hover min-h-[190px]">
-            <div className="absolute -right-6 -bottom-6 text-[160px] leading-none opacity-20 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">📱</div>
+          <Link href="/category/fashion" className="group relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#F472B6] to-[#BE185D] text-white p-6 lg:p-7 hover:-translate-y-0.5 transition-all shadow-card hover:shadow-card-hover min-h-[190px]">
+            <div className="absolute -right-6 -bottom-6 text-[160px] leading-none opacity-20 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">👗</div>
             <div className="relative">
-              <span className="inline-block text-[10px] font-extrabold text-accent uppercase tracking-wider bg-white/10 backdrop-blur-sm border border-white/20 px-2.5 py-1 rounded-full">New in</span>
-              <p className="text-[24px] font-black mt-3 leading-tight">iPhone 16 Pro</p>
-              <p className="text-[12px] text-white/70 mt-1 font-medium">From <span className="text-white font-black">€1.199,-</span></p>
-              <span className="inline-flex items-center gap-1 text-[12px] font-extrabold mt-4 text-accent group-hover:gap-2 transition-all">
+              <span className="inline-block text-[10px] font-extrabold uppercase tracking-wider bg-white/15 backdrop-blur-sm border border-white/20 px-2.5 py-1 rounded-full">New season</span>
+              <p className="text-[24px] font-black mt-3 leading-tight">Spring Fashion</p>
+              <p className="text-[12px] text-white/80 mt-1 font-medium">24,000+ looks for him &amp; her</p>
+              <span className="inline-flex items-center gap-1 text-[12px] font-extrabold mt-4 text-white group-hover:gap-2 transition-all">
                 Shop now
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
               </span>
             </div>
           </Link>
-          <Link href="/category/gaming" className="group relative rounded-2xl overflow-hidden bg-gradient-to-br from-accent to-[#E05A00] text-white p-6 lg:p-7 hover:-translate-y-0.5 transition-all shadow-card hover:shadow-card-hover min-h-[190px]">
-            <div className="absolute -right-6 -bottom-6 text-[160px] leading-none opacity-20 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500">🎮</div>
+          <Link href="/category/home-living" className="group relative rounded-2xl overflow-hidden bg-gradient-to-br from-accent to-[#E05A00] text-white p-6 lg:p-7 hover:-translate-y-0.5 transition-all shadow-card hover:shadow-card-hover min-h-[190px]">
+            <div className="absolute -right-6 -bottom-6 text-[160px] leading-none opacity-20 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500">🛋️</div>
             <div className="relative">
               <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-white uppercase tracking-wider bg-white/15 backdrop-blur-sm border border-white/20 px-2.5 py-1 rounded-full">
                 <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
-                Hot −20%
+                Hot −30%
               </span>
-              <p className="text-[24px] font-black mt-3 leading-tight">PlayStation 5</p>
-              <p className="text-[12px] text-white/75 mt-1 font-medium"><span className="text-white font-black">€499,-</span> · free delivery</p>
+              <p className="text-[24px] font-black mt-3 leading-tight">Home refresh</p>
+              <p className="text-[12px] text-white/80 mt-1 font-medium">Furniture, decor &amp; lighting</p>
               <span className="inline-flex items-center gap-1 text-[12px] font-extrabold mt-4 text-white group-hover:gap-2 transition-all">
                 Shop now
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
@@ -119,7 +125,7 @@ export default function Home() {
           ═══════════════════════════════════════════════════════ */}
       <div className="relative -mx-4 lg:mx-0">
         <div className="flex lg:grid lg:grid-cols-6 gap-3 lg:gap-4 overflow-x-auto px-4 lg:px-0 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory">
-          {categories.map((cat, i) => {
+          {primaryCategories.map((cat, i) => {
             const tints = [
               "from-blue-100 to-blue-200",
               "from-orange-100 to-orange-200",
@@ -214,24 +220,24 @@ export default function Home() {
           FULL-WIDTH PROMO BANNER — student discount
           ═══════════════════════════════════════════════════════ */}
       <Link
-        href="/category/laptops"
+        href="/category/all"
         className="relative block rounded-3xl overflow-hidden bg-gradient-to-r from-[#FFE8D6] via-[#FFF4E8] to-[#E8F1FF] p-8 md:p-10 lg:p-12 group hover:shadow-card-hover transition-all shadow-card"
       >
-        <div className="absolute -right-10 -top-10 text-[220px] leading-none opacity-15 select-none pointer-events-none group-hover:scale-110 group-hover:rotate-6 transition-transform duration-700">💻</div>
+        <div className="absolute -right-10 -top-10 text-[220px] leading-none opacity-15 select-none pointer-events-none group-hover:scale-110 group-hover:rotate-6 transition-transform duration-700">🌸</div>
         <div className="absolute -left-16 -bottom-16 w-[280px] h-[280px] rounded-full bg-primary/10 blur-3xl" />
         <div className="relative grid md:grid-cols-[1fr_auto] gap-6 items-center">
           <div className="max-w-[560px]">
-            <span className="inline-block text-[10px] font-extrabold text-accent uppercase tracking-[0.15em] bg-white px-3 py-1 rounded-full shadow-sm">Student Week</span>
+            <span className="inline-block text-[10px] font-extrabold text-accent uppercase tracking-[0.15em] bg-white px-3 py-1 rounded-full shadow-sm">Spring Sale</span>
             <p className="text-[26px] md:text-[36px] font-black text-ink mt-3 leading-[1.05] tracking-tight">
-              15% off all laptops<br />
-              <span className="text-primary">with valid student ID.</span>
+              Up to −50% off,<br />
+              <span className="text-primary">across every aisle.</span>
             </p>
             <p className="text-[13px] md:text-[14px] text-ink-secondary mt-3 font-medium">
-              MacBooks, Windows laptops, Chromebooks — all in. Until March 31.
+              Fashion, home, beauty, electronics, toys, garden — the whole marketplace. Until April 30.
             </p>
           </div>
           <div className="inline-flex items-center gap-2 h-[52px] px-7 rounded-xl bg-primary text-white text-[14px] font-extrabold shadow-[0_6px_20px_rgba(0,70,190,0.3)] group-hover:shadow-[0_10px_28px_rgba(0,70,190,0.4)] group-hover:-translate-y-0.5 transition-all flex-shrink-0 self-start md:self-center whitespace-nowrap">
-            Claim discount
+            Shop the sale
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
           </div>
         </div>
@@ -245,7 +251,7 @@ export default function Home() {
           <span className="w-1 h-8 bg-accent rounded-full" />
           <div>
             <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider">Verified partners</p>
-            <h2 className="text-[20px] md:text-[24px] font-black text-ink tracking-tight leading-tight">Top brands on Nivo</h2>
+            <h2 className="text-[20px] md:text-[24px] font-black text-ink tracking-tight leading-tight">Brands you love, all in one place</h2>
           </div>
         </div>
         <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
@@ -308,7 +314,7 @@ export default function Home() {
           <p className="text-[28px] md:text-[36px] font-black mt-4 leading-tight tracking-tight">
             Get the best deals<br />in your inbox.
           </p>
-          <p className="text-[14px] text-white/60 mt-3 mb-7">Join 10,000+ tech lovers in Kosovo. Weekly deals. No spam, ever.</p>
+          <p className="text-[14px] text-white/60 mt-3 mb-7">Join 50,000+ shoppers in Kosovo. Weekly deals across every category. No spam, ever.</p>
           <div className="flex flex-col sm:flex-row gap-3 max-w-[480px] mx-auto">
             <input
               type="email"

@@ -69,6 +69,31 @@ export interface Category {
 }
 
 export const categories: Category[] = [
+  { name: "Home & Living", slug: "home-living", description: "Furniture, decor & interior style", icon: "🛋️", count: 18420, image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop",
+    subs: [{ name: "Furniture", slug: "home-living" }, { name: "Lighting", slug: "home-living" }, { name: "Bedding & Textiles", slug: "home-living" }, { name: "Wall Decor", slug: "home-living" }, { name: "Storage", slug: "home-living" }, { name: "Rugs & Carpets", slug: "home-living" }] },
+  { name: "Fashion", slug: "fashion", description: "Clothing, shoes & accessories", icon: "👗", count: 24150, image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&h=300&fit=crop",
+    subs: [{ name: "Women's Clothing", slug: "fashion" }, { name: "Men's Clothing", slug: "fashion" }, { name: "Kids & Baby", slug: "fashion" }, { name: "Shoes", slug: "fashion" }, { name: "Bags & Wallets", slug: "fashion" }, { name: "Accessories", slug: "fashion" }] },
+  { name: "Electronics", slug: "electronics", description: "Phones, laptops & gadgets", icon: "📱", count: 12840, image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=300&fit=crop",
+    subs: [{ name: "Smartphones", slug: "smartphones" }, { name: "Laptops", slug: "laptops" }, { name: "Audio", slug: "audio" }, { name: "Wearables", slug: "wearables" }, { name: "Gaming", slug: "gaming" }, { name: "Smart Home", slug: "smart-home" }] },
+  { name: "Beauty & Care", slug: "beauty", description: "Makeup, skincare & fragrance", icon: "💄", count: 9870, image: "https://images.unsplash.com/photo-1522335789203-aaa9dc5f5a4d?w=400&h=300&fit=crop",
+    subs: [{ name: "Skincare", slug: "beauty" }, { name: "Makeup", slug: "beauty" }, { name: "Haircare", slug: "beauty" }, { name: "Fragrance", slug: "beauty" }, { name: "Men's Grooming", slug: "beauty" }, { name: "Tools & Devices", slug: "beauty" }] },
+  { name: "Kitchen & Dining", slug: "kitchen", description: "Cookware, appliances & tableware", icon: "🍳", count: 11230, image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
+    subs: [{ name: "Small Appliances", slug: "kitchen" }, { name: "Cookware", slug: "kitchen" }, { name: "Knives & Tools", slug: "kitchen" }, { name: "Tableware", slug: "kitchen" }, { name: "Food Storage", slug: "kitchen" }, { name: "Coffee & Tea", slug: "kitchen" }] },
+  { name: "Toys & Kids", slug: "toys", description: "Toys, games & baby essentials", icon: "🧸", count: 8560, image: "https://images.unsplash.com/photo-1558877385-8c1fa66454ab?w=400&h=300&fit=crop",
+    subs: [{ name: "Building Sets", slug: "toys" }, { name: "Dolls & Figures", slug: "toys" }, { name: "Board Games", slug: "toys" }, { name: "Outdoor Toys", slug: "toys" }, { name: "Baby Gear", slug: "toys" }, { name: "Learning Toys", slug: "toys" }] },
+  { name: "Sports & Outdoor", slug: "sports", description: "Fitness, cycling & adventure", icon: "⚽", count: 7340, image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400&h=300&fit=crop",
+    subs: [{ name: "Fitness Equipment", slug: "sports" }, { name: "Cycling", slug: "sports" }, { name: "Running", slug: "sports" }, { name: "Camping & Hiking", slug: "sports" }, { name: "Team Sports", slug: "sports" }, { name: "Water Sports", slug: "sports" }] },
+  { name: "Books & Media", slug: "books", description: "Books, music, movies & games", icon: "📚", count: 15980, image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=300&fit=crop",
+    subs: [{ name: "Fiction", slug: "books" }, { name: "Non-Fiction", slug: "books" }, { name: "Children's Books", slug: "books" }, { name: "Textbooks", slug: "books" }, { name: "Music & Vinyl", slug: "books" }, { name: "Movies & TV", slug: "books" }] },
+  { name: "Garden & DIY", slug: "garden", description: "Plants, tools & outdoor living", icon: "🌿", count: 6420, image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop",
+    subs: [{ name: "Plants & Seeds", slug: "garden" }, { name: "Outdoor Furniture", slug: "garden" }, { name: "Power Tools", slug: "garden" }, { name: "Hand Tools", slug: "garden" }, { name: "BBQ & Grilling", slug: "garden" }, { name: "Garden Decor", slug: "garden" }] },
+  { name: "Health & Wellness", slug: "health", description: "Supplements, fitness & self-care", icon: "💊", count: 5210, image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=300&fit=crop",
+    subs: [{ name: "Vitamins", slug: "health" }, { name: "Personal Care", slug: "health" }, { name: "Medical Devices", slug: "health" }, { name: "Sleep & Relaxation", slug: "health" }, { name: "Oral Care", slug: "health" }] },
+  { name: "Pet Supplies", slug: "pets", description: "Food, toys & care for every pet", icon: "🐾", count: 3840, image: "https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=400&h=300&fit=crop",
+    subs: [{ name: "Dog Supplies", slug: "pets" }, { name: "Cat Supplies", slug: "pets" }, { name: "Small Animals", slug: "pets" }, { name: "Aquarium", slug: "pets" }, { name: "Pet Food", slug: "pets" }] },
+  { name: "Groceries", slug: "groceries", description: "Pantry, drinks & specialty foods", icon: "🛒", count: 4960, image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&h=300&fit=crop",
+    subs: [{ name: "Pantry Staples", slug: "groceries" }, { name: "Snacks", slug: "groceries" }, { name: "Drinks", slug: "groceries" }, { name: "Breakfast", slug: "groceries" }, { name: "Specialty & Organic", slug: "groceries" }] },
+  // Legacy tech sub-category slugs (kept so existing products keep routing)
   { name: "Smartphones", slug: "smartphones", description: "Latest flagship & budget phones", icon: "📱", count: 48, image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=300&fit=crop",
     subs: [{ name: "iPhones", slug: "smartphones" }, { name: "Samsung Galaxy", slug: "smartphones" }, { name: "Xiaomi", slug: "smartphones" }, { name: "Cases & Protection", slug: "smartphones" }, { name: "Chargers & Cables", slug: "smartphones" }, { name: "Screen Protectors", slug: "smartphones" }] },
   { name: "Laptops", slug: "laptops", description: "Power meets portability", icon: "💻", count: 35, image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=300&fit=crop",
@@ -82,6 +107,9 @@ export const categories: Category[] = [
   { name: "Smart Home", slug: "smart-home", description: "Connected living devices", icon: "🏠", count: 33, image: "https://images.unsplash.com/photo-1558089687-f282ffcbc126?w=400&h=300&fit=crop",
     subs: [{ name: "Smart Speakers", slug: "smart-home" }, { name: "Smart Lighting", slug: "smart-home" }, { name: "Security Cameras", slug: "smart-home" }, { name: "Robot Vacuums", slug: "smart-home" }, { name: "Thermostats", slug: "smart-home" }] },
 ];
+
+// Primary navigable categories (shown on homepage / mega menu main row)
+export const primaryCategories = categories.slice(0, 12);
 
 const sharedReviews: Review[] = [
   { id: "r1", author: "Arta M.", date: "2026-03-28", rating: 5, title: "Best purchase I've made this year", body: "Absolutely love it. The build quality is premium and it performs exactly as advertised. Delivery was fast too.", verified: true, helpful: 24 },

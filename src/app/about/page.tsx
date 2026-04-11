@@ -23,12 +23,12 @@ export default function AboutPage() {
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
             <span className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-white/90">Founded 2024 · Prishtina</span>
           </div>
-          <h1 className="text-[44px] md:text-[72px] font-black leading-[0.95] tracking-tight mb-5 max-w-[720px]">
-            Kosovo&apos;s tech <br />
+          <h1 className="text-[44px] md:text-[72px] font-black leading-[0.95] tracking-tight mb-5 max-w-[760px]">
+            Kosovo&apos;s <br />
             marketplace, <span className="text-accent">done right.</span>
           </h1>
-          <p className="text-[16px] md:text-[18px] text-white/75 max-w-[560px] leading-relaxed mb-8">
-            We&apos;re building the shopping experience Kosovo deserves — the one our friends in Amsterdam, Berlin and Vienna take for granted.
+          <p className="text-[16px] md:text-[18px] text-white/75 max-w-[580px] leading-relaxed mb-8">
+            From fashion to furniture, beauty to electronics, groceries to garden tools — everything you need in one place. The shopping experience Kosovo deserves.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/category/all" className="inline-flex items-center gap-2 h-[52px] px-7 rounded-xl bg-accent text-white text-[14px] font-extrabold hover:bg-accent-dark transition-all shadow-[0_6px_20px_rgba(255,103,0,0.35)] hover:-translate-y-0.5">
@@ -45,9 +45,9 @@ export default function AboutPage() {
       {/* STATS BAR */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-10">
         {[
-          { num: "15,000+", label: "Products listed", accent: "text-primary" },
-          { num: "150+", label: "Verified sellers", accent: "text-accent" },
-          { num: "50,000+", label: "Happy customers", accent: "text-success" },
+          { num: "200k+", label: "Products listed", accent: "text-primary" },
+          { num: "30", label: "Categories", accent: "text-accent" },
+          { num: "850+", label: "Verified sellers", accent: "text-success" },
           { num: "24h", label: "Avg. delivery", accent: "text-primary" },
         ].map((s) => (
           <div key={s.label} className="bg-white rounded-2xl shadow-card p-5 md:p-6 hover:shadow-card-hover hover:-translate-y-1 transition-all">
@@ -62,10 +62,10 @@ export default function AboutPage() {
         <div className="bg-white rounded-2xl shadow-card p-8 md:p-10">
           <p className="text-[11px] font-extrabold text-primary uppercase tracking-[0.15em] mb-3">The mission</p>
           <h2 className="text-[28px] md:text-[34px] font-black text-ink tracking-tight leading-[1.1] mb-4">
-            Tech shopping, <br />without the friction.
+            Shopping, <br />without the friction.
           </h2>
           <p className="text-[14px] text-ink-secondary leading-relaxed">
-            Every product you buy on Nivo ships from a verified seller, carries local warranty, and arrives at your door — usually within 24 hours. No grey imports, no fake reviews, no surprises at checkout. The way it should be.
+            Whether it&apos;s a new sofa, skincare, a laptop, or weekly groceries — every product on Nivo ships from a verified seller, carries local guarantees, and arrives at your door, usually within 24 hours. No grey imports, no fake reviews, no surprises at checkout.
           </p>
         </div>
 
@@ -136,17 +136,17 @@ export default function AboutPage() {
         <div className="bg-white rounded-2xl shadow-card p-8 md:p-10">
           <p className="text-[11px] font-extrabold text-primary uppercase tracking-[0.15em] mb-3">The story</p>
           <h2 className="text-[28px] md:text-[34px] font-black text-ink tracking-tight leading-[1.1] mb-5">
-            It started with a broken laptop.
+            It started with a bad order.
           </h2>
           <div className="space-y-4 text-[14px] text-ink-secondary leading-relaxed">
             <p>
-              In 2023, our founder Arben ordered a MacBook from a grey-market reseller in Prishtina. It arrived with a US keyboard, no invoice, and a warranty &ldquo;valid only in Dubai.&rdquo; Two weeks later, the trackpad died. The store ghosted him.
+              In 2023, our founder Arben ordered a &ldquo;premium&rdquo; coffee machine from a classifieds site in Prishtina. It arrived scratched, with no invoice, and a warranty &ldquo;valid only in Dubai.&rdquo; Two weeks later, it died. The seller ghosted him.
             </p>
             <p>
-              That week he met Endrit — a logistics engineer who&apos;d just moved back from Rotterdam — at a coffee shop in Germia. They drew the first version of Nivo on a napkin: <span className="font-bold text-ink">real sellers, real warranty, real receipts, and delivery that actually shows up.</span>
+              That week he met Endrit — a logistics engineer who&apos;d just moved back from Rotterdam — at a coffee shop in Germia. They drew the first version of Nivo on a napkin: <span className="font-bold text-ink">everything under one roof, real sellers, real guarantees, real receipts, and delivery that actually shows up.</span>
             </p>
             <p>
-              Nine months later we launched with 12 sellers and 400 products. Today we serve 50,000+ customers across Kosovo with 150+ verified sellers. Still the same napkin principles.
+              Nine months later we launched with 40 sellers across 6 categories. Today we serve 50,000+ customers with 850+ verified sellers across 30 categories — from fashion to furniture, beauty to groceries. Still the same napkin principles.
             </p>
           </div>
           <div className="flex items-center gap-3 mt-7 pt-6 border-t border-divider">
@@ -174,10 +174,10 @@ export default function AboutPage() {
               <div className="absolute left-[11px] top-2 bottom-2 w-px bg-primary/20" />
               {[
                 { year: "2023", title: "The napkin", desc: "Idea drawn over coffee in Prishtina." },
-                { year: "2024 · Q1", title: "Launch", desc: "12 sellers, 400 products, 1 warehouse." },
-                { year: "2024 · Q3", title: "10,000 orders", desc: "Expanded to 7 cities in Kosovo." },
-                { year: "2025", title: "150 sellers", desc: "Nivo Business + installments launched." },
-                { year: "2026", title: "You are here", desc: "50,000+ customers and counting." },
+                { year: "2024 · Q1", title: "Launch", desc: "40 sellers across 6 categories." },
+                { year: "2024 · Q3", title: "Fashion + Home", desc: "Expanded beyond tech into lifestyle." },
+                { year: "2025", title: "Full marketplace", desc: "30 categories, 850+ sellers, installments." },
+                { year: "2026", title: "You are here", desc: "200k+ products. Everything in Kosovo." },
               ].map((m, i) => (
                 <div key={m.year} className="relative pl-8">
                   <div className={`absolute left-0 top-1 w-[22px] h-[22px] rounded-full border-[3px] border-white flex items-center justify-center ${i === 4 ? "bg-accent" : "bg-primary"}`}>

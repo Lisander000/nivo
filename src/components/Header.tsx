@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useCart } from "@/context/CartContext";
-import { categories } from "@/data/products";
+import { primaryCategories as categories } from "@/data/products";
 
 export default function Header() {
   const { totalItems, setIsOpen } = useCart();
@@ -49,9 +49,9 @@ export default function Header() {
           <Link href="/category/all" className="group inline-flex items-center gap-2 text-[12px] font-bold">
             <span className="inline-flex items-center gap-1 bg-accent text-white text-[9px] font-extrabold uppercase tracking-wider px-1.5 py-0.5 rounded-full">
               <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
-              Deals
+              Sale
             </span>
-            <span className="text-white/90">Tech Week is live — up to −40% on 1,000+ products</span>
+            <span className="text-white/90">Spring Sale is live — up to −50% across every category</span>
             <span className="inline-flex items-center gap-1 text-accent font-extrabold group-hover:gap-1.5 transition-all">
               Shop now
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -176,7 +176,7 @@ export default function Header() {
                                 <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
                                 Live
                               </span>
-                              <p className="text-[18px] font-black mt-3 leading-tight">Tech Week<br />−40% off</p>
+                              <p className="text-[18px] font-black mt-3 leading-tight">Spring Sale<br />−50% off</p>
                               <p className="text-[11px] text-white/70 mt-1 font-medium">Limited time</p>
                               <span className="inline-flex items-center gap-1 text-[12px] font-extrabold mt-3 text-accent group-hover/promo:gap-1.5 transition-all">
                                 Shop deals

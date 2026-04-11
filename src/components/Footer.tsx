@@ -13,7 +13,7 @@ export default function Footer() {
               <span className="text-[22px] font-extrabold text-accent">.</span>
             </div>
             <p className="text-[13px] text-white/45 leading-relaxed mb-5 max-w-[220px]">
-              The premium gadget marketplace of Kosovo. Technology, delivered.
+              Kosovo&apos;s everything marketplace. Fashion, home, beauty, electronics &amp; more — delivered.
             </p>
             <div className="flex gap-3">
               {[
