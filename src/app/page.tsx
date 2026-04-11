@@ -55,9 +55,8 @@ export default function Home() {
               <span className="text-[11px] font-extrabold uppercase tracking-wider text-ink">Spring sale · Up to −50%</span>
             </div>
             <h1 className="text-[34px] md:text-[48px] lg:text-[56px] font-black leading-[0.95] mb-4 tracking-[-0.02em] text-ink">
-              Everything you want.<br />
-              <span className="text-primary">One marketplace</span><br />
-              <span className="text-accent">for all of Kosovo.</span>
+              Everything <span className="text-primary">you want.</span><br />
+              <span className="text-accent">Delivered tomorrow.</span>
             </h1>
             <p className="text-[14px] md:text-[15px] text-ink-secondary mb-7 max-w-[440px] leading-relaxed font-medium">
               200,000+ products across 30 categories. Fashion, home, beauty, electronics, toys, books &amp; more. Free next-day delivery.
