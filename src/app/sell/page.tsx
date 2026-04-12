@@ -31,13 +31,13 @@ export default function SellPage() {
               </p>
 
               <div className="flex flex-wrap gap-3">
-                <Link href="/contact" className="group inline-flex items-center gap-2 h-[56px] px-8 rounded-xl bg-accent text-white text-[15px] font-extrabold hover:bg-accent-dark transition-all shadow-[0_8px_24px_rgba(255,103,0,0.4)] hover:shadow-[0_12px_32px_rgba(255,103,0,0.5)] hover:-translate-y-0.5">
-                  Start selling today
+                <Link href="/seller/register" className="group inline-flex items-center gap-2 h-[56px] px-8 rounded-xl bg-accent text-white text-[15px] font-extrabold hover:bg-accent-dark transition-all shadow-[0_8px_24px_rgba(255,103,0,0.4)] hover:shadow-[0_12px_32px_rgba(255,103,0,0.5)] hover:-translate-y-0.5">
+                  Open your store
                   <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
                 </Link>
-                <a href="#how" className="inline-flex items-center h-[56px] px-7 rounded-xl bg-white/10 backdrop-blur-sm text-white text-[14px] font-extrabold hover:bg-white/15 transition-all border border-white/15">
-                  How it works
-                </a>
+                <Link href="/seller/login" className="inline-flex items-center h-[56px] px-7 rounded-xl bg-white/10 backdrop-blur-sm text-white text-[14px] font-extrabold hover:bg-white/15 transition-all border border-white/15">
+                  Already a partner? Sign in
+                </Link>
               </div>
             </div>
 
@@ -176,7 +176,7 @@ export default function SellPage() {
               Contact us at <span className="font-extrabold text-white">partners@kahsya.ks</span> or <span className="font-extrabold text-white">+383 44 123 456</span>
             </p>
           </div>
-          <Link href="/contact" className="inline-flex items-center justify-center gap-2 h-[56px] px-8 rounded-xl bg-accent text-white text-[15px] font-extrabold hover:bg-accent-dark transition-all shadow-[0_8px_24px_rgba(255,103,0,0.4)] hover:-translate-y-0.5 whitespace-nowrap">
+          <Link href="/seller/register" className="inline-flex items-center justify-center gap-2 h-[56px] px-8 rounded-xl bg-accent text-white text-[15px] font-extrabold hover:bg-accent-dark transition-all shadow-[0_8px_24px_rgba(255,103,0,0.4)] hover:-translate-y-0.5 whitespace-nowrap">
             Apply now
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
           </Link>

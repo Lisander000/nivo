@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import CartWrapper from "@/components/CartWrapper";
+import ChromeSwitch from "@/components/ChromeSwitch";
 import { CartProvider } from "@/context/CartContext";
 
 const inter = Inter({
@@ -12,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "kahsya — The Premium Gadget Marketplace of Kosovo",
-  description: "Curated gadgets, verified sellers, free delivery. Shop smartphones, laptops, audio, gaming & more with local warranty.",
+  title: "kahsya — Kosovo's everything marketplace",
+  description: "Fashion, home, beauty, electronics, groceries & more. Verified sellers, fast delivery across Kosovo.",
 };
 
 export default function RootLayout({
@@ -25,10 +23,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className="min-h-screen flex flex-col antialiased">
         <CartProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <CartWrapper />
+          <ChromeSwitch>{children}</ChromeSwitch>
         </CartProvider>
       </body>
     </html>

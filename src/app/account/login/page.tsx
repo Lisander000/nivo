@@ -34,7 +34,7 @@ export default function AccountPage() {
                   Welcome to <br /> the <span className="text-accent">club.</span>
                 </h1>
                 <p className="text-[15px] text-white/70 max-w-[400px] leading-relaxed">
-                  Join 50,000+ people who shop the latest tech on Kosovo&apos;s premium gadget marketplace.
+                  Join 50,000+ people who shop fashion, home, beauty, electronics and more on Kosovo&apos;s marketplace.
                 </p>
               </div>
 
@@ -183,6 +183,25 @@ export default function AccountPage() {
                 </svg>
                 <p className="text-[11px] text-ink-muted font-medium">Bank-level encryption · Your data never sold</p>
               </div>
+            </div>
+
+            {/* Seller portal redirect — prevents mix-up */}
+            <div className="mt-4 rounded-2xl border border-divider bg-white p-4 flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="w-10 h-10 rounded-xl bg-[#0A0A14] flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72" />
+                  </svg>
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[13px] font-extrabold text-ink">Selling on Kahsya?</p>
+                  <p className="text-[11px] text-ink-muted font-medium truncate">Seller portal is separate from customer accounts.</p>
+                </div>
+              </div>
+              <Link href="/seller/login" className="flex-shrink-0 inline-flex items-center gap-1 h-[38px] px-4 rounded-xl bg-[#0A0A14] text-amber-400 text-[12px] font-extrabold hover:bg-black transition-colors">
+                Seller login
+                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+              </Link>
             </div>
           </div>
         </div>
