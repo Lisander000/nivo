@@ -228,12 +228,6 @@ export default function Header() {
 
             {/* Right actions */}
             <div className="flex items-center gap-0.5 ml-auto">
-              <Link href="/sell" className="hidden xl:inline-flex items-center gap-1.5 h-[38px] px-3 rounded-xl text-[12px] font-extrabold text-primary hover:bg-primary-light transition-colors mr-1">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72" />
-                </svg>
-                Sell on Kahsya
-              </Link>
               <Link href="/account" className="hidden sm:flex flex-col items-center px-3 py-1.5 rounded-xl text-ink-secondary hover:text-ink hover:bg-bg transition-colors">
                 <svg className="w-[22px] h-[22px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
@@ -325,10 +319,6 @@ export default function Header() {
               <Link href="/community" className="flex items-center px-5 py-3.5 text-[14px] text-ink" onClick={() => setMobileMenuOpen(false)}>Community</Link>
               <Link href="/help" className="flex items-center px-5 py-3.5 text-[14px] text-ink" onClick={() => setMobileMenuOpen(false)}>Customer Service</Link>
               <Link href="/account" className="flex items-center px-5 py-3.5 text-[14px] text-ink" onClick={() => setMobileMenuOpen(false)}>My Account</Link>
-              <div className="border-t border-divider mt-2 pt-2 mx-5" />
-              <p className="px-5 py-2 text-[11px] font-bold text-ink-muted uppercase tracking-wider">Partners</p>
-              <Link href="/sell" className="flex items-center px-5 py-3.5 text-[14px] text-ink" onClick={() => setMobileMenuOpen(false)}>Sell on Kahsya</Link>
-              <Link href="/seller/login" className="flex items-center px-5 py-3.5 text-[14px] text-primary font-semibold" onClick={() => setMobileMenuOpen(false)}>Seller login →</Link>
             </div>
           </div>
         </div>

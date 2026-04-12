@@ -66,10 +66,10 @@ export default function Footer() {
             <h4 className="text-[12px] font-bold uppercase tracking-wider text-white/35 mb-4">Partners</h4>
             <ul className="space-y-2.5">
               {[
-                ["Sell on Kahsya", "/sell"],
-                ["Commission & Fees", "/sell"],
-                ["Fulfillment by Kahsya", "/sell"],
-                ["Partner Guidelines", "/sell"],
+                ["Sell on Kahsya", "/partners"],
+                ["Commission & Fees", "/partners"],
+                ["Fulfillment by Kahsya", "/partners"],
+                ["Partner Guidelines", "/partners"],
               ].map(([label, href]) => (
                 <li key={label}><Link href={href} className="text-[13px] text-white/55 hover:text-white transition-colors">{label}</Link></li>
               ))}

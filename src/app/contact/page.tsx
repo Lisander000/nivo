@@ -157,7 +157,7 @@ export default function ContactPage() {
               Looking to sell on Kahsya or open a business account?
             </p>
             <div className="flex gap-2">
-              <Link href="/sell" className="text-[12px] font-extrabold text-accent-dark hover:underline">Sell on Kahsya →</Link>
+              <Link href="/partners" className="text-[12px] font-extrabold text-accent-dark hover:underline">Sell on Kahsya →</Link>
               <span className="text-ink-faint">·</span>
               <Link href="/business" className="text-[12px] font-extrabold text-accent-dark hover:underline">Kahsya Business →</Link>
             </div>
