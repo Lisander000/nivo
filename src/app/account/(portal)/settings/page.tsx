@@ -12,7 +12,7 @@ export default function SettingsPage() {
       {/* Profile */}
       <div className="bg-white rounded-2xl shadow-card border border-divider p-5 md:p-6">
         <h2 className="text-[14px] font-black text-ink mb-4">Profile</h2>
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-[11px] font-bold text-ink mb-1.5 uppercase tracking-wider">First name</label>
             <input defaultValue="Arta" className="w-full h-[44px] px-3 rounded-xl border-2 border-border text-[13px] focus:outline-none focus:border-primary" />

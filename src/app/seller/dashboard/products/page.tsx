@@ -37,14 +37,14 @@ export default function SellerProductsPage() {
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div>
           <p className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-amber-400">Catalog</p>
-          <h1 className="text-[28px] md:text-[34px] font-black text-white tracking-tight leading-tight">Products</h1>
+          <h1 className="text-[22px] sm:text-[28px] md:text-[34px] font-black text-white tracking-tight leading-tight">Products</h1>
           <p className="text-[13px] text-white/50 mt-1">{allProducts.length} total · {allProducts.filter((p) => p.status === "Live").length} live</p>
         </div>
         <div className="flex gap-2">
-          <button className="h-[42px] px-4 rounded-xl bg-white/5 border border-white/10 text-white text-[12px] font-extrabold hover:bg-white/10 transition-colors">Import CSV</button>
-          <button className="h-[42px] px-5 rounded-xl bg-amber-400 text-[#0A0A14] text-[12px] font-black hover:bg-amber-300 transition-colors inline-flex items-center gap-1.5">
+          <button className="hidden sm:inline-flex h-[42px] px-4 rounded-xl bg-white/5 border border-white/10 text-white text-[12px] font-extrabold hover:bg-white/10 transition-colors">Import CSV</button>
+          <button className="h-[36px] sm:h-[42px] px-3 sm:px-5 rounded-xl bg-amber-400 text-[#0A0A14] text-[11px] sm:text-[12px] font-black hover:bg-amber-300 transition-colors inline-flex items-center gap-1.5">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
-            New product
+            <span className="hidden sm:inline">New product</span><span className="sm:hidden">Add</span>
           </button>
         </div>
       </div>

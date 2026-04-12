@@ -27,7 +27,7 @@ export default function SellerLoginPage() {
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
               <span className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-amber-400">Seller portal</span>
             </div>
-            <h1 className="text-[36px] md:text-[44px] font-black leading-[1.02] tracking-tight text-white">
+            <h1 className="text-[28px] sm:text-[36px] md:text-[44px] font-black leading-[1.02] tracking-tight text-white">
               Welcome back, <br /><span className="text-amber-400">partner.</span>
             </h1>
             <p className="text-[13px] text-white/55 mt-3 max-w-[340px] mx-auto">Sign in to your Kahsya store. Track sales, manage inventory, ship orders.</p>

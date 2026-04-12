@@ -14,18 +14,18 @@ export default function SellerPayoutsPage() {
     <div className="space-y-6">
       <div>
         <p className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-amber-400">Finances</p>
-        <h1 className="text-[28px] md:text-[34px] font-black text-white tracking-tight leading-tight">Payouts</h1>
+        <h1 className="text-[22px] sm:text-[28px] md:text-[34px] font-black text-white tracking-tight leading-tight">Payouts</h1>
         <p className="text-[13px] text-white/50 mt-1">Weekly bank transfers every Monday.</p>
       </div>
 
       {/* Balance hero */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-amber-400/15 via-amber-400/5 to-transparent border border-amber-400/20 p-6 md:p-8">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-amber-400/15 via-amber-400/5 to-transparent border border-amber-400/20 p-4 sm:p-6 md:p-8">
         <div className="absolute -right-10 -top-10 w-[280px] h-[280px] rounded-full bg-amber-400/10 blur-3xl pointer-events-none" />
-        <div className="relative grid md:grid-cols-3 gap-5">
+        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
           <div>
             <p className="text-[11px] font-extrabold uppercase tracking-wider text-amber-400">Available now</p>
-            <p className="text-[40px] md:text-[48px] font-black text-white tracking-tight leading-none mt-2">€2,140<span className="text-[24px] text-white/50">.40</span></p>
-            <button className="mt-4 h-[44px] px-6 bg-amber-400 hover:bg-amber-300 text-[#0A0A14] text-[13px] font-black rounded-xl transition-colors">Withdraw now</button>
+            <p className="text-[32px] sm:text-[40px] md:text-[48px] font-black text-white tracking-tight leading-none mt-2">€2,140<span className="text-[18px] sm:text-[24px] text-white/50">.40</span></p>
+            <button className="mt-3 sm:mt-4 h-[40px] sm:h-[44px] px-5 sm:px-6 bg-amber-400 hover:bg-amber-300 text-[#0A0A14] text-[12px] sm:text-[13px] font-black rounded-xl transition-colors">Withdraw now</button>
           </div>
           <div className="md:border-l md:border-white/10 md:pl-6">
             <p className="text-[11px] font-bold uppercase tracking-wider text-white/50">Pending (clearing)</p>

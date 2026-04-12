@@ -11,7 +11,7 @@ export default function AccountPage() {
       <div className="max-w-[1280px] mx-auto px-4 lg:px-6 py-8 lg:py-12">
         <div className="grid lg:grid-cols-[1.1fr_1fr] gap-6 lg:gap-10 items-stretch">
           {/* LEFT — Brand panel */}
-          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#001847] via-[#0046BE] to-[#0057E0] text-white order-2 lg:order-1 min-h-[420px] lg:min-h-[640px]">
+          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#001847] via-[#0046BE] to-[#0057E0] text-white order-2 lg:order-1 min-h-[320px] sm:min-h-[420px] lg:min-h-[640px]">
             {/* Decorative blobs */}
             <div className="absolute -top-20 -right-20 w-[380px] h-[380px] rounded-full bg-accent/25 blur-3xl pointer-events-none" />
             <div className="absolute -bottom-32 -left-20 w-[420px] h-[420px] rounded-full bg-primary/30 blur-3xl pointer-events-none" />
@@ -79,7 +79,7 @@ export default function AccountPage() {
 
           {/* RIGHT — Auth form */}
           <div className="order-1 lg:order-2">
-            <div className="bg-white rounded-3xl shadow-card p-6 md:p-10">
+            <div className="bg-white rounded-3xl shadow-card p-4 sm:p-6 md:p-10">
               {/* Tab switcher */}
               <div className="relative flex bg-bg rounded-xl p-1 mb-7">
                 <div

@@ -15,7 +15,7 @@ export default function SellerAnalyticsPage() {
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div>
           <p className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-amber-400">Insights</p>
-          <h1 className="text-[28px] md:text-[34px] font-black text-white tracking-tight leading-tight">Analytics</h1>
+          <h1 className="text-[22px] sm:text-[28px] md:text-[34px] font-black text-white tracking-tight leading-tight">Analytics</h1>
           <p className="text-[13px] text-white/50 mt-1">How your store is performing across the marketplace.</p>
         </div>
         <button className="h-[42px] px-4 rounded-xl bg-white/5 border border-white/10 text-white text-[12px] font-extrabold hover:bg-white/10 transition-colors">Last 30 days ▾</button>
@@ -29,9 +29,9 @@ export default function SellerAnalyticsPage() {
           { label: "Add to cart", value: "2,140", delta: "+9%", up: true },
           { label: "Checkout rate", value: "16.0%", delta: "-1.2%", up: false },
         ].map((k) => (
-          <div key={k.label} className="bg-white/[0.03] border border-white/10 rounded-2xl p-5">
-            <p className="text-[11px] font-bold text-white/50 uppercase tracking-wider">{k.label}</p>
-            <p className="text-[26px] md:text-[30px] font-black text-white tracking-tight mt-2">{k.value}</p>
+          <div key={k.label} className="bg-white/[0.03] border border-white/10 rounded-2xl p-3 sm:p-5">
+            <p className="text-[10px] sm:text-[11px] font-bold text-white/50 uppercase tracking-wider">{k.label}</p>
+            <p className="text-[20px] sm:text-[26px] md:text-[30px] font-black text-white tracking-tight mt-1 sm:mt-2">{k.value}</p>
             <span className={`text-[11px] font-extrabold ${k.up ? "text-emerald-400" : "text-red-400"}`}>
               {k.up ? "↗" : "↘"} {k.delta}
             </span>
@@ -40,15 +40,15 @@ export default function SellerAnalyticsPage() {
       </div>
 
       {/* Revenue curve */}
-      <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-5 md:p-6">
-        <div className="flex items-center justify-between mb-5">
+      <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-4 sm:p-5 md:p-6">
+        <div className="flex items-center justify-between mb-4 sm:mb-5">
           <div>
             <p className="text-[11px] font-bold text-white/50 uppercase tracking-wider">Revenue trend</p>
-            <p className="text-[28px] font-black text-white mt-1">€18,420</p>
+            <p className="text-[22px] sm:text-[28px] font-black text-white mt-1">€18,420</p>
             <p className="text-[11px] text-emerald-400 font-extrabold mt-0.5">↗ +12.4% vs previous period</p>
           </div>
         </div>
-        <div className="h-[220px] flex items-end gap-1.5">
+        <div className="h-[160px] sm:h-[220px] flex items-end gap-1">
           {chart.map((v, i) => (
             <div
               key={i}

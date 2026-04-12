@@ -33,12 +33,12 @@ export default function SellerOverviewPage() {
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div>
           <p className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-amber-400">Dashboard</p>
-          <h1 className="text-[28px] md:text-[34px] font-black text-white tracking-tight leading-tight">Good morning, Endrit 👋</h1>
+          <h1 className="text-[22px] sm:text-[28px] md:text-[34px] font-black text-white tracking-tight leading-tight">Good morning, Endrit 👋</h1>
           <p className="text-[13px] text-white/50 mt-1">Here&apos;s how ElectroKS is doing today.</p>
         </div>
         <div className="flex gap-2">
-          <button className="h-[42px] px-4 rounded-xl bg-white/5 border border-white/10 text-white text-[12px] font-extrabold hover:bg-white/10 transition-colors">Last 30 days ▾</button>
-          <Link href="/seller/dashboard/products" className="h-[42px] px-5 rounded-xl bg-amber-400 text-[#0A0A14] text-[12px] font-black hover:bg-amber-300 transition-colors inline-flex items-center gap-1.5">
+          <button className="h-[36px] sm:h-[42px] px-3 sm:px-4 rounded-xl bg-white/5 border border-white/10 text-white text-[11px] sm:text-[12px] font-extrabold hover:bg-white/10 transition-colors">Last 30 days ▾</button>
+          <Link href="/seller/dashboard/products" className="hidden sm:inline-flex h-[42px] px-5 rounded-xl bg-amber-400 text-[#0A0A14] text-[12px] font-black hover:bg-amber-300 transition-colors items-center gap-1.5">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
             Add product
           </Link>
@@ -48,9 +48,9 @@ export default function SellerOverviewPage() {
       {/* KPIs */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         {kpis.map((k) => (
-          <div key={k.label} className="bg-white/[0.03] border border-white/10 rounded-2xl p-5 hover:border-white/20 transition-colors">
-            <p className="text-[11px] font-bold text-white/50 uppercase tracking-wider">{k.label}</p>
-            <p className="text-[26px] md:text-[32px] font-black text-white tracking-tight leading-none mt-2">{k.value}</p>
+          <div key={k.label} className="bg-white/[0.03] border border-white/10 rounded-2xl p-3 sm:p-5 hover:border-white/20 transition-colors">
+            <p className="text-[10px] sm:text-[11px] font-bold text-white/50 uppercase tracking-wider">{k.label}</p>
+            <p className="text-[20px] sm:text-[26px] md:text-[32px] font-black text-white tracking-tight leading-none mt-1 sm:mt-2">{k.value}</p>
             <div className="flex items-center gap-1.5 mt-2">
               <span className={`text-[11px] font-extrabold ${k.up ? "text-emerald-400" : "text-red-400"}`}>
                 {k.up ? "↗" : "↘"} {k.delta}

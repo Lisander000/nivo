@@ -5,11 +5,11 @@ export default function SellerSettingsPage() {
     <div className="space-y-5 max-w-[860px]">
       <div>
         <p className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-amber-400">Store</p>
-        <h1 className="text-[28px] md:text-[34px] font-black text-white tracking-tight leading-tight">Store settings</h1>
+        <h1 className="text-[22px] sm:text-[28px] md:text-[34px] font-black text-white tracking-tight leading-tight">Store settings</h1>
       </div>
 
       {/* Storefront */}
-      <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-5 md:p-6">
+      <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-4 sm:p-5 md:p-6">
         <h2 className="text-[14px] font-black text-white mb-4">Storefront</h2>
         <div className="flex items-center gap-4 mb-5">
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-300 to-amber-500 flex items-center justify-center text-[#0A0A14] font-black text-[22px] flex-shrink-0">EK</div>
@@ -19,7 +19,7 @@ export default function SellerSettingsPage() {
             <button className="mt-1 text-[11px] font-extrabold text-amber-400 hover:underline">Change logo</button>
           </div>
         </div>
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-[11px] font-bold text-white/70 mb-1.5 uppercase tracking-wider">Display name</label>
             <input defaultValue="ElectroKS" className="w-full h-[44px] px-3 rounded-xl bg-white/5 border-2 border-white/10 text-white text-[13px] focus:outline-none focus:border-amber-400" />
@@ -36,7 +36,7 @@ export default function SellerSettingsPage() {
       </div>
 
       {/* Shipping */}
-      <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-5 md:p-6">
+      <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-4 sm:p-5 md:p-6">
         <h2 className="text-[14px] font-black text-white mb-4">Shipping & fulfillment</h2>
         <div className="space-y-3">
           {[
@@ -59,7 +59,7 @@ export default function SellerSettingsPage() {
       </div>
 
       {/* Bank */}
-      <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-5 md:p-6">
+      <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-4 sm:p-5 md:p-6">
         <h2 className="text-[14px] font-black text-white mb-4">Payouts & banking</h2>
         <div className="space-y-3">
           <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
@@ -75,7 +75,7 @@ export default function SellerSettingsPage() {
       </div>
 
       {/* Team */}
-      <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-5 md:p-6">
+      <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-4 sm:p-5 md:p-6">
         <h2 className="text-[14px] font-black text-white mb-4">Team members</h2>
         <div className="space-y-2.5">
           {[

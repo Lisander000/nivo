@@ -31,7 +31,7 @@ export default function SellerOrdersPage() {
     <div className="space-y-5">
       <div>
         <p className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-amber-400">Fulfillment</p>
-        <h1 className="text-[28px] md:text-[34px] font-black text-white tracking-tight leading-tight">Orders</h1>
+        <h1 className="text-[22px] sm:text-[28px] md:text-[34px] font-black text-white tracking-tight leading-tight">Orders</h1>
         <p className="text-[13px] text-white/50 mt-1">{orders.filter((o) => o.status === "To ship").length} need to be shipped today</p>
       </div>
 

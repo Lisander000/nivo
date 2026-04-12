@@ -40,7 +40,7 @@ export default function OrdersPage() {
         <span className="w-1 h-8 bg-accent rounded-full" />
         <div>
           <p className="text-[11px] font-extrabold text-primary uppercase tracking-wider">My orders</p>
-          <h1 className="text-[22px] md:text-[28px] font-black text-ink tracking-tight leading-tight">Order history</h1>
+          <h1 className="text-[18px] sm:text-[22px] md:text-[28px] font-black text-ink tracking-tight leading-tight">Order history</h1>
         </div>
       </div>
 

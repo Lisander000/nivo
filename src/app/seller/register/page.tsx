@@ -30,15 +30,15 @@ export default function SellerRegisterPage() {
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
               <span className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-amber-400">Open a store</span>
             </div>
-            <h1 className="text-[36px] md:text-[44px] font-black tracking-tight leading-[1.05] text-white">Sell on Kahsya</h1>
+            <h1 className="text-[28px] sm:text-[36px] md:text-[44px] font-black tracking-tight leading-[1.05] text-white">Sell on Kahsya</h1>
             <p className="text-[13px] text-white/55 mt-3 max-w-[460px] mx-auto">Reach 50,000+ active shoppers across Kosovo. 48h review, 0% listing fee, payouts every Monday.</p>
           </div>
 
           {/* Stepper */}
-          <div className="flex items-center justify-between mb-7 gap-3">
+          <div className="flex items-center justify-between mb-6 sm:mb-7 gap-1.5 sm:gap-3">
             {steps.map((s, i) => (
-              <div key={s} className="flex items-center gap-3 flex-1 min-w-0">
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-[12px] font-black flex-shrink-0 transition-all ${
+              <div key={s} className="flex items-center gap-1.5 sm:gap-3 flex-1 min-w-0">
+                <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-[11px] sm:text-[12px] font-black flex-shrink-0 transition-all ${
                   i < step ? "bg-amber-400 text-[#0A0A14]" : i === step ? "bg-amber-400 text-[#0A0A14] ring-4 ring-amber-400/20" : "bg-white/5 text-white/40"
                 }`}>
                   {i < step ? "✓" : i + 1}
