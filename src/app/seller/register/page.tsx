@@ -27,7 +27,7 @@ export default function SellerRegisterPage() {
         <div className="w-full max-w-[720px]">
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-1.5 bg-amber-400/10 border border-amber-400/20 rounded-full px-3 py-1.5 mb-5">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
               <span className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-amber-400">Open a store</span>
             </div>
             <h1 className="text-[28px] sm:text-[36px] md:text-[44px] font-black tracking-tight leading-[1.05] text-white">Sell on Kahsya</h1>

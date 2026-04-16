@@ -16,14 +16,8 @@ export default function WishlistPage() {
 
       {/* Hero empty state */}
       <div className="relative bg-white rounded-3xl shadow-card overflow-hidden mb-8">
-        {/* Decorative gradient blobs */}
-        <div className="absolute -top-24 -right-20 w-[380px] h-[380px] rounded-full bg-accent/15 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-32 -left-20 w-[380px] h-[380px] rounded-full bg-primary/15 blur-3xl pointer-events-none" />
-
         <div className="relative px-6 md:px-16 py-14 md:py-20 text-center">
-          {/* Floating heart icon */}
           <div className="relative inline-flex mb-6">
-            <div className="absolute inset-0 bg-danger/20 rounded-3xl blur-2xl" />
             <div className="relative w-20 h-20 rounded-3xl bg-gradient-to-br from-danger to-accent flex items-center justify-center shadow-[0_12px_32px_rgba(214,59,47,0.35)]">
               <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />

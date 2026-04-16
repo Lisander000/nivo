@@ -3,14 +3,14 @@
 import { useState } from "react";
 
 const allProducts = [
-  { id: 1, emoji: "📱", name: "Samsung Galaxy A55 5G", sku: "SMG-A55-128", category: "Smartphones", price: 299, stock: 24, status: "Live", sold: 48 },
-  { id: 2, emoji: "🎧", name: "JBL Tune 510BT", sku: "JBL-510BT-BK", category: "Audio", price: 40, stock: 56, status: "Live", sold: 36 },
-  { id: 3, emoji: "🔌", name: "Anker 20W USB-C Charger", sku: "ANK-20W-01", category: "Accessories", price: 14, stock: 3, status: "Low stock", sold: 118 },
-  { id: 4, emoji: "⌚", name: "Samsung Galaxy Watch 6", sku: "SMG-WATCH6-44", category: "Wearables", price: 280, stock: 12, status: "Live", sold: 14 },
-  { id: 5, emoji: "💻", name: "Logitech MX Master 3S", sku: "LOG-MX3S-GR", category: "Accessories", price: 109, stock: 0, status: "Out of stock", sold: 27 },
-  { id: 6, emoji: "⌨️", name: "Keychron K2 Pro RGB", sku: "KC-K2PRO-RED", category: "Accessories", price: 135, stock: 18, status: "Live", sold: 22 },
-  { id: 7, emoji: "📷", name: "Sony ZV-1F Vlog Camera", sku: "SON-ZV1F-BK", category: "Electronics", price: 549, stock: 6, status: "Low stock", sold: 8 },
-  { id: 8, emoji: "🖥️", name: "LG UltraGear 27\" 165Hz", sku: "LG-27GN650-B", category: "Electronics", price: 299, stock: 9, status: "Draft", sold: 0 },
+  { id: 1, name: "Samsung Galaxy A55 5G", sku: "SMG-A55-128", category: "Smartphones", price: 299, stock: 24, status: "Live", sold: 48 },
+  { id: 2, name: "JBL Tune 510BT", sku: "JBL-510BT-BK", category: "Audio", price: 40, stock: 56, status: "Live", sold: 36 },
+  { id: 3, name: "Anker 20W USB-C Charger", sku: "ANK-20W-01", category: "Accessories", price: 14, stock: 3, status: "Low stock", sold: 118 },
+  { id: 4, name: "Samsung Galaxy Watch 6", sku: "SMG-WATCH6-44", category: "Wearables", price: 280, stock: 12, status: "Live", sold: 14 },
+  { id: 5, name: "Logitech MX Master 3S", sku: "LOG-MX3S-GR", category: "Accessories", price: 109, stock: 0, status: "Out of stock", sold: 27 },
+  { id: 6, name: "Keychron K2 Pro RGB", sku: "KC-K2PRO-RED", category: "Accessories", price: 135, stock: 18, status: "Live", sold: 22 },
+  { id: 7, name: "Sony ZV-1F Vlog Camera", sku: "SON-ZV1F-BK", category: "Electronics", price: 549, stock: 6, status: "Low stock", sold: 8 },
+  { id: 8, name: "LG UltraGear 27\" 165Hz", sku: "LG-27GN650-B", category: "Electronics", price: 299, stock: 9, status: "Draft", sold: 0 },
 ];
 
 const statusStyle = (s: string) => {
@@ -95,7 +95,9 @@ export default function SellerProductsPage() {
                 <tr key={p.id} className="hover:bg-white/[0.02] transition-colors">
                   <td className="px-5 py-3.5">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-[20px] flex-shrink-0">{p.emoji}</div>
+                      <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-white/25" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0 0 22.5 18.75V5.25A2.25 2.25 0 0 0 20.25 3H3.75A2.25 2.25 0 0 0 1.5 5.25v13.5A2.25 2.25 0 0 0 3.75 21Z" /></svg>
+                      </div>
                       <div className="min-w-0">
                         <p className="text-[13px] font-extrabold text-white truncate">{p.name}</p>
                         <p className="text-[11px] text-white/40 font-medium">{p.sku}</p>

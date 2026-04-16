@@ -17,12 +17,9 @@ export default function ContactPage() {
 
       {/* HERO */}
       <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#001847] via-[#0046BE] to-[#0057E0] text-white mb-8">
-        <div className="absolute -top-28 -right-20 w-[480px] h-[480px] rounded-full bg-accent/25 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-32 -left-20 w-[420px] h-[420px] rounded-full bg-primary/30 blur-3xl pointer-events-none" />
-
         <div className="relative px-6 md:px-16 py-14 md:py-20">
           <div className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 mb-5 border border-white/10">
-            <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-success" />
             <span className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-white/90">Team online now</span>
           </div>
           <h1 className="text-[40px] md:text-[60px] font-black leading-[0.98] tracking-tight mb-4">
@@ -42,7 +39,7 @@ export default function ContactPage() {
           { title: "Call us", desc: "+383 44 123 456", color: "bg-accent", action: "Call now", icon: "M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" },
         ].map((c) => (
           <button key={c.title} className="group bg-white rounded-2xl shadow-card p-6 text-left hover:-translate-y-1 hover:shadow-card-hover transition-all">
-            <div className={`w-12 h-12 rounded-2xl ${c.color} text-white flex items-center justify-center shadow-sm mb-4 group-hover:scale-110 transition-transform`}>
+            <div className={`w-12 h-12 rounded-2xl ${c.color} text-white flex items-center justify-center shadow-sm mb-4`}>
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                 <path strokeLinecap="round" strokeLinejoin="round" d={c.icon} />
               </svg>
@@ -108,7 +105,6 @@ export default function ContactPage() {
         <div className="space-y-4">
           {/* Office card with map-style gradient */}
           <div className="relative bg-gradient-to-br from-primary to-primary-dark rounded-2xl shadow-card p-7 text-white overflow-hidden">
-            <div className="absolute -top-16 -right-16 w-[240px] h-[240px] rounded-full bg-accent/20 blur-3xl" />
             {/* Fake map lines */}
             <div className="absolute inset-0 opacity-20" style={{
               backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.1) 20px, rgba(255,255,255,0.1) 21px), repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,255,255,0.1) 20px, rgba(255,255,255,0.1) 21px)"

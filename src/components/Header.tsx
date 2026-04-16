@@ -48,7 +48,7 @@ export default function Header() {
         <div className="max-w-[1280px] mx-auto px-4 lg:px-6 h-[34px] flex items-center justify-center">
           <Link href="/category/all" className="group inline-flex items-center gap-2 text-[12px] font-bold">
             <span className="inline-flex items-center gap-1 bg-accent text-white text-[9px] font-extrabold uppercase tracking-wider px-1.5 py-0.5 rounded-full">
-              <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
+              <span className="w-1 h-1 rounded-full bg-white" />
               Sale
             </span>
             <span className="text-white/90">Spring Sale is live — up to −50% across every category</span>
@@ -173,7 +173,7 @@ export default function Header() {
                             <div className="absolute -right-6 -bottom-6 text-[120px] leading-none opacity-20 group-hover/promo:scale-110 group-hover/promo:rotate-6 transition-transform duration-500">⚡</div>
                             <div className="relative">
                               <span className="inline-flex items-center gap-1 bg-accent text-white text-[9px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full">
-                                <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
+                                <span className="w-1 h-1 rounded-full bg-white" />
                                 Live
                               </span>
                               <p className="text-[18px] font-black mt-3 leading-tight">Spring Sale<br />−50% off</p>

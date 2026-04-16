@@ -20,10 +20,9 @@ export default function AccountOverviewPage() {
     <div className="space-y-6">
       {/* Hero greeting */}
       <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#001847] via-[#0046BE] to-[#0057E0] text-white p-6 md:p-8">
-        <div className="absolute -top-16 -right-16 w-[280px] h-[280px] rounded-full bg-accent/25 blur-3xl pointer-events-none" />
         <div className="relative">
           <p className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-accent">Welcome back</p>
-          <h1 className="text-[26px] md:text-[32px] font-black tracking-tight mt-1">Hi, Arta 👋</h1>
+          <h1 className="text-[26px] md:text-[32px] font-black tracking-tight mt-1">Hi, Arta</h1>
           <p className="text-[13px] text-white/75 mt-1 max-w-[420px]">You have <span className="font-extrabold text-white">3 active orders</span> and <span className="font-extrabold text-white">2 new deals</span> on items you saved.</p>
           <div className="flex gap-2 mt-5 flex-wrap">
             <Link href="/account/orders" className="inline-flex items-center gap-1.5 h-[40px] px-4 bg-white text-ink text-[12px] font-extrabold rounded-xl hover:-translate-y-0.5 transition-all shadow-sm">Track orders</Link>
@@ -74,7 +73,6 @@ export default function AccountOverviewPage() {
       <div className="bg-gradient-to-br from-accent/10 via-white to-primary/5 rounded-2xl border border-accent/15 p-5 md:p-6">
         <div className="flex items-center gap-3 mb-3">
           <span className="inline-flex items-center gap-1 bg-accent text-white text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full">
-            <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
             Price drop
           </span>
           <h3 className="text-[15px] font-black text-ink">2 items you saved are now cheaper</h3>

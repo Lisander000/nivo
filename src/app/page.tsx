@@ -40,16 +40,11 @@ export default function Home() {
           ═══════════════════════════════════════════════════════ */}
       <div className="grid grid-cols-1 lg:grid-cols-[1.8fr_1fr] gap-3 lg:gap-4">
         {/* Main hero banner — light, bright, bol-style */}
-        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#E8F1FF] via-[#F4F7FF] to-[#FFE8D6] min-h-[280px] sm:min-h-[340px] lg:min-h-[400px] group">
-          {/* Decorative pattern */}
-          <div className="absolute -top-20 -right-16 w-[380px] h-[380px] rounded-full bg-primary/10 blur-3xl" />
-          <div className="absolute -bottom-20 -left-10 w-[320px] h-[320px] rounded-full bg-accent/15 blur-3xl" />
-          <div className="absolute top-8 right-8 text-[120px] sm:text-[200px] lg:text-[260px] leading-none opacity-[0.12] select-none pointer-events-none group-hover:scale-110 group-hover:rotate-6 transition-transform duration-700">📱</div>
-
+        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#E8F1FF] via-[#F4F7FF] to-[#FFE8D6] min-h-[280px] sm:min-h-[340px] lg:min-h-[400px]">
           <div className="relative h-full p-5 sm:p-8 md:p-12 lg:p-14 flex flex-col justify-center max-w-[560px]">
             <div className="inline-flex self-start items-center gap-2 bg-white rounded-full pl-1.5 pr-4 py-1 mb-5 shadow-sm">
               <span className="flex items-center gap-1 bg-danger text-white text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full">
-                <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
+                <span className="w-1 h-1 rounded-full bg-white" />
                 Sale
               </span>
               <span className="text-[11px] font-extrabold uppercase tracking-wider text-ink">Spring sale · Up to −50%</span>
@@ -90,7 +85,6 @@ export default function Home() {
         {/* Right: 2 stacked promo tiles */}
         <div className="grid grid-cols-2 lg:grid-cols-1 gap-3 lg:gap-4">
           <Link href="/category/fashion" className="group relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#F472B6] to-[#BE185D] text-white p-4 sm:p-6 lg:p-7 hover:-translate-y-0.5 transition-all shadow-card hover:shadow-card-hover min-h-[140px] sm:min-h-[190px]">
-            <div className="absolute -right-4 -bottom-4 text-[80px] sm:text-[160px] leading-none opacity-20 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">👗</div>
             <div className="relative">
               <span className="inline-block text-[10px] font-extrabold uppercase tracking-wider bg-white/15 backdrop-blur-sm border border-white/20 px-2.5 py-1 rounded-full">New season</span>
               <p className="text-[16px] sm:text-[24px] font-black mt-2 sm:mt-3 leading-tight">Spring Fashion</p>
@@ -102,10 +96,8 @@ export default function Home() {
             </div>
           </Link>
           <Link href="/category/home-living" className="group relative rounded-2xl overflow-hidden bg-gradient-to-br from-accent to-[#E05A00] text-white p-4 sm:p-6 lg:p-7 hover:-translate-y-0.5 transition-all shadow-card hover:shadow-card-hover min-h-[140px] sm:min-h-[190px]">
-            <div className="absolute -right-4 -bottom-4 text-[80px] sm:text-[160px] leading-none opacity-20 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500">🛋️</div>
             <div className="relative">
               <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-white uppercase tracking-wider bg-white/15 backdrop-blur-sm border border-white/20 px-2.5 py-1 rounded-full">
-                <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
                 Hot −30%
               </span>
               <p className="text-[16px] sm:text-[24px] font-black mt-2 sm:mt-3 leading-tight">Home refresh</p>
@@ -140,7 +132,7 @@ export default function Home() {
                 className="group flex-shrink-0 w-[110px] lg:w-auto flex flex-col items-center snap-start"
               >
                 <div className={`w-[86px] h-[86px] lg:w-[96px] lg:h-[96px] rounded-full bg-gradient-to-br ${tints[i % tints.length]} flex items-center justify-center shadow-sm group-hover:shadow-card-hover group-hover:-translate-y-1 transition-all duration-300 relative overflow-hidden`}>
-                  <span className="text-[44px] lg:text-[48px] group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-300">{cat.icon}</span>
+                  <span className="text-[44px] lg:text-[48px] group-hover:scale-105 transition-transform duration-300">{cat.icon}</span>
                 </div>
                 <p className="text-[12px] font-extrabold text-ink mt-2.5 text-center">{cat.name}</p>
                 <p className="text-[10px] text-ink-muted font-semibold">{cat.count} items</p>
@@ -155,17 +147,19 @@ export default function Home() {
           ═══════════════════════════════════════════════════════ */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {[
-          { title: "Pay in 3", sub: "Interest-free", bg: "bg-gradient-to-br from-primary to-[#0039AA]", text: "text-white", accent: "text-accent", href: "/help", icon: "💳" },
-          { title: "Free returns", sub: "14 days, no drama", bg: "bg-gradient-to-br from-success to-[#0E7A52]", text: "text-white", accent: "text-white/70", href: "/returns", icon: "↩️" },
-          { title: "Kahsya Business", sub: "Tech for teams", bg: "bg-gradient-to-br from-ink to-[#0F172A]", text: "text-white", accent: "text-accent", href: "/business", icon: "💼" },
-          { title: "Sell on Kahsya", sub: "150+ partners", bg: "bg-gradient-to-br from-accent to-[#D65400]", text: "text-white", accent: "text-white/70", href: "/partners", icon: "🚀" },
+          { title: "Pay in 3", sub: "Interest-free", bg: "bg-gradient-to-br from-primary to-[#0039AA]", text: "text-white", accent: "text-accent", href: "/help", iconPath: "M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" },
+          { title: "Free returns", sub: "14 days, no drama", bg: "bg-gradient-to-br from-success to-[#0E7A52]", text: "text-white", accent: "text-white/70", href: "/returns", iconPath: "M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" },
+          { title: "Kahsya Business", sub: "Tech for teams", bg: "bg-gradient-to-br from-ink to-[#0F172A]", text: "text-white", accent: "text-accent", href: "/business", iconPath: "M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0" },
+          { title: "Sell on Kahsya", sub: "150+ partners", bg: "bg-gradient-to-br from-accent to-[#D65400]", text: "text-white", accent: "text-white/70", href: "/partners", iconPath: "M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z" },
         ].map((p) => (
           <Link
             key={p.title}
             href={p.href}
             className={`group relative rounded-2xl p-4 sm:p-5 ${p.bg} ${p.text} overflow-hidden hover:-translate-y-1 transition-all shadow-card hover:shadow-card-hover`}
           >
-            <div className="absolute -right-2 -bottom-2 text-[56px] sm:text-[80px] leading-none opacity-20 group-hover:scale-110 group-hover:-rotate-12 transition-transform duration-500">{p.icon}</div>
+            <div className="absolute -right-2 -bottom-2 opacity-[0.08]">
+              <svg className="w-[56px] h-[56px] sm:w-[80px] sm:h-[80px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}><path strokeLinecap="round" strokeLinejoin="round" d={p.iconPath} /></svg>
+            </div>
             <div className="relative">
               <p className="text-[13px] sm:text-[16px] font-black leading-tight">{p.title}</p>
               <p className={`text-[11px] font-bold mt-0.5 ${p.accent}`}>{p.sub}</p>
@@ -185,7 +179,7 @@ export default function Home() {
         <div className="relative bg-gradient-to-br from-danger/5 via-accent/5 to-transparent rounded-3xl p-5 md:p-6 lg:p-7 border border-danger/10">
           <ProductRail
             title="Today's hottest deals"
-            kicker="⚡ Limited time"
+            kicker="Limited time"
             href="/category/all"
             accent="danger"
             trailing={
@@ -222,8 +216,6 @@ export default function Home() {
         href="/category/all"
         className="relative block rounded-3xl overflow-hidden bg-gradient-to-r from-[#FFE8D6] via-[#FFF4E8] to-[#E8F1FF] p-5 sm:p-8 md:p-10 lg:p-12 group hover:shadow-card-hover transition-all shadow-card"
       >
-        <div className="absolute -right-10 -top-10 text-[120px] sm:text-[220px] leading-none opacity-15 select-none pointer-events-none group-hover:scale-110 group-hover:rotate-6 transition-transform duration-700">🌸</div>
-        <div className="absolute -left-16 -bottom-16 w-[280px] h-[280px] rounded-full bg-primary/10 blur-3xl" />
         <div className="relative grid md:grid-cols-[1fr_auto] gap-6 items-center">
           <div className="max-w-[560px]">
             <span className="inline-block text-[10px] font-extrabold text-accent uppercase tracking-[0.15em] bg-white px-3 py-1 rounded-full shadow-sm">Spring Sale</span>
@@ -282,7 +274,6 @@ export default function Home() {
           INSTALLMENTS BANNER
           ═══════════════════════════════════════════════════════ */}
       <div className="relative bg-gradient-to-br from-primary-light via-white to-primary-50 rounded-3xl shadow-card overflow-hidden border border-primary/10">
-        <div className="absolute -top-10 -right-10 w-48 h-48 rounded-full bg-primary/10 blur-2xl" />
         <div className="relative p-5 sm:p-8 md:p-10 flex flex-col md:flex-row items-center gap-5 sm:gap-8">
           <div className="flex-1">
             <span className="inline-block text-[11px] font-extrabold text-primary uppercase tracking-wider bg-white px-3 py-1 rounded-full shadow-sm">Flexible payments</span>
@@ -306,8 +297,6 @@ export default function Home() {
           NEWSLETTER
           ═══════════════════════════════════════════════════════ */}
       <div className="relative bg-gradient-to-br from-[#001847] via-[#002D7A] to-[#0046BE] rounded-3xl p-6 sm:p-10 md:p-14 text-center text-white overflow-hidden">
-        <div className="absolute -top-20 -left-20 w-[320px] h-[320px] rounded-full bg-accent/20 blur-3xl" />
-        <div className="absolute -bottom-20 -right-20 w-[280px] h-[280px] rounded-full bg-primary/30 blur-3xl" />
         <div className="relative max-w-[560px] mx-auto">
           <span className="inline-block text-[11px] font-extrabold text-accent uppercase tracking-wider bg-accent/10 border border-accent/20 px-3 py-1 rounded-full">Weekly drop</span>
           <p className="text-[22px] sm:text-[28px] md:text-[36px] font-black mt-4 leading-tight tracking-tight">

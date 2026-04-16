@@ -12,14 +12,11 @@ export default function SellPage() {
 
       {/* HERO */}
       <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#001847] via-[#0046BE] to-[#0057E0] text-white mb-10">
-        <div className="absolute -top-32 -right-20 w-[560px] h-[560px] rounded-full bg-accent/30 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-40 -left-20 w-[480px] h-[480px] rounded-full bg-primary/30 blur-3xl pointer-events-none" />
-
         <div className="relative px-6 md:px-16 py-16 md:py-24">
           <div className="grid lg:grid-cols-[1.3fr_1fr] gap-8 items-center">
             <div>
               <div className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 mb-6 border border-white/10">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                 <span className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-white/90">For sellers</span>
               </div>
               <h1 className="text-[44px] md:text-[68px] font-black leading-[0.95] tracking-tight mb-5">
@@ -83,7 +80,7 @@ export default function SellPage() {
             <div key={b.title} className={`group bg-gradient-to-br ${b.grad} rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 border border-white/50 relative overflow-hidden`}>
               <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full bg-white/30 group-hover:scale-150 transition-transform duration-500" />
               <div className="relative">
-                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 group-hover:-rotate-6 transition-transform">
+                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                     <path strokeLinecap="round" strokeLinejoin="round" d={b.icon} />
                   </svg>
@@ -163,8 +160,6 @@ export default function SellPage() {
 
       {/* FINAL CTA */}
       <div className="relative bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-8 md:p-12 text-white overflow-hidden">
-        <div className="absolute -top-20 -right-20 w-[380px] h-[380px] rounded-full bg-accent/25 blur-3xl" />
-        <div className="absolute -bottom-32 -left-20 w-[380px] h-[380px] rounded-full bg-primary/40 blur-3xl" />
         <div className="relative grid md:grid-cols-[1fr_auto] gap-6 items-center">
           <div>
             <p className="text-[11px] font-extrabold text-accent uppercase tracking-[0.15em] mb-3">Ready?</p>

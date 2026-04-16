@@ -14,13 +14,9 @@ export default function AboutPage() {
 
       {/* HERO */}
       <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#001847] via-[#0046BE] to-[#0057E0] text-white mb-8">
-        <div className="absolute -top-32 -right-24 w-[520px] h-[520px] rounded-full bg-accent/25 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-32 -left-24 w-[480px] h-[480px] rounded-full bg-primary/30 blur-3xl pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.08),transparent_60%)]" />
-
         <div className="relative px-6 md:px-16 py-16 md:py-24">
           <div className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 mb-6 border border-white/10">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
             <span className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-white/90">Founded 2024 · Prishtina</span>
           </div>
           <h1 className="text-[44px] md:text-[72px] font-black leading-[0.95] tracking-tight mb-5 max-w-[760px]">
@@ -70,7 +66,6 @@ export default function AboutPage() {
         </div>
 
         <div className="bg-gradient-to-br from-primary to-primary-dark rounded-2xl shadow-card p-8 md:p-10 text-white relative overflow-hidden">
-          <div className="absolute -top-20 -right-20 w-[300px] h-[300px] rounded-full bg-accent/20 blur-3xl" />
           <div className="relative">
             <p className="text-[11px] font-extrabold text-accent uppercase tracking-[0.15em] mb-3">Why we exist</p>
             <h3 className="text-[22px] md:text-[26px] font-black leading-tight mb-5">A promise we&apos;ll keep:</h3>
@@ -118,7 +113,7 @@ export default function AboutPage() {
             <div key={v.title} className={`group bg-gradient-to-br ${v.grad} rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 border border-white/50 relative overflow-hidden`}>
               <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full bg-white/30 group-hover:scale-150 transition-transform duration-500" />
               <div className="relative">
-                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 group-hover:-rotate-6 transition-transform">
+                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d={v.icon} />
                   </svg>
@@ -166,7 +161,6 @@ export default function AboutPage() {
 
         {/* TIMELINE */}
         <div className="bg-gradient-to-br from-primary-light via-white to-pink-50 rounded-2xl shadow-card p-8 md:p-10 border border-primary/10 relative overflow-hidden">
-          <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-accent/10 blur-3xl" />
           <div className="relative">
             <p className="text-[11px] font-extrabold text-primary uppercase tracking-[0.15em] mb-3">Milestones</p>
             <h3 className="text-[22px] font-black text-ink leading-tight mb-6">From napkin to nationwide.</h3>
@@ -181,7 +175,7 @@ export default function AboutPage() {
               ].map((m, i) => (
                 <div key={m.year} className="relative pl-8">
                   <div className={`absolute left-0 top-1 w-[22px] h-[22px] rounded-full border-[3px] border-white flex items-center justify-center ${i === 4 ? "bg-accent" : "bg-primary"}`}>
-                    {i === 4 && <span className="w-2 h-2 rounded-full bg-white animate-pulse" />}
+                    {i === 4 && <span className="w-2 h-2 rounded-full bg-white" />}
                   </div>
                   <p className="text-[10px] font-extrabold text-primary uppercase tracking-wider">{m.year}</p>
                   <p className="text-[14px] font-black text-ink mt-0.5">{m.title}</p>
@@ -217,8 +211,6 @@ export default function AboutPage() {
 
       {/* AMBASSADORS */}
       <div className="mb-10 bg-gradient-to-br from-[#001847] via-[#002D7A] to-[#0046BE] rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
-        <div className="absolute -top-24 -right-24 w-[360px] h-[360px] rounded-full bg-accent/20 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 w-[300px] h-[300px] rounded-full bg-primary/30 blur-3xl" />
         <div className="relative">
           <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
             <div>

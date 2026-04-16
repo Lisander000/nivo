@@ -12,11 +12,6 @@ export default function AccountPage() {
         <div className="grid lg:grid-cols-[1.1fr_1fr] gap-6 lg:gap-10 items-stretch">
           {/* LEFT — Brand panel */}
           <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#001847] via-[#0046BE] to-[#0057E0] text-white order-2 lg:order-1 min-h-[320px] sm:min-h-[420px] lg:min-h-[640px]">
-            {/* Decorative blobs */}
-            <div className="absolute -top-20 -right-20 w-[380px] h-[380px] rounded-full bg-accent/25 blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-32 -left-20 w-[420px] h-[420px] rounded-full bg-primary/30 blur-3xl pointer-events-none" />
-            <div className="absolute top-1/3 right-1/4 w-[200px] h-[200px] rounded-full bg-white/5 blur-2xl pointer-events-none" />
-
             <div className="relative h-full flex flex-col p-8 md:p-12">
               {/* Logo */}
               <Link href="/" className="flex items-baseline gap-0.5 self-start">
@@ -27,7 +22,7 @@ export default function AccountPage() {
               {/* Headline */}
               <div className="flex-1 flex flex-col justify-center py-10">
                 <div className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 mb-5 self-start border border-white/10">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                   <span className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-white/90">Members club</span>
                 </div>
                 <h1 className="text-[36px] md:text-[48px] font-black leading-[1.02] tracking-tight mb-4">

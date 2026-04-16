@@ -66,12 +66,9 @@ export default function HelpPage() {
 
       {/* HERO with search */}
       <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#001847] via-[#0046BE] to-[#0057E0] text-white mb-8">
-        <div className="absolute -top-32 -right-20 w-[520px] h-[520px] rounded-full bg-accent/25 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-32 -left-20 w-[420px] h-[420px] rounded-full bg-primary/30 blur-3xl pointer-events-none" />
-
         <div className="relative px-6 md:px-16 py-14 md:py-20 text-center">
           <div className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 mb-5 border border-white/10">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
             <span className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-white/90">Avg. reply in 2h</span>
           </div>
           <h1 className="text-[36px] md:text-[56px] font-black leading-[1.02] tracking-tight mb-4">
@@ -123,7 +120,7 @@ export default function HelpPage() {
             <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full bg-white/30 group-hover:scale-150 transition-transform duration-500" />
             <div className="relative">
               <div className="flex items-start justify-between mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary group-hover:scale-110 group-hover:-rotate-6 transition-transform">
+                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                     <path strokeLinecap="round" strokeLinejoin="round" d={topic.icon} />
                   </svg>
@@ -150,7 +147,6 @@ export default function HelpPage() {
 
       {/* Still need help — 3 contact cards */}
       <div className="relative bg-gradient-to-br from-primary-light to-primary-50 rounded-3xl p-8 md:p-12 overflow-hidden">
-        <div className="absolute -top-20 -right-20 w-[320px] h-[320px] rounded-full bg-accent/15 blur-3xl" />
         <div className="relative">
           <div className="text-center mb-8">
             <p className="text-[11px] font-extrabold text-primary uppercase tracking-[0.15em] mb-2">Still stuck?</p>
@@ -166,13 +162,13 @@ export default function HelpPage() {
             ].map((c) => (
               <button key={c.title} className="group bg-white rounded-2xl p-6 text-left hover:-translate-y-1 transition-all shadow-card hover:shadow-card-hover">
                 <div className="flex items-start justify-between mb-4">
-                  <div className={`w-12 h-12 rounded-2xl ${c.color} text-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform`}>
+                  <div className={`w-12 h-12 rounded-2xl ${c.color} text-white flex items-center justify-center shadow-sm`}>
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                       <path strokeLinecap="round" strokeLinejoin="round" d={c.icon} />
                     </svg>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-success" />
                     <span className="text-[10px] font-extrabold text-success uppercase tracking-wider">{c.status}</span>
                   </div>
                 </div>

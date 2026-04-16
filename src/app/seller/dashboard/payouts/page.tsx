@@ -20,7 +20,6 @@ export default function SellerPayoutsPage() {
 
       {/* Balance hero */}
       <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-amber-400/15 via-amber-400/5 to-transparent border border-amber-400/20 p-4 sm:p-6 md:p-8">
-        <div className="absolute -right-10 -top-10 w-[280px] h-[280px] rounded-full bg-amber-400/10 blur-3xl pointer-events-none" />
         <div className="relative grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
           <div>
             <p className="text-[11px] font-extrabold uppercase tracking-wider text-amber-400">Available now</p>

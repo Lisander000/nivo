@@ -23,13 +23,9 @@ export default function CommunityPage() {
 
       {/* HERO */}
       <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#001847] via-[#0046BE] to-[#0057E0] text-white mb-8">
-        <div className="absolute -top-32 -right-24 w-[520px] h-[520px] rounded-full bg-accent/25 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-32 -left-24 w-[480px] h-[480px] rounded-full bg-primary/30 blur-3xl pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.08),transparent_60%)]" />
-
         <div className="relative px-6 md:px-16 py-16 md:py-24">
           <div className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 mb-6 border border-white/10">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
             <span className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-white/90">50,000+ strong</span>
           </div>
           <h1 className="text-[44px] md:text-[72px] font-black leading-[0.95] tracking-tight mb-5 max-w-[780px]">
@@ -95,7 +91,6 @@ export default function CommunityPage() {
 
       {/* INSTAGRAM WALL */}
       <section className="mb-12 relative bg-gradient-to-br from-primary-light via-white to-pink-50 rounded-3xl p-6 md:p-10 border border-primary/10 overflow-hidden">
-        <div className="absolute -top-24 -right-24 w-[320px] h-[320px] rounded-full bg-accent/10 blur-3xl" />
         <div className="relative">
           <div className="flex items-end justify-between mb-6 flex-wrap gap-4">
             <div className="flex items-center gap-3">
@@ -123,8 +118,8 @@ export default function CommunityPage() {
                 rel="noopener noreferrer"
                 className={`group relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br ${post.gradient} shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300`}
               >
-                <div className="absolute inset-0 flex items-center justify-center text-[72px] group-hover:scale-110 transition-transform duration-500">
-                  {post.emoji}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <svg className="w-10 h-10 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0 0 22.5 18.75V5.25A2.25 2.25 0 0 0 20.25 3H3.75A2.25 2.25 0 0 0 1.5 5.25v13.5A2.25 2.25 0 0 0 3.75 21Z" /></svg>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="absolute inset-x-0 bottom-0 p-3 text-white translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all">
@@ -185,8 +180,6 @@ export default function CommunityPage() {
 
       {/* JOIN CTA */}
       <div className="relative bg-gradient-to-br from-[#001847] via-[#002D7A] to-[#0046BE] rounded-3xl p-10 md:p-16 text-center text-white overflow-hidden">
-        <div className="absolute -top-20 -left-20 w-[320px] h-[320px] rounded-full bg-accent/20 blur-3xl" />
-        <div className="absolute -bottom-20 -right-20 w-[280px] h-[280px] rounded-full bg-primary/30 blur-3xl" />
         <div className="relative max-w-[640px] mx-auto">
           <span className="inline-block text-[11px] font-extrabold text-accent uppercase tracking-[0.15em] bg-accent/10 border border-accent/20 px-3 py-1 rounded-full">Join the movement</span>
           <p className="text-[30px] md:text-[44px] font-black mt-4 leading-[1.05] tracking-tight">

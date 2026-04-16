@@ -12,10 +12,6 @@ export default function BusinessPage() {
 
       {/* HERO */}
       <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#0A0A1E] via-[#001847] to-[#0046BE] text-white mb-10">
-        <div className="absolute -top-32 -right-20 w-[560px] h-[560px] rounded-full bg-primary/40 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-40 -left-20 w-[480px] h-[480px] rounded-full bg-accent/20 blur-3xl pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_60%)]" />
-
         <div className="relative px-6 md:px-16 py-16 md:py-24">
           <div className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1.5 mb-6 border border-white/15">
             <svg className="w-3 h-3 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
@@ -90,7 +86,7 @@ export default function BusinessPage() {
             <div key={b.title} className={`group bg-gradient-to-br ${b.grad} rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 border border-white/50 relative overflow-hidden`}>
               <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full bg-white/30 group-hover:scale-150 transition-transform duration-500" />
               <div className="relative">
-                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 group-hover:-rotate-6 transition-transform">
+                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                     <path strokeLinecap="round" strokeLinejoin="round" d={b.icon} />
                   </svg>
@@ -136,8 +132,6 @@ export default function BusinessPage() {
 
       {/* FINAL CTA */}
       <div className="relative bg-gradient-to-br from-primary-light to-primary-50 rounded-3xl p-8 md:p-12 overflow-hidden">
-        <div className="absolute -top-20 -right-20 w-[320px] h-[320px] rounded-full bg-accent/15 blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-[320px] h-[320px] rounded-full bg-primary/10 blur-3xl" />
         <div className="relative grid md:grid-cols-[1fr_auto] gap-6 items-center">
           <div>
             <p className="text-[11px] font-extrabold text-primary uppercase tracking-[0.15em] mb-3">Ready to start?</p>
